@@ -39,3 +39,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ## Contributors
  - Guru Swarupa [https://github.com/guruswarupa/]
+ - Arjun Dev [https://github.com/ArjunD2005/]
