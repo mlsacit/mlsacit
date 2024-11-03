@@ -46,3 +46,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 - Sahina Parbin [https://github.com/sahinarparbin]
 - Chintu Rai [https://github.com/chinturai]
 - Dilip B [https://github.com/DILIP-SHEESH]
+- Nikhil Kumar [https://github.com/Nikhil-Blllitz]
