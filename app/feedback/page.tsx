@@ -94,7 +94,7 @@ const FeedbackForm: React.FC = () => {
                             value={formData.name}
                             onChange={handleChange}
                             required
-                            className={`mt-1 block w-full rounded-lg bg-white/20 text-white placeholder-gray-300 shadow-sm border ${validated && !formData.name ? 'border-red-500' : 'border-transparent'
+                            className={`mt-1 py-2 block w-full rounded-lg bg-white/20 text-white placeholder-gray-300 shadow-sm border ${validated && !formData.name ? 'border-red-500' : 'border-transparent'
                                 } focus:ring-blue-500 focus:border-blue-500`}
                         />
                         {validated && !formData.name && <p className="text-red-400 text-sm mt-1">Please provide your name.</p>}
@@ -112,7 +112,7 @@ const FeedbackForm: React.FC = () => {
                             value={formData.usn}
                             onChange={handleChange}
                             required
-                            className={`mt-1 block w-full rounded-lg bg-white/20 text-white placeholder-gray-300 shadow-sm border ${validated && !formData.usn ? 'border-red-500' : 'border-transparent'
+                            className={`mt-1 py-2 block w-full rounded-lg bg-white/20 text-white placeholder-gray-300 shadow-sm border ${validated && !formData.usn ? 'border-red-500' : 'border-transparent'
                                 } focus:ring-blue-500 focus:border-blue-500`}
                         />
                         {validated && !formData.usn && <p className="text-red-400 text-sm mt-1">Please provide your USN.</p>}
@@ -129,7 +129,7 @@ const FeedbackForm: React.FC = () => {
                             value={formData.branch}
                             onChange={handleChange}
                             required
-                            className={`mt-1 block w-full rounded-lg bg-white/20 text-black placeholder-gray-300 shadow-sm border ${validated && !formData.branch ? 'border-red-500' : 'border-transparent'
+                            className={`mt-1 py-2  block w-full rounded-lg bg-black/20 text-white placeholder-gray-300 shadow-sm border ${validated && !formData.branch ? 'border-red-500' : 'border-transparent'
                                 } focus:ring-blue-500 focus:border-blue-500`}
                         >
                             <option value="">Select your branch</option>
@@ -156,7 +156,7 @@ const FeedbackForm: React.FC = () => {
                             value={formData.semester}
                             onChange={handleChange}
                             required
-                            className={`mt-1 block w-full rounded-lg bg-white/20 text-black placeholder-gray-300 shadow-sm border ${validated && !formData.semester ? 'border-red-500' : 'border-transparent'
+                            className={`mt-1 py-2  block w-full rounded-lg bg-black/20 text-white placeholder-gray-300 shadow-sm border ${validated && !formData.semester ? 'border-red-500' : 'border-transparent'
                                 } focus:ring-blue-500 focus:border-blue-500`}
                         >
                             <option value="">Select your semester</option>
@@ -180,7 +180,7 @@ const FeedbackForm: React.FC = () => {
                             value={formData.section}
                             onChange={handleChange}
                             required
-                            className={`mt-1 block w-full rounded-lg bg-white/20 text-black placeholder-gray-300 shadow-sm border ${validated && !formData.section ? 'border-red-500' : 'border-transparent'
+                            className={`mt-1 py-2  block w-full rounded-lg bg-black/20 text-white placeholder-gray-300 shadow-sm border ${validated && !formData.section ? 'border-red-500' : 'border-transparent'
                                 } focus:ring-blue-500 focus:border-blue-500`}
                         >
                             <option value="">Select your section</option>
@@ -211,10 +211,10 @@ const FeedbackForm: React.FC = () => {
                                     }));
                                 }}
                                 required
-                                className={`mt-1 block w-full rounded-l-lg bg-white/20 text-white placeholder-gray-300 shadow-sm border ${validated && !formData.collegeMail ? 'border-red-500' : 'border-transparent'
+                                className={`mt-1 py-2 block w-full rounded-l-lg bg-white/20 text-white placeholder-gray-300 shadow-sm border ${validated && !formData.collegeMail ? 'border-red-500' : 'border-transparent'
                                     } focus:ring-blue-500 focus:border-blue-500`}
                             />
-                            <span className="inline-flex items-center px-3 bg-gray-800 text-gray-300 rounded-r-lg border-l border-gray-500">
+                            <span className="inline-flex py-2 items-center px-3 bg-gray-800 text-gray-300 rounded-r-lg border-l border-gray-500">
                                 @cambridge.edu.in
                             </span>
                         </div>
