@@ -42,7 +42,7 @@ export default function Home() {
                   BE A FORCE FOR GOOD
                 </h3>
                 <p className="text-lg h-auto">
-                  If you're looking for random paragraphs, you've come to the right place. When a random word or a random sentence isn't quite enough, the next logical step is to find a random paragraph. We created the Random Paragraph Generator with you in mind. The process is quite simple.
+                  If you&apos;re looking for random paragraphs, you&apos;ve come to the right place. When a random word or a random sentence isn&apos;t quite enough, the next logical step is to find a random paragraph. We created the Random Paragraph Generator with you in mind. The process is quite simple.
                 </p>
                 <button className="box-border bg-slate-900 text-white py-4 px-12 text-xl rounded-xl my-4">
                   CLICK HERE
