@@ -17,7 +17,7 @@ const Navbar = () => {
         
         {/* Left links */}
         <div className="bg-slate-500 text-white rounded-full w-1/2 p-3 flex items-start justify-start space-x-8 shadow-lg">
-          <Link href="/main" className="hover:text-slate-300 hover:scale-110 transition-transform on-duration-1500">HOME</Link>
+          <Link href="/" className="hover:text-slate-300 hover:scale-110 transition-transform on-duration-1500">HOME</Link>
           <Link href="/about" className="hover:text-slate-300 hover:scale-110 transition-transform on-duration-1500">ABOUT</Link>
           <Link href="/events" className="hover:text-slate-300 hover:scale-110 transition-transform on-duration-1500">EVENTS</Link>
           <Link href="/teams" className="hover:text-slate-300 hover:scale-110 transition-transform on-duration-1500">TEAM</Link>

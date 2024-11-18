@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 const Footer = () => {
   return (
-    <div className=' bg-slate-950 text-white w-full p-8 rounded-md'>
+    <div className=' bg-slate-950 text-white w-full p-8 rounded-md opacity-85'>
         <div className="container grid grid-cols-2 ">
             <div className="name text-left text-lg text-semibold">
                 {/* <img src="/msc_logo.png" alt="" width={50} height={50}/> */}
