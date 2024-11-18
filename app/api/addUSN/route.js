@@ -24,7 +24,7 @@ export async function POST(req) {
   const authClient = await auth.getClient();
   const sheets = google.sheets({ version: 'v4', auth: authClient });
   const spreadsheetId = process.env.NEXT_PUBLIC_GOOGLE_ATTENDANCE_SHEET_ID;
-  const range = 'Active!B2:B';
+  const range = 'Active!C2:C';
 
   try {
     const response = await sheets.spreadsheets.values.get({
@@ -40,7 +40,7 @@ export async function POST(req) {
     }
 
     const nextEmptyRow = values.length + 2;
-    const updateRange = `Active!B${nextEmptyRow}`;
+    const updateRange = `Active!C${nextEmptyRow}`;
 
     await sheets.spreadsheets.values.update({
       spreadsheetId,

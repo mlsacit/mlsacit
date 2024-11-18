@@ -55,32 +55,32 @@ const USNScannerPage: React.FC = () => {
     };
 
     return (
-        <div className="min-h-screen bg-blue-50 flex items-center justify-center">
+        <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-black flex items-center justify-center">
             {!authorized ? (
-                <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md text-center">
-                    <h1 className="text-2xl font-bold text-blue-600 mb-4">Admin Access</h1>
+                <div className="bg-white/10 backdrop-blur-lg shadow-lg rounded-lg p-8 w-full max-w-md text-center">
+                    <h1 className="text-2xl font-bold text-white mb-4">Admin Access</h1>
                     <div className="flex flex-col gap-4">
                         <input
-                            className="px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="px-4 py-2 border rounded-md bg-white/20 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                             type="password"
                             placeholder="Enter password"
                             value={enteredPassword}
                             onChange={(e) => setEnteredPassword(e.target.value)}
                         />
                         <button
-                            className="bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition"
+                            className="bg-blue-800 text-white py-2 rounded-md hover:bg-blue-700 transition focus:outline-none focus:ring-2 focus:ring-blue-500"
                             onClick={handleLogin}
                         >
                             Login
                         </button>
                     </div>
-                    {error && <p className="text-red-500 mt-4">{error}</p>}
+                    {error && <p className="text-red-400 mt-4">{error}</p>}
                 </div>
             ) : (
-                <div className="w-full max-w-2xl p-4 bg-white rounded-lg shadow-lg">
+                <div className="w-full max-w-2xl p-4 bg-white/10 backdrop-blur-lg rounded-lg shadow-lg">
                     {showScanner && (
                         <>
-                            <h1 className="text-xl font-bold text-blue-600 mb-6">USN Scanner</h1>
+                            <h1 className="text-2xl font-bold text-white mb-6">USN Scanner</h1>
                             <Html5QrcodePlugin
                                 fps={10}
                                 qrbox={250}
