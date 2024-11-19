@@ -102,7 +102,9 @@ export default function Home() {
 
 
     if (!eventData) {
-        return <LoadingComponent/>;
+        return <>
+            <div className="flex items-center justify-center min-h-screen bg-blue-950 bg-opacity-95"> <LoadingComponent /></div>
+        </>
     }
 
     return (
