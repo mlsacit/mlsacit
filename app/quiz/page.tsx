@@ -20,6 +20,7 @@ const QuizPage: React.FC = () => {
     const [timerInterval, setTimerInterval] = useState<NodeJS.Timeout | null>(null);
     const [isAutoSubmitted, setIsAutoSubmitted] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleUserDetailsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -75,12 +76,9 @@ const QuizPage: React.FC = () => {
     const handleSubmit = async (e: FormEvent, autoSubmit = false) => {
         e.preventDefault();
 
-        if (quizSubmitted) return;
+        if (quizSubmitted || isSubmitting) return; 
 
-        if (Object.keys(answers).length < questions.length) {
-            setValidated(true);
-            return;
-        }
+        setIsSubmitting(true);
 
         try {
             const response = await fetch('/api/submitQuizAnswers', {
@@ -106,6 +104,8 @@ const QuizPage: React.FC = () => {
             if (timerInterval) clearInterval(timerInterval);
         } catch (error: any) {
             setShowToast({ message: error.message || 'Error submitting quiz answers.', type: 'error' });
+        } finally {
+            setIsSubmitting(false);
         }
     };
 
@@ -209,7 +209,7 @@ const QuizPage: React.FC = () => {
                         <p className="text-white text-xl mb-6 text-center">
                             Time Remaining: {formatTime(timeRemaining)}
                         </p>
-                        <form onSubmit={handleSubmit} className="space-y-6">
+                        <form onSubmit={handleSubmit} className="space-y-6" onContextMenu={(e) => e.preventDefault()} style={{ userSelect: 'none' }}>
                             {questions.map((question, index) => (
                                 <div key={question.id}>
                                     <h2 className="text-lg font-medium text-white mb-2">
@@ -241,6 +241,7 @@ const QuizPage: React.FC = () => {
                             <div className="flex justify-center">
                                 <button
                                     type="submit"
+                                    disabled={isSubmitting}
                                     className="px-6 py-2 text-white bg-blue-800 rounded-lg shadow hover:bg-blue-700"
                                 >
                                     Submit Quiz
