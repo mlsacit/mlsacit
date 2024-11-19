@@ -147,7 +147,6 @@ const QuizPage: React.FC = () => {
                             <ul className="list-disc list-inside space-y-1 text-gray-300">
                                 <li>Ensure you provide your USN and email correctly before starting.</li>
                                 <li>You can participate in the quiz only once per USN and email.</li>
-                                <li>You must attempt all the questions to complete the quiz.</li>
                                 <li>If you do not submit the quiz before the time ends, your score will be zero (0).</li>
                                 <li>Switching tabs during the quiz will result in automatic submission (0).</li>
                             </ul>
