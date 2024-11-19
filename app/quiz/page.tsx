@@ -119,7 +119,7 @@ const QuizPage: React.FC = () => {
         const handleVisibilityChange = () => {
             if (document.visibilityState === 'hidden' && quizStarted && !quizSubmitted) {
                 setShowToast({ message: 'Quiz automatically submitted due to tab change.', type: 'info' });
-                setIsAutoSubmitted(true); // Mark as auto-submitted
+                setIsAutoSubmitted(true);
                 handleSubmit({ preventDefault: () => { }, target: {} } as FormEvent<HTMLFormElement>, true);
             }
         };
@@ -139,7 +139,22 @@ const QuizPage: React.FC = () => {
                     <LoadingComponent />
                 ) : !quizStarted ? (
                     <>
-                        <h1 className="text-4xl font-bold text-white mb-6 text-center">Start Quiz</h1>
+                        <div className="text-white p-4 mb-6">
+                            <h1 className="text-2xl font-semibold mb-2 text-center">Welcome to the Quiz!</h1>
+                            <p className="text-sm text-gray-300 mb-4 text-center">
+                                Get ready to test your knowledge and have fun! Here's what you need to know before you start:
+                            </p>
+                            <ul className="list-disc list-inside space-y-1 text-gray-300">
+                                <li>Ensure you provide your USN and email correctly before starting.</li>
+                                <li>You can participate in the quiz only once per USN and email.</li>
+                                <li>You must attempt all the questions to complete the quiz.</li>
+                                <li>If you do not submit the quiz before the time ends, your score will be zero (0).</li>
+                                <li>Switching tabs during the quiz will result in automatic submission (0).</li>
+                            </ul>
+                            <p className="text-sm text-gray-300 mt-4 text-center">
+                                Click the **Start Quiz** button when you're ready. Good luck!
+                            </p>
+                        </div>
                         <form className="space-y-6">
                             <div>
                                 <label htmlFor="usn" className="block text-sm font-medium text-white">
@@ -234,16 +249,16 @@ const QuizPage: React.FC = () => {
                         </form>
                     </>
                 )}
-                {showToast && (
-                    <div
-                        className={`fixed bottom-4 right-4 text-white text-sm py-2 px-4 rounded-md shadow-md ${showToast.type === 'success' ? 'bg-blue-600' : 'bg-red-600'
-                            }`}
-                        role="alert"
-                    >
-                        {showToast.message}
-                    </div>
-                )}
             </div>
+            {showToast && (
+                <div
+                    className={`fixed bottom-4 right-4 text-white text-sm py-2 px-4 rounded-md shadow-md ${showToast.type === 'success' ? 'bg-blue-600' : 'bg-red-600'
+                        }`}
+                    role="alert"
+                >
+                    {showToast.message}
+                </div>
+            )}
         </div>
     );
 };

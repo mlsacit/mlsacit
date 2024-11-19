@@ -33,6 +33,23 @@ export async function POST(req) {
             throw new Error('Invalid input data.');
         }
 
+        // Check for duplicate email
+        const { data: existingData } = await sheets.spreadsheets.values.get({
+            spreadsheetId,
+            range: answersRange,
+        });
+
+        const existingRows = existingData.values || [];
+        const duplicateEntry = existingRows.find((row) => row[1]?.toLowerCase() === email.toLowerCase());
+
+        if (duplicateEntry) {
+            return NextResponse.json(
+                { message: 'This email has already been used to submit the quiz.' },
+                { status: 400 }
+            );
+        }
+
+        // Fetch questions from the spreadsheet
         const { data: questionData } = await sheets.spreadsheets.values.get({
             spreadsheetId,
             range: questionsRange,
@@ -56,6 +73,7 @@ export async function POST(req) {
 
         const resultRow = [[usn, email, correctAnswersCount]];
 
+        // Append the user's result
         await sheets.spreadsheets.values.append({
             spreadsheetId,
             range: answersRange,
