@@ -142,7 +142,7 @@ const QuizPage: React.FC = () => {
                         <div className="text-white p-4 mb-6">
                             <h1 className="text-2xl font-semibold mb-2 text-center">Welcome to the Quiz!</h1>
                             <p className="text-sm text-gray-300 mb-4 text-center">
-                                Get ready to test your knowledge and have fun! Here's what you need to know before you start:
+                                Get ready to test your knowledge and have fun! Here&apos;s what you need to know before you start:
                             </p>
                             <ul className="list-disc list-inside space-y-1 text-gray-300">
                                 <li>Ensure you provide your USN and email correctly before starting.</li>
@@ -152,7 +152,7 @@ const QuizPage: React.FC = () => {
                                 <li>Switching tabs during the quiz will result in automatic submission (0).</li>
                             </ul>
                             <p className="text-sm text-gray-300 mt-4 text-center">
-                                Click the **Start Quiz** button when you're ready. Good luck!
+                                Click the **Start Quiz** button when you&apos;re ready. Good luck!
                             </p>
                         </div>
                         <form className="space-y-6">
