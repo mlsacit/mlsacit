@@ -49,6 +49,14 @@ export async function POST(req) {
             );
         }
 
+        const duplicateUsn = existingRows.find((row) => row[0]?.toLowerCase() === usn.toLowerCase());
+        if (duplicateUsn) {
+            return NextResponse.json(
+                { message: 'This USN has already been used to submit the quiz.' },
+                { status: 400 }
+            );
+        }
+
         // Fetch questions from the spreadsheet
         const { data: questionData } = await sheets.spreadsheets.values.get({
             spreadsheetId,
