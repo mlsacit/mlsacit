@@ -1,6 +1,7 @@
 import { google } from 'googleapis';
 import { GoogleAuth } from 'google-auth-library';
 import bcrypt from 'bcryptjs';
+import { NextResponse } from 'next/server';
 
 export async function POST(req) {
   const auth = new GoogleAuth({
@@ -28,31 +29,52 @@ export async function POST(req) {
   try {
     const { email, password } = await req.json();
 
+    // Validate input
     if (!email || !password) {
-      throw new Error('Please provide all required fields.');
+      return NextResponse.json(
+        { message: 'Please provide both email and password.' },
+        { status: 400 }
+      );
     }
 
+    // Fetch existing user data
     const { data: existingData } = await sheets.spreadsheets.values.get({
       spreadsheetId,
       range: usersRange,
     });
 
     const existingRows = existingData.values || [];
-    const user = existingRows.find((row) => row[0]?.toLowerCase() === email.toLowerCase());
+    const user = existingRows.find(
+      (row) => row[0]?.toLowerCase() === email.toLowerCase()
+    );
 
     if (!user) {
-      return new NextResponse('Email not found', { status: 404 });
+      return NextResponse.json(
+        { message: 'Email not found. Please sign up first.' },
+        { status: 404 }
+      );
     }
 
     const [storedEmail, storedHash] = user;
 
+    // Compare passwords
     const match = await bcrypt.compare(password, storedHash);
     if (!match) {
-      return new NextResponse('Incorrect password', { status: 400 });
+      return NextResponse.json(
+        { message: 'Incorrect password. Please try again.' },
+        { status: 401 }
+      );
     }
 
-    return new NextResponse('Login successful', { status: 200 });
+    // Successful login
+    return NextResponse.json(
+      { message: 'Login successful!' },
+      { status: 200 }
+    );
   } catch (error) {
-    return new NextResponse(error.message, { status: 500 });
+    return NextResponse.json(
+      { message: `Error: ${error.message}` },
+      { status: 500 }
+    );
   }
 }

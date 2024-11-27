@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import Head from "next/head";
+import { AuthProvider } from './context/AuthContext';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -30,7 +31,7 @@ export default function RootLayout({ children }) {
         <Head>
       <link rel="icon" href="/favicon.ico" />
     </Head>
-        {children}
+      <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
   );
