@@ -2,13 +2,23 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import Cookies from 'js-cookie';
 
 const Navbar = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
-    setAnimate(true); // Trigger animation on mount
+    const authStatus = Cookies.get('isAuthenticated') === 'true';
+    setIsAuthenticated(authStatus);
+
+    setAnimate(true);
   }, []);
+
+  const handleSignOut = () => {
+    Cookies.remove('isAuthenticated');
+    setIsAuthenticated(false);
+  };
 
   return (
     <div className="flex justify-center w-full">
@@ -37,8 +47,19 @@ const Navbar = () => {
 
           {/* Right links */}
           <div className="bg-slate-500 text-white rounded-full p-3 flex items-center justify-end space-x-8 shadow-lg w-full sm:w-1/2">
-            <Link href="/login" className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-1500">LOGIN</Link>
-            <Link href="/sign-up" className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-1500">SIGN UP</Link>
+            {!isAuthenticated ? (
+              <>
+                <Link href="/login" className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-1500">LOGIN</Link>
+                <Link href="/signup" className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-1500">SIGN UP</Link>
+              </>
+            ) : (
+              <button
+                onClick={handleSignOut}
+                className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-1500"
+              >
+                SIGN OUT
+              </button>
+            )}
           </div>
         </div>
       </div>
