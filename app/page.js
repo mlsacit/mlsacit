@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Head from "next/head";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -8,6 +8,17 @@ import Footer from "./components/Footer";
 export default function Home() {
   const [isAnimating, setIsAnimating] = useState(false);
   const [showMainPage, setShowMainPage] = useState(false); // New state to toggle between pages
+  const [isHovered, setIsHovered] = useState(false); // State for hover effect
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setShowMainPage(true); 
+      }, 1000);
+    }, 1000); 
+    return () => clearTimeout(timer);
+  }, []);    //auto animate after a second
 
   const handleClick = () => {
     // Start the animation
@@ -31,15 +42,23 @@ export default function Home() {
           />
           <div className="relative z-10">
             <Navbar />
-            <div className="flex flex-col p-8 items-center text-center justify-center h-full">
+            <div className="min-h-screen flex flex-col p-8 items-center text-center justify-center h-full">
               <div className="container mx-auto p-8 text-center text-white">
-                {/* Additional content goes here */}
-                <h1 className="text-9xl font-bold" style={{ fontFamily: "Karantina" }}>
-                  MSC
+                {/* Animated Text */}
+                <h1 
+                  className={`text-7xl font-bold ${isHovered ? 'text-5xl' : ''} transition-all duration-500 ease-in-out karantina-bold`} 
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
+                >
+                  {isHovered ? 'MICROSOFT STUDENT CLUB' : 'MSC'}
                 </h1>
 
-                <h3 className="text-2xl font-normal relative before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-1/3 before:h-0.5 before:bg-white after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:w-1/3 after:h-0.5 after:bg-white">
-                  BE A FORCE FOR GOOD
+                <h3 
+                  className={`text-2xl font-normal relative before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-1/3 before:h-0.5 before:bg-white after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:w-1/3 after:h-0.5 after:bg-white`}
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
+                >
+                  {isHovered ? 'BE A FORCE FOR BAD' : 'BE A FORCE FOR GOOD'}
                 </h3>
                 <p className="text-lg h-auto">
                   If you&apos;re looking for random paragraphs, you&apos;ve come to the right place. When a random word or a random sentence isn&apos;t quite enough, the next logical step is to find a random paragraph. We created the Random Paragraph Generator with you in mind. The process is quite simple.

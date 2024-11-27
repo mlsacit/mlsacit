@@ -27,7 +27,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between relative">
 
           {/* Left links */}
-          <div className="bg-slate-500 text-white rounded-full p-3 flex items-center justify-start space-x-8 shadow-lg w-full sm:w-1/2">
+          <div className="bg-slate-500 text-white rounded-md p-3 flex items-center justify-start space-x-8 shadow-lg w-full sm:w-1/2">
             <Link href="/" className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-1500">HOME</Link>
             <Link href="/about" className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-1500">ABOUT</Link>
             <Link href="/events" className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-1500">EVENTS</Link>
@@ -46,7 +46,7 @@ const Navbar = () => {
           </div>
 
           {/* Right links */}
-          <div className="bg-slate-500 text-white rounded-full p-3 flex items-center justify-end space-x-8 shadow-lg w-full sm:w-1/2">
+          <div className="bg-slate-500 text-white rounded-md p-3 flex items-center justify-end space-x-8 shadow-lg w-full sm:w-1/2">
             {!isAuthenticated ? (
               <>
                 <Link href="/login" className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-1500">LOGIN</Link>
