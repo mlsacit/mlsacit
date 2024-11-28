@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Add this in your globals.css or tailwind.css */
-/* Add this in your globals.css or tailwind.css */
 @keyframes scroll {
     0% {
       transform: translateX(0);
@@ -25,3 +23,10 @@
       -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
       scrollbar-width: none; /* Hide scrollbar for Firefox */
   }
+
+  .karantina-bold {
+    font-family: "Karantina";
+    font-weight: 600;
+    font-style: normal;
+  }
+  
