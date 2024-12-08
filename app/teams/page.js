@@ -6,7 +6,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const page = () => {
   return (
-    <div className='relative bg-gradient-radial from-[#0052A1] to-[#002863] h-full'>
+    <div className='relative bg-gradient-radial from-[#0052A1] to-[#002863] h-full '>
         <Navbar/>
         <img
         src="/vector.png" 
