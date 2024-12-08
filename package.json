@@ -11,10 +11,12 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.6.0",
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
+    "bcryptjs": "^2.4.3",
     "framer-motion": "^11.11.17",
     "google-auth-library": "^9.15.0",
     "googleapis": "^144.0.0",
     "html5-qrcode": "^2.3.8",
+    "js-cookie": "^3.0.5",
     "next": "15.0.2",
     "react": "18.3.1",
     "react-bootstrap": "^2.10.5",

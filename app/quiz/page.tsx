@@ -1,6 +1,9 @@
 'use client';
 import React, { useState, useEffect, FormEvent } from 'react';
 import LoadingComponent from "../components/Loader";
+import { useAuth } from '../context/AuthContext';
+import { usePathname, useRouter } from 'next/navigation';
+import Cookies from 'js-cookie';
 
 interface Question {
     id: string;
@@ -21,6 +24,9 @@ const QuizPage: React.FC = () => {
     const [isAutoSubmitted, setIsAutoSubmitted] = useState(false);
     const [loading, setLoading] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const { isAuthenticated } = useAuth();
+    const router = useRouter();
+    const pathname = usePathname();
 
     const handleUserDetailsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -131,6 +137,17 @@ const QuizPage: React.FC = () => {
         };
     }, [quizStarted, quizSubmitted]);
 
+    useEffect(() => {
+        const storedAuth = Cookies.get('isAuthenticated');
+        if (storedAuth !== 'true') {
+          Cookies.set('redirectPath', pathname, { expires: 1 });
+          router.push('/login');
+        }
+      }, [pathname, router]);
+
+      if (!isAuthenticated) {
+        return <div>Redirecting to login...</div>;
+      }
 
     return (
         <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-gray-900 via-blue-900 to-black py-10">
