@@ -4,7 +4,8 @@ import Cookies from 'js-cookie';
 
 interface AuthContextType {
   isAuthenticated: boolean;
-  login: () => void;
+  userEmail: string | null;
+  login: (email: string) => void;
   logout: () => void;
 }
 
@@ -12,29 +13,35 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+  const [userEmail, setUserEmail] = useState<string | null>(null);
 
   useEffect(() => {
-    // Check the cookie for authentication status
     const storedAuth = Cookies.get('isAuthenticated');
-    if (storedAuth === 'true') {
+    const storedEmail = Cookies.get('userEmail');
+    if (storedAuth === 'true' && storedEmail) {
       setIsAuthenticated(true);
+      setUserEmail(storedEmail);
     }
   }, []);
 
-  const login = () => {
+  const login = (email: string) => {
     setIsAuthenticated(true);
+    setUserEmail(email);
     const expirationTime = new Date();
     expirationTime.setMinutes(expirationTime.getMinutes() + 30);
     Cookies.set('isAuthenticated', 'true', { expires: expirationTime });
+    Cookies.set('userEmail', email, { expires: expirationTime });
   };
 
   const logout = () => {
     setIsAuthenticated(false);
+    setUserEmail(null);
     Cookies.remove('isAuthenticated');
+    Cookies.remove('userEmail');
   };
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
+    <AuthContext.Provider value={{ isAuthenticated, userEmail, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

@@ -28,7 +28,7 @@ export async function POST(req) {
 
     try {
         const { usn, email, answers } = await req.json();
-
+        
         if (!usn || !email || !answers || typeof answers !== 'object') {
             throw new Error('Invalid input data.');
         }
