@@ -66,9 +66,8 @@ export async function POST(req) {
       );
     }
 
-    // Successful login
     return NextResponse.json(
-      { message: 'Login successful!' },
+      { message: 'Login successful!', email: storedEmail },
       { status: 200 }
     );
   } catch (error) {

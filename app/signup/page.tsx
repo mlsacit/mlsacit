@@ -39,7 +39,7 @@ const SignUpPage: React.FC = () => {
       if (!response.ok) throw new Error(data.message || 'Failed to sign up');
 
       setShowToast({ message: 'Sign-up successful!', type: 'success' });
-      login();
+      login(userDetails.email);
       const redirectPath = Cookies.get('redirectPath') || '/';
       router.push(redirectPath); 
       Cookies.remove('redirectPath'); 
