@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Head from "next/head";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Link from "next/link";
 
 export default function Home() {
   const [isAnimating, setIsAnimating] = useState(false);
@@ -46,7 +47,7 @@ export default function Home() {
               <div className="container mx-auto p-8 text-center text-white">
                 {/* Animated Text */}
                 <h1 
-                  className={`text-7xl font-bold ${isHovered ? 'text-5xl' : ''} transition-all duration-500 ease-in-out karantina-bold`} 
+                  className={`text-8xl font-bold ${isHovered ? 'text-5xl' : ''} transition-all duration-500 ease-in-out karantina-bold`} 
                   onMouseEnter={() => setIsHovered(true)}
                   onMouseLeave={() => setIsHovered(false)}
                 >
@@ -54,17 +55,17 @@ export default function Home() {
                 </h1>
 
                 <h3 
-                  className={`text-2xl font-normal relative before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-1/3 before:h-0.5 before:bg-white after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:w-1/3 after:h-0.5 after:bg-white`}
+                  className={`text-3xl font-normal relative before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-1/3 before:h-0.5 before:bg-white after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:w-1/3 after:h-0.5 after:bg-white`}
                   onMouseEnter={() => setIsHovered(true)}
                   onMouseLeave={() => setIsHovered(false)}
                 >
                   {isHovered ? 'BE A FORCE FOR BAD' : 'BE A FORCE FOR GOOD'}
                 </h3>
-                <p className="text-lg h-auto">
+                <p className="text-xl h-auto ">
                   If you&apos;re looking for random paragraphs, you&apos;ve come to the right place. When a random word or a random sentence isn&apos;t quite enough, the next logical step is to find a random paragraph. We created the Random Paragraph Generator with you in mind. The process is quite simple.
                 </p>
-                <button className="box-border bg-slate-900 text-white py-4 px-12 text-xl rounded-xl my-4">
-                  CLICK HERE
+                <button className="box-border bg-slate-900 text-white py-4 px-12 text-xl rounded-xl my-4" >
+                  <Link href="/events">EVENTS</Link>
                 </button>
               </div>
               

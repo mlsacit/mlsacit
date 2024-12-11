@@ -11,24 +11,35 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="sticky top-0 bg-transparent z-50">
+    <div className="sticky top-0 left-0 w-full z-50 bg-transparent">
       <div className="flex justify-center w-full">
-        <div className="w-full max-w-7xl px-4">
+        <div className="w-full px-4">
           {/* Navbar container */}
           <div className="flex items-center justify-between py-4">
-
             {/* Left links */}
-            <div className="bg-slate-500 bg-opacity-80 text-white rounded-full p-3 flex items-center justify-start space-x-8 shadow-lg w-full sm:w-1/2">
-              <Link href="/" className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-1500">
+            <div className="bg-slate-500 bg-opacity-80 text-white rounded-lg p-3 flex items-center justify-start space-x-8 shadow-lg w-full sm:w-1/2">
+              <Link
+                href="/"
+                className="hover:text-slate-300 hover:underline text-bold hover:scale-110 transition-transform duration-1500"
+              >
                 HOME
               </Link>
-              <Link href="/about" className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-1500">
+              <Link
+                href="/about"
+                className="hover:text-slate-300 hover:underline text-bold hover:scale-110 transition-transform duration-1500"
+              >
                 ABOUT
               </Link>
-              <Link href="/events" className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-1500">
+              <Link
+                href="/events"
+                className="hover:text-slate-300 hover:underline text-bold hover:scale-110 transition-transform duration-1500"
+              >
                 EVENTS
               </Link>
-              <Link href="/teams" className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-1500">
+              <Link
+                href="https://teams-page-msc.vercel.app/"
+                className="hover:text-slate-300 hover:underline text-bold hover:scale-110 transition-transform duration-1500"
+              >
                 TEAM
               </Link>
             </div>
@@ -47,11 +58,17 @@ const Navbar = () => {
             </div>
 
             {/* Right links */}
-            <div className="bg-slate-500 bg-opacity-80 text-white rounded-full p-3 flex items-center justify-end space-x-8 shadow-lg w-full sm:w-1/2">
-              <Link href="/login" className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-1500">
+            <div className="bg-slate-500 bg-opacity-80 text-white rounded-lg p-3 flex items-center justify-end space-x-8 shadow-lg w-full sm:w-1/2">
+              <Link
+                href="/login"
+                className="hover:text-slate-300 hover:underline text-bold hover:scale-110 transition-transform duration-1500"
+              >
                 LOGIN
               </Link>
-              <Link href="/signup" className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-1500">
+              <Link
+                href="/signup"
+                className="hover:text-slate-300 hover:underline text-bold hover:scale-110 transition-transform duration-1500"
+              >
                 SIGN UP
               </Link>
             </div>

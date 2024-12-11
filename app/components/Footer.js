@@ -22,8 +22,8 @@ const Footer = () => {
             <div className="flex gap-8">
             <div className="mt-6 text-slate-500 hover:text-white">
               <a
-                href="https://www.linkedin.com"
-                target="_blank"
+                href="https://www.linkedin.com/company/microsoft-student-club-citech/"
+                
                 rel="noopener noreferrer"
                 className=" text-2xl "
               >
@@ -32,8 +32,8 @@ const Footer = () => {
             </div>
             <div className="mt-6 text-slate-500 hover:text-white">
               <a
-                href="https://www.instagram.com"
-                target="_blank"
+                href="https://www.instagram.com/msclub_cit?igsh=ajhqcWJoN3VnNGRw"
+                
                 rel="noopener noreferrer"
                 className=" text-2xl "
               >
