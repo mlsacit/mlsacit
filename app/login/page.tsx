@@ -1,17 +1,27 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useRouter } from 'next/navigation';
 import Cookies from 'js-cookie';
 
 const LoginPage: React.FC = () => {
+  const { userEmail, login } = useAuth();
+  const router = useRouter();
+
   const [userDetails, setUserDetails] = useState({ email: '', password: '' });
   const [validated, setValidated] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [showToast, setShowToast] = useState({ message: '', type: '' });
-  const { login } = useAuth();
-  const router = useRouter();
+
+  useEffect(() => {
+    if (userEmail) {
+      setUserDetails((prevDetails) => ({
+        ...prevDetails,
+        email: userEmail,
+      }));
+    }
+  }, [userEmail]);
 
   const handleUserDetailsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -23,32 +33,32 @@ const LoginPage: React.FC = () => {
       setValidated(true);
       return;
     }
-  
+
     setLoading(true);
     setErrorMessage('');
-  
+
     try {
       const response = await fetch('/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(userDetails),
       });
-  
+
       const data = await response.json();
-  
+
       if (!response.ok) throw new Error(data.message || 'Failed to log in');
-  
+
       setShowToast({ message: 'Login successful!', type: 'success' });
-      login();
+      login(userDetails.email);
       const redirectPath = Cookies.get('redirectPath') || '/';
       router.push(redirectPath);
-      Cookies.remove('redirectPath'); 
+      Cookies.remove('redirectPath');
     } catch (error: any) {
       setErrorMessage(error.message);
     } finally {
       setLoading(false);
     }
-  };  
+  };
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-gray-900 via-blue-900 to-black py-10">

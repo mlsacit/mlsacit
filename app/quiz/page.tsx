@@ -12,7 +12,8 @@ interface Question {
 }
 
 const QuizPage: React.FC = () => {
-    const [userDetails, setUserDetails] = useState({ usn: '', email: '' });
+    const { isAuthenticated, userEmail } = useAuth(); // Use email from AuthContext
+    const [userDetails, setUserDetails] = useState({ usn: '', email: userEmail || 'Undefined' }); // Default email from AuthContext
     const [questions, setQuestions] = useState<Question[]>([]);
     const [answers, setAnswers] = useState<{ [key: string]: string }>({});
     const [quizStarted, setQuizStarted] = useState(false);
@@ -24,7 +25,6 @@ const QuizPage: React.FC = () => {
     const [isAutoSubmitted, setIsAutoSubmitted] = useState(false);
     const [loading, setLoading] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const { isAuthenticated } = useAuth();
     const router = useRouter();
     const pathname = usePathname();
 
@@ -36,7 +36,7 @@ const QuizPage: React.FC = () => {
     const fetchQuestions = async () => {
         setLoading(true);
         try {
-
+            
             const response = await fetch('/api/getQuizQuestions');
             const data = await response.json();
 
@@ -51,7 +51,7 @@ const QuizPage: React.FC = () => {
     };
 
     const handleStartQuiz = () => {
-        if (!userDetails.usn || !userDetails.email) {
+        if (!userDetails.usn) {
             setValidated(true);
             return;
         }
@@ -82,7 +82,7 @@ const QuizPage: React.FC = () => {
     const handleSubmit = async (e: FormEvent, autoSubmit = false) => {
         e.preventDefault();
 
-        if (quizSubmitted || isSubmitting) return; 
+        if (quizSubmitted || isSubmitting) return;
 
         setIsSubmitting(true);
 
@@ -140,14 +140,14 @@ const QuizPage: React.FC = () => {
     useEffect(() => {
         const storedAuth = Cookies.get('isAuthenticated');
         if (storedAuth !== 'true') {
-          Cookies.set('redirectPath', pathname, { expires: 1 });
-          router.push('/login');
+            Cookies.set('redirectPath', pathname, { expires: 1 });
+            router.push('/login');
         }
-      }, [pathname, router]);
+    }, [pathname, router]);
 
-      if (!isAuthenticated) {
+    if (!isAuthenticated) {
         return <div>Redirecting to login...</div>;
-      }
+    }
 
     return (
         <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-gray-900 via-blue-900 to-black py-10">
@@ -162,8 +162,8 @@ const QuizPage: React.FC = () => {
                                 Get ready to test your knowledge and have fun! Here&apos;s what you need to know before you start:
                             </p>
                             <ul className="list-disc list-inside space-y-1 text-gray-300">
-                                <li>Ensure you provide your USN and email correctly before starting.</li>
-                                <li>You can participate in the quiz only once per USN and email.</li>
+                                <li>Ensure you provide your USN correctly before starting.</li>
+                                <li>You can participate in the quiz only once per USN.</li>
                                 <li>If you do not submit the quiz before the time ends, your score will be zero (0).</li>
                                 <li>Switching tabs during the quiz will result in automatic submission (0).</li>
                             </ul>
@@ -188,24 +188,6 @@ const QuizPage: React.FC = () => {
                                 />
                                 {validated && !userDetails.usn && (
                                     <p className="text-red-400 text-sm mt-1">Please provide your USN.</p>
-                                )}
-                            </div>
-                            <div>
-                                <label htmlFor="email" className="block text-sm font-medium text-white">
-                                    Email
-                                </label>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    value={userDetails.email}
-                                    onChange={handleUserDetailsChange}
-                                    className={`mt-1 py-2 block w-full rounded-lg bg-white/20 text-white placeholder-gray-300 shadow-sm border ${validated && !userDetails.email ? 'border-red-500' : 'border-transparent'
-                                        }`}
-                                    required
-                                />
-                                {validated && !userDetails.email && (
-                                    <p className="text-red-400 text-sm mt-1">Please provide your email.</p>
                                 )}
                             </div>
                             <div className="flex justify-center">
