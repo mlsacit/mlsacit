@@ -10,13 +10,13 @@ const Page = () => {
   return (
     <div className="relative bg-gradient-radial from-[#0052A1] to-[#002863] h-full ">
       {/* Background Image with Glow Effect */}
-      
+
         <img
           src="/vector.png"
           alt="Background"
           className="absolute top-1/2 left-1/2 w-full h-[80%] object-contain z-0 transform -translate-x-1/2 -translate-y-1/2 "
         />
-       
+
       <div className="relative z-10 p-4">
         <Navbar />
         {/* Centered Image */}
@@ -45,7 +45,7 @@ const Page = () => {
             {/* What We Do Section */}
             <p className="font-bold text-4xl mt-6 text-center">The <span className="text-amber-300">Team</span></p>
             <p className="text-lg text-center">
-              Meet the heart of our club, a enthusiastic group of innovators, creators, and leaders who bring their unique talents together to drive our mission forward. Whether it's coding, designing, strategizing, or inspiring, our team is all about collaboration and impact.
+              Meet the heart of our club, a enthusiastic group of innovators, creators, and leaders who bring their unique talents together to drive our mission forward. Whether it&apos;s coding, designing, strategizing, or inspiring, our team is all about collaboration and impact.
             </p>
             <p className="text-lg text-center" style={{ fontFamily: "monospace" }}>
               Meet the team - <Link className="text-red-100 hover:underline" href="https://teams-page-msc.vercel.app/">Team</Link>
