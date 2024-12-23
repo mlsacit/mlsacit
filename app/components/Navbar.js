@@ -26,8 +26,15 @@ const Navbar = () => {
         <div className="w-full px-4">
           {/* Navbar container */}
           <div className="flex items-center justify-between py-4">
-            {/* Left links */}
-            <div className="bg-slate-500 bg-opacity-80 text-white rounded-lg p-3 flex items-center justify-start space-x-8 shadow-lg w-full sm:w-1/2">
+            {/* Left links with background image */}
+            <div
+              className="text-white p-3 flex items-center justify-start space-x-8 shadow-lg w-full sm:w-1/2"
+              style={{
+                backgroundImage: "url('/c1.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
               <Link
                 href="/"
                 className="hover:text-slate-300 hover:underline text-bold hover:scale-110 transition-transform duration-1500"
@@ -44,7 +51,7 @@ const Navbar = () => {
                 href="/events"
                 className="hover:text-slate-300 hover:underline text-bold hover:scale-110 transition-transform duration-1500"
               >
-                EVENTS
+                SPEAKERS
               </Link>
               <Link
                 href="https://teams-page-msc.vercel.app/"
@@ -52,28 +59,53 @@ const Navbar = () => {
               >
                 TEAM
               </Link>
+              <Link
+                href="https://teams-page-msc.vercel.app/"
+                className="hover:text-slate-300 hover:underline text-bold hover:scale-110 transition-transform duration-1500"
+              >
+                EVENTS
+              </Link>
             </div>
 
             {/* Center Image */}
             <div className="flex justify-center items-center mx-4">
               <Image
-                src="/msc_logo.png"
+                src="/msc-logo.png"
                 alt="MSC Logo"
                 width={100}
                 height={100}
-                className={`rounded-sm transform transition-transform duration-500 ${
-                  animate ? "scale-105" : "scale-100"
-                }`}
+                className={`rounded-sm transform transition-transform duration-500 hover:scale-110`}
               />
             </div>
             
             {/* Right links */}
-            <div className="bg-slate-500 text-white rounded-lg p-3 flex items-center justify-end space-x-8 shadow-lg w-full sm:w-1/2">
+            <div className="text-white  p-3 flex items-center justify-end space-x-8 shadow-lg w-full sm:w-1/2"
+              style={{
+                backgroundImage: "url('/c2.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}>
             {!isAuthenticated ? (
-              <>
-                <Link href="/login" className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-1500">LOGIN</Link>
-                <Link href="/signup" className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-1500">SIGN UP</Link>
-              </>
+              <div className="flex items-center space-x-8">
+              <Link
+                href="/login"
+                className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-1500"
+              >
+                LOGIN
+              </Link>
+              <Link
+                href="/signup"
+                className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-1500"
+              >
+                SIGN UP
+              </Link>
+              <Link
+                href="/course"
+                className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-1500"
+              >
+                COURSE
+              </Link>
+            </div>
             ) : (
               <button
                 onClick={handleSignOut}

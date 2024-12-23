@@ -5,6 +5,7 @@ import Head from "next/head";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Link from "next/link";
+import aboutPage from './about/page'
 
 export default function Home() {
   const [isAnimating, setIsAnimating] = useState(false);
@@ -33,73 +34,64 @@ export default function Home() {
   return (
     <div>
       {/* Conditional Rendering */}
-      {showMainPage ? (
-        // Main Page Content
-        <div className="relative bg-gradient-radial from-[#0052A1] to-[#002863] h-full w-screen">
-          <img
-            src="/vector.png"
-            alt="Background"
-            className="absolute top-1/2 left-1/2 w-full h-[80%] object-contain z-0 transform -translate-x-1/2 -translate-y-1/2"
+        
+        <div className="min-h-screen w-full relative">
+        {/* Background Gradient Layer */}
+        <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-[#020084] to-[#000149] z-0" >
+  
+          {/* Background Image Layer */}
+          <div
+            className="absolute inset-0 w-full h-full"
+            style={{
+            backgroundImage: "url('/gradient-rectangle.png')", // Add your image URL
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            }}
           />
-          <div className="relative z-10">
-            <Navbar />
-            <div className="min-h-screen flex flex-col p-8 items-center text-center justify-center h-full">
-              <div className="container mx-auto p-8 text-center text-white">
-                {/* Animated Text */}
-                <h1 
-                  className={`text-8xl font-bold ${isHovered ? 'text-5xl' : ''} transition-all duration-500 ease-in-out karantina-bold`} 
-                  onMouseEnter={() => setIsHovered(true)}
-                  onMouseLeave={() => setIsHovered(false)}
-                >
-                  {isHovered ? 'MICROSOFT STUDENT CLUB' : 'MSC'}
-                </h1>
-
-                <h3 
-                  className={`text-3xl font-normal relative before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-1/3 before:h-0.5 before:bg-white after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:w-1/3 after:h-0.5 after:bg-white`}
-                  onMouseEnter={() => setIsHovered(true)}
-                  onMouseLeave={() => setIsHovered(false)}
-                >
-                  {isHovered ? 'BE A FORCE FOR BAD' : 'BE A FORCE FOR GOOD'}
-                </h3>
-                <p className="text-xl h-auto ">
-                  If you&apos;re looking for random paragraphs, you&apos;ve come to the right place. When a random word or a random sentence isn&apos;t quite enough, the next logical step is to find a random paragraph. We created the Random Paragraph Generator with you in mind. The process is quite simple.
-                </p>
-                <button className="box-border bg-slate-900 text-white py-4 px-12 text-xl rounded-xl my-4" >
-                  <Link href="/events">EVENTS</Link>
-                </button>
+        
+          {/* Navbar */}
+          <Navbar />
+  
+          {/* Background Vector Image */}
+          <Image
+            src="/Vector up.png"
+            alt="vector 1"
+            layout="fill"
+            objectFit="cover"
+            className="absolute top-0 left-0 z-0 opacity-60"
+          />
+  
+          {/* Main Content */}
+          <div className="relative z-10 grid gird-col-3 justify-between w-full h-full ">
+            <div className="flex col-span-2 lg:flex-row items-center justify-between w-11/12 max-w-7xl px-4 m-auto">
+              {/* Text Section */}
+              <div className="text-white lg:w-1/2 text-center lg:text-left mb-8 lg:mb-0">
+                <h1 className="font-extrabold text-6xl mb-4">Microsoft Learn</h1>
+                <h1 className="font-extrabold text-6xl mb-4 whitespace-nowrap">Student Ambassadors</h1>
+                <h2 className="font-extrabold text-4xl text-blue-600">CIT CHAPTER</h2>
+                <p className="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit pariatur porro mollitia, necessitatibus tenetur optio fugiat aut molestiae ea, velit totam dolore quam ratione?</p>
               </div>
-              
+  
+              {/* Foreground Image */}
+              <div className="col-span-1 relative lg:w-1/2 flex justify-end lg:justify-end">
+                <Image
+                  src="/fluids.png"
+                  alt="MSC Logo"
+                  width={1000}
+                  height={1000}
+                  className="rounded-sm bg-opacity-100 object-cover right-0"
+                />
+              </div>
             </div>
-            <Footer />
+          </div>
+  
+          <div className="about ">
+            <h1 >About Miscrosoft Student Club!!</h1>
+            <aboutPage/>
           </div>
         </div>
-      ) : (
-        <div
-          className="bg-gradient-radial from-[#0052A1] to-[#002863] h-screen flex flex-col items-center justify-center relative cursor-pointer"
-          onClick={handleClick}
-        >
-          {/* Background Image */}
-          <Head>
-            <link href="https://fonts.googleapis.com/css2?family=Karantina:wght@400;700&display=swap" rel="stylesheet" />
-          </Head>
-          <img
-            src="/vector.png"
-            alt="Background"
-            className="absolute top-0 left-0 w-full h-full object-contain z-0"
-          />
-          {/* Initial Page Content (Before Animation) */}
-          <div className="mt-10">
-            <Image
-              src="/msc_logo.png"
-              alt="MSC Logo"
-              width={500}
-              height={500}
-              className={`rounded-lg z-20 transition-transform duration-1000 ease-in-out ${isAnimating ? "transform scale-25 translate-y-[-250px]" : ""}`}
-              style={isAnimating ? { transform: 'scale(0.2) translateY(-200px)' } : {}} // Adjust translateY for top center
-            />
-          </div>
-        </div>
-      )}
+      </div>
+      
     </div>
   );
 }
