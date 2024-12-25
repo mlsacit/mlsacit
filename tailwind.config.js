@@ -17,6 +17,10 @@ module.exports = {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-100%)" },
         },
+        fadeInUp: {
+          '0%': { opacity: 0, transform: 'translateY(20px)' },
+          '100%': { opacity: 1, transform: 'translateY(0)' },
+        },
       },
       fontFamily: {
         custom: ['', 'sans-serif'], // Add your custom font
@@ -31,6 +35,7 @@ module.exports = {
         bulge: 'bulge 1s ease-in-out forwards',
         animate: 'slideUp 1s ease-out forwards',
         scroll: "scroll 12s linear infinite",
+        fadeInUp: 'fadeInUp 1s ease-out',
       },
     },
   },

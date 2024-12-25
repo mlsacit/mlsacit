@@ -1,17 +1,15 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import Cookies from 'js-cookie';
+import { Link } from "react-scroll";
 
 const Navbar = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
     const authStatus = Cookies.get('isAuthenticated') === 'true';
     setIsAuthenticated(authStatus);
-    setAnimate(true); // Trigger animation on mount
   }, []);
 
   const handleSignOut = () => {
@@ -24,9 +22,8 @@ const Navbar = () => {
     <div className="sticky top-0 left-0 w-full z-50 bg-transparent">
       <div className="flex justify-center w-full">
         <div className="w-full px-4">
-          {/* Navbar container */}
           <div className="flex items-center justify-between py-4">
-            {/* Left links with background image */}
+            {/* Left links */}
             <div
               className="text-white p-3 flex items-center justify-start space-x-8 shadow-lg w-full sm:w-1/2"
               style={{
@@ -36,13 +33,18 @@ const Navbar = () => {
               }}
             >
               <Link
-                href="/"
+                to="home"
+                smooth={true}
+                duration={500}
                 className="hover:text-slate-300 hover:underline text-bold hover:scale-110 transition-transform duration-1500"
               >
                 HOME
               </Link>
               <Link
-                href="/about"
+                to="about"
+                smooth={true}
+                duration={500}
+                offset={-80}
                 className="hover:text-slate-300 hover:underline text-bold hover:scale-110 transition-transform duration-1500"
               >
                 ABOUT
@@ -77,47 +79,49 @@ const Navbar = () => {
                 className={`rounded-sm transform transition-transform duration-500 hover:scale-110`}
               />
             </div>
-            
+
             {/* Right links */}
-            <div className="text-white  p-3 flex items-center justify-end space-x-8 shadow-lg w-full sm:w-1/2"
+            <div
+              className="text-white p-3 flex items-center justify-end space-x-8 shadow-lg w-full sm:w-1/2"
               style={{
                 backgroundImage: "url('/c2.png')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
-              }}>
-            {!isAuthenticated ? (
-              <div className="flex items-center space-x-8">
-              <Link
-                href="/login"
-                className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-1500"
-              >
-                LOGIN
-              </Link>
-              <Link
-                href="/signup"
-                className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-1500"
-              >
-                SIGN UP
-              </Link>
-              <Link
-                href="/course"
-                className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-1500"
-              >
-                COURSE
-              </Link>
+              }}
+            >
+              {!isAuthenticated ? (
+                <div className="flex items-center space-x-8">
+                  <Link
+                    href="/login"
+                    className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-1500"
+                  >
+                    LOGIN
+                  </Link>
+                  <Link
+                    href="/signup"
+                    className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-1500"
+                  >
+                    SIGN UP
+                  </Link>
+                  <Link
+                    href="/course"
+                    className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-1500"
+                  >
+                    COURSE
+                  </Link>
+                </div>
+              ) : (
+                <button
+                  onClick={handleSignOut}
+                  className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-1500"
+                >
+                  SIGN OUT
+                </button>
+              )}
             </div>
-            ) : (
-              <button
-                onClick={handleSignOut}
-                className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-1500"
-              >
-                SIGN OUT
-              </button>
-            )}
           </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };
