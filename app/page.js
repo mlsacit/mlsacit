@@ -89,9 +89,11 @@ export default function Home() {
         <div id="about" className="about w-full scroll-mt-20 text-white">
           <About />
         </div>
-        <div id="events" className="events w-full scroll-m-20 text-white">
+
+        {/* Events Section */}
+        {/* <div id="events" className="events w-full scroll-m-20 text-white">
           <Events />
-        </div>
+        </div> */}
       </div>
     </div>
   );

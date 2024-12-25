@@ -50,7 +50,7 @@ const Navbar = () => {
                 ABOUT
               </Link>
               <Link
-                href="/events"
+                href="/speakers"
                 className="hover:text-slate-300 hover:underline text-bold hover:scale-110 transition-transform duration-1500"
               >
                 SPEAKERS
@@ -62,7 +62,10 @@ const Navbar = () => {
                 TEAM
               </Link>
               <Link
-                href="https://teams-page-msc.vercel.app/"
+                to="events"
+                smooth={true}
+                duration={500}
+                offset={-80}
                 className="hover:text-slate-300 hover:underline text-bold hover:scale-110 transition-transform duration-1500"
               >
                 EVENTS
