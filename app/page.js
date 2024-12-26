@@ -8,50 +8,69 @@ export default function Home() {
   const logoRef = useRef(null); // Reference for the logo image
   const navbarRef = useRef(null); // Reference for the Navbar container
   const titleRef = useRef(null); // Reference for the title
+  const [isMobile, setIsMobile] = useState(false); // State to track if screen is mobile
+
+  // Detect screen size on load and on resize
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.matchMedia("(max-width: 642px)").matches);
+    };
+    
+    handleResize();  // Check screen size on load
+    window.addEventListener("resize", handleResize); // Update on resize
+    
+    return () => window.removeEventListener("resize", handleResize); // Cleanup event listener
+  }, []);
 
   useEffect(() => {
-    const dynamicY = window.innerHeight * 0.52;
-    // Create a GSAP timeline
-    const tl = gsap.timeline();
+    const animateLogo = () => {
+      const logoScale = isMobile ? 0.13 : 0.18;
+      const logoPosition = isMobile ? "-40vw" : "0"; // Leftward shift for mobile, centered for desktop
+      const logoVerticalShift = isMobile ? "-53vh" : "-51vh"; // Adjust y position based on screen size
 
-    // GSAP animation for logo
-    tl.to(logoRef.current, {
-      scale: 0.18,  // Scale the logo to 18%
-      y: "-51vh",  // Move it upwards
-      duration: 0.5,  // Duration of the animation
-      delay: 1,
-    });
+      const tl = gsap.timeline();
 
-    // GSAP animation for Navbar (move left and right navbar)
-    tl.fromTo(
-      navbarRef.current.querySelector('.left-nav'), // Left navbar
-      { x: 50 }, // Initial position (hidden)
-      { x: 0, opacity: 1, duration: 0.5 }, // Final position (visible)
-      "<"
-    ).fromTo(
-      navbarRef.current.querySelector('.right-nav'), // Right navbar
-      { x: -50 }, // Initial position (hidden)
-      { x: 0, opacity: 1, duration: 0.5 }, // Final position (visible)
-      "<"
-    );
+      // GSAP animation for logo
+      tl.to(logoRef.current, {
+        scale: logoScale,  // Scale the logo
+        x: logoPosition, // Shift horizontally
+        y: logoVerticalShift,  // Move upwards
+        duration: 0.5,
+        delay: 1,
+      });
 
-    // GSAP animation for title
-    tl.fromTo(
-      titleRef.current, // Title reference
-      { opacity: 0, y: 50 }, // Initial state
-      { opacity: 1, y: 0, duration: 0.6 }, // Final state (visible and moved up)
-      "+=0.2" // Start 0.2 seconds after the previous animation
-    );
-  }, []);
+      // GSAP animation for Navbar
+      tl.fromTo(
+        navbarRef.current.querySelector('.left-nav'),
+        { x: 50 },
+        { x: 0, opacity: 1, duration: 0.5 },
+        "<"
+      ).fromTo(
+        navbarRef.current.querySelector('.right-nav'),
+        { x: -50 },
+        { x: 0, opacity: 1, duration: 0.5 },
+        "<"
+      );
+
+      // GSAP animation for title
+      tl.fromTo(
+        titleRef.current,
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 0.6 },
+        "+=0.2"
+      );
+    };
+
+    animateLogo();
+  }, [isMobile]); // Trigger animation when screen size changes
 
   return (
     <>
       <div className="bg-gradient-to-br from-gray-800 via-blue-700 to-black min-h-screen text-white flex flex-col overflow-hidden">
         <div ref={navbarRef}>
-          <Navbar /> {/* Add the Navbar component here */}
+          <Navbar />
         </div>
         
-        {/* Main content container */}
         <div className="flex justify-center items-center flex-grow relative">
           <img
             src="/vector.png"
@@ -61,7 +80,11 @@ export default function Home() {
 
           <div ref={titleRef} className="mt-10 text-center z-10">
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-wider font-[CB]">
-              <span className="group-hover:hidden">Microsoft Learn Student Ambassadors-CIT Club</span>
+              {isMobile ? (
+                <span className="group-hover:hidden">MLSA CLUB CIT</span>
+              ) : (
+                <span className="group-hover:hidden">Microsoft Learn Student Ambassadors Club CIT</span>
+              )}
             </h1>
             <p className="text-xl mt-4 text-center max-w-2xl mx-auto font-[MB]">
               Be a force for good
@@ -74,7 +97,7 @@ export default function Home() {
               alt="MSC Logo"
               width={500}
               height={500}
-              ref={logoRef}  // Assign the ref to the logo
+              ref={logoRef}
             />
           </div>
         </div>
@@ -85,3 +108,7 @@ export default function Home() {
     </>
   );
 }
+
+
+
+

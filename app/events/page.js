@@ -1,20 +1,55 @@
 
 "use client"; 
+import { useEffect, useRef, useState } from "react";
+import { gsap } from "gsap";
 import React from "react"; 
 import Navbar from "../components/Navbar"; 
 import Footer from "../components/Footer"; 
 import "../events/eventpage.css";
 
 const Page = () => {
+  const logoRef = useRef(null);
+  const navbarRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.matchMedia("(max-width: 642px)").matches);
+    };
+
+    handleResize(); // Check screen size on load
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    const animateLogo = () => {
+      const logoPosition = isMobile
+        ? { x: "-47vw", y: "-5vh", scale: 0.75 } // Mobile position: top-left
+        : { x: "0.5vw", y: "-1vh", scale: 1.2 }; // Desktop position: center
+
+      gsap.to(logoRef.current, {
+        ...logoPosition,
+        duration: 0.75,
+        ease: "power2.out",
+      });
+    };
+
+    animateLogo();
+  }, [isMobile]);
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-800 via-blue-700 to-black flex flex-col items-center justify-between">
-      <Navbar />
-      <div className="flex absolute justify-center items-center z-10 top-[2vh] left-[47.5vw]">
+    <div className="bg-gradient-to-br from-gray-800 via-blue-700 to-black h-full overflow-hidden">
+      
+        <Navbar />
+      <div className="flex absolute justify-center items-center z-20 top-[4vh] left-[47vw]">
           <img
             src="/msc_logo.png"
             alt="MSC Logo"
             width={80}
-            height={80}  
+            height={80} 
+            ref={logoRef} 
             />
         </div>
       <img
@@ -61,6 +96,9 @@ const Page = () => {
 };
 
 export default Page;
+
+
+
 
 
 
