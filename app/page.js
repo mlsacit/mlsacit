@@ -1,111 +1,101 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
-import { gsap } from "gsap";  // Import GSAP for animation
-import Navbar from "./components/Navbar";  // Import the Navbar component
-import Footer from "./components/Footer";  // Import the Footer component
+import Image from "next/image";
+import { useState, useEffect } from "react";
+import Navbar from "./components/Navbar";
+import About from './components/About';
+import Events from "./components/Events";
 
 export default function Home() {
-  const logoRef = useRef(null); // Reference for the logo image
-  const navbarRef = useRef(null); // Reference for the Navbar container
-  const titleRef = useRef(null); // Reference for the title
-  const [isMobile, setIsMobile] = useState(false); // State to track if screen is mobile
-
-  // Detect screen size on load and on resize
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.matchMedia("(max-width: 642px)").matches);
-    };
-    
-    handleResize();  // Check screen size on load
-    window.addEventListener("resize", handleResize); // Update on resize
-    
-    return () => window.removeEventListener("resize", handleResize); // Cleanup event listener
-  }, []);
-
-  useEffect(() => {
-    const animateLogo = () => {
-      const logoScale = isMobile ? 0.13 : 0.18;
-      const logoPosition = isMobile ? "-40vw" : "0"; // Leftward shift for mobile, centered for desktop
-      const logoVerticalShift = isMobile ? "-53vh" : "-51vh"; // Adjust y position based on screen size
-
-      const tl = gsap.timeline();
-
-      // GSAP animation for logo
-      tl.to(logoRef.current, {
-        scale: logoScale,  // Scale the logo
-        x: logoPosition, // Shift horizontally
-        y: logoVerticalShift,  // Move upwards
-        duration: 0.5,
-        delay: 1,
-      });
-
-      // GSAP animation for Navbar
-      tl.fromTo(
-        navbarRef.current.querySelector('.left-nav'),
-        { x: 50 },
-        { x: 0, opacity: 1, duration: 0.5 },
-        "<"
-      ).fromTo(
-        navbarRef.current.querySelector('.right-nav'),
-        { x: -50 },
-        { x: 0, opacity: 1, duration: 0.5 },
-        "<"
-      );
-
-      // GSAP animation for title
-      tl.fromTo(
-        titleRef.current,
-        { opacity: 0, y: 50 },
-        { opacity: 1, y: 0, duration: 0.6 },
-        "+=0.2"
-      );
-    };
-
-    animateLogo();
-  }, [isMobile]); // Trigger animation when screen size changes
-
+  
   return (
-    <>
-      <div className="bg-gradient-to-br from-gray-800 via-blue-700 to-black min-h-screen text-white flex flex-col overflow-hidden">
-        <div ref={navbarRef}>
-          <Navbar />
-        </div>
-        
-        <div className="flex justify-center items-center flex-grow relative">
-          <img
-            src="/vector.png"
-            alt="Background"
-            className="absolute top-0 left-0 w-full h-full object-contain z-0"
-          />
+    <div className="min-h-screen w-full relative">
+      {/* Background Gradient Layer */}
+      <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-[#020084] to-[#000149] z-0"></div>
+      
+      {/* Background Image Layer */}
+      <div
+        className="absolute inset-0 w-full h-full"
+        style={{
+          backgroundImage: "url('/gradient-rectangle.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      ></div>
+      
+      {/* Background Vector Image */}
+      <Image
+        src="/Vector up.png"
+        alt="vector 1"
+        layout="fill"
+        objectFit="cover"
+        className="absolute top-0 left-0 z-0 opacity-60"
+      />
 
-          <div ref={titleRef} className="mt-10 text-center z-10">
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-wider font-[CB]">
-              {isMobile ? (
-                <span className="group-hover:hidden">MLSA CLUB CIT</span>
-              ) : (
-                <span className="group-hover:hidden">Microsoft Learn Student Ambassadors Club CIT</span>
-              )}
-            </h1>
-            <p className="text-xl mt-4 text-center max-w-2xl mx-auto font-[MB]">
-              Be a force for good
-            </p>
+      {/* Main Content */}
+      <div className=" home relative z-10">
+        {/* Navbar */}
+        <Navbar />
+
+        {/* Main Page Content */}
+        <div className="grid grid-cols-3 w-full h-auto">
+          <div className="flex col-span-3 lg:flex-row items-center justify-between w-full px-0 m-0">
+            {/* Text Section */}
+            <div className="text-white lg:w-1/2 text-center lg:text-left m-2 mb-8 lg:mb-0 px-4">
+              <h1 className="font-extrabold text-6xl mb-4">Microsoft Learn</h1>
+              <h1 className="font-extrabold text-6xl mb-4 whitespace-nowrap">Student Ambassadors</h1>
+              <h2 className="font-extrabold text-4xl text-blue-600">CIT CHAPTER</h2>
+              <p className="text-sm">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit pariatur porro mollitia, necessitatibus tenetur optio fugiat aut molestiae ea, velit totam dolore quam ratione?
+              </p>
+            </div>
+
+            {/* Foreground Image */}
+            <div className="relative lg:w-1/2 flex justify-center lg:justify-end">
+              <Image
+                src="/fluids.png"
+                alt="MSC Logo"
+                width={1000}
+                height={1000}
+                className="rounded-sm bg-opacity-100 object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="relative w-full h-36">
+          {/* Background Image */}
+          <div className="absolute z-0"> {/* Add margin between images if needed */}
+            <Image 
+              src="/banner2.png"
+              alt="banner"
+              width={1920}
+              height={36}
+              className="w-full"
+            />
           </div>
 
-          <div className="mt-10 flex absolute justify-center items-center z-10">
-            <img
-              src="/msc_logo.png"
-              alt="MSC Logo"
-              width={500}
-              height={500}
-              ref={logoRef}
+          <div className="absolute z-10">
+            <Image
+              src="/banner 1.png"
+              alt="banner"
+              width={1920}
+              height={36}
+              className="w-full"
             />
           </div>
         </div>
+
+        {/* About Section */}
+        <div id="about" className="about w-full scroll-mt-20 text-white">
+          <About />
+        </div>
+
+        {/* Events Section */}
+        {/* <div id="events" className="events w-full scroll-m-20 text-white">
+          <Events />
+        </div> */}
       </div>
-      <div className="mt-0 bg-[#080B1D]">
-        <Footer />
-      </div>
-    </>
+    </div>
   );
 }
 
