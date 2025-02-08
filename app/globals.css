@@ -50,6 +50,23 @@
   font-family: 'Khand';
   src: url('./fonts/Khand-Light.woff2') format('woff2');
 }
+@font-face{
+  font-family: 'Technor';
+  src: url('./fonts/Technor-Medium.woff2') format('woff2');
+}
+@font-face{
+  font-family: 'GMVF';
+  src: url('./fonts/GeistMonoVF.woff') format('woff');
+}
+@font-face{
+  font-family: 'GVF';
+  src: url('./fonts/GeistVF.woff') format('woff');
+}
+@font-face{
+  font-family: 'LM';
+  src: url('./fonts/LEMONMILK-Regular.woff2') format('woff2');
+}
+
 
 html::-webkit-scrollbar{
   display:none;
@@ -57,4 +74,3 @@ html::-webkit-scrollbar{
 
 
 
-  

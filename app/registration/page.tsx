@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import { FaCalendarAlt, FaClock, FaMapMarkerAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
+import Image from 'next/image';
 import LoadingComponent from "../components/Loader";
 
 export default function Home() {
@@ -147,7 +148,7 @@ export default function Home() {
                         </div>
 
                         <div className="mt-4 flex items-center text-sm">
-                            <img
+                            <Image
                                 src={eventData.sponsorLogo}
                                 alt="Microsoft Logo"
                                 className="h-12 w-auto mr-2"

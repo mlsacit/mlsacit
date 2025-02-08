@@ -1,20 +1,25 @@
 "use client"
 import React from 'react'
 import Link from 'next/link'
+import { FaInstagram } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className=' bg-slate-950 text-white w-full p-8 rounded-md opacity-85'>
+    <div className='bg-transparent text-white w-full p-8 rounded-md opacity-85 bg-red-600'>
+      <h3 className='text-slate-500 text-xl font-bold'>Microsoft Learn Student Ambassador</h3>
+      <div className='w-full h-[2px] bg-slate-400 '></div>
         <div className="container grid grid-cols-2 ">
             <div className="name text-left text-lg text-semibold">
                 {/* <img src="/msc_logo.png" alt="" width={50} height={50}/> */}
-                <h3 className='text-slate-500'>Microsoft Club</h3>
+                
                 <h4 className='text-slate-500'>Cambridge Institute of Technology</h4>
             </div>
             <div className="parts text-right text-lg grid grid-rows-3 text-semibold">
-                <Link href="/main" className="text-slate-500 hover:text-white">Events</Link>
-                <Link href="/teams" className="text-slate-500 hover:text-white">Team</Link>
-                <Link href="/projects" className="text-slate-500 hover:text-white">Projects</Link>
+                <Link href="/events" className="text-slate-500 hover:text-white">Events</Link>
+                <Link href="/"
+                className="text-slate-500 hover:text-white">Team</Link>
+                {/* <Link href="/projects" className="text-slate-500 hover:text-white">Projects</Link> */}
             </div>
         </div>
         <div>
@@ -27,22 +32,23 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className=" text-2xl "
               >
-                <i className="fab fa-linkedin text-4xl"></i>
+                <FaLinkedin size={30}/>
               </a>
             </div>
-            <div className="mt-6 text-slate-500 hover:text-white">
+            <div className="mt-6 mb-6 text-slate-500 hover:text-white">
               <a
                 href="https://www.instagram.com/msclub_cit?igsh=ajhqcWJoN3VnNGRw"
                 
                 rel="noopener noreferrer"
                 className=" text-2xl "
               >
-                <i className="fa-brands fa-instagram text-4xl"></i>
+                <FaInstagram size={30}/>
               </a>
             </div>
             </div>
         </div>
-      <p className='text-center p-2'>Copyright &copy; 2024, All rights reserved.</p>
+        <div className='w-full h-[2px] bg-slate-400 '></div>
+      <p className='text-center p-2'>Copyright &copy; MLSA, Cambridge Institute of Technology.</p>
     </div>
   )
 }
