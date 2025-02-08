@@ -1,0 +1,252 @@
+ #container {
+    height: 75vh;
+    padding: 1em;
+    width: 95%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(252, 251, 251, 0.37);
+    display: flex;
+    flex-direction: column; 
+    border-radius: 20px;
+    margin: 3vw;
+    gap: 1em;
+  }
+  
+  .row {
+    flex: 1;
+    border: 2px solid rgba(232, 222, 222, 0.308);
+    border-radius: 20px;
+    /* cursor: pointer; */
+    position: relative;
+    overflow: hidden;
+    transition: flex 0.4s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: row; /* Default: side-by-side */
+  }
+  
+  .row:hover {
+    flex: 3;
+  }
+  
+  .row .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    text-align: center;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    color: white;
+    font-family: 'wowala';
+    font-size: 1.5em;
+    z-index: 2; 
+  }
+  
+  .row:hover .content {
+    opacity: 0; 
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    color: white;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    flex-direction: row; 
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+    padding: 20px; 
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  
+  .overlay img {
+    max-width: 40%; 
+    max-height: 90%;
+    margin-right: 20px; 
+  }
+  
+  
+  .overlay p {
+    font-size: 1.2em;
+    color: white;
+    max-width: 80%; 
+    text-align: left;
+  }
+  
+  .row:hover .overlay {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .contentL {
+    position: relative;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 1;
+    text-align: left;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    color: white;
+    font-family: 'wowala';
+    font-size: 1.5em;
+  }
+  
+  .row1 h3 {
+    color: rgba(127, 255, 212, 0.63);
+    font-family:"CB" ;
+    position: relative;
+    font-size: 1vw;
+    text-align: center;
+    transform: scale(2);
+    top: 15%;
+  }
+  .row2 h3 {
+    color: rgba(127, 255, 212, 0.63);
+    font-family:"CB" ;
+    position: relative;
+    font-size: 1vw;
+    text-align: center;
+    transform: scale(2);
+    top: 15%;
+  }
+  .row3 h3 {
+    color: rgba(127, 255, 212, 0.63);
+    font-family:"CB" ;
+    position: relative;
+    font-size: 1vw;
+    text-align: center;
+    transform: scale(2);
+    top: 15%;
+  }
+  
+  .row1:hover {
+    background-color: #1E3D8F;
+  }
+  
+  .row2:hover {
+    background-color: #1E3D8F;
+  }
+  
+  .row3:hover {
+    background-color: #1E3D8F;
+  }
+
+  /* @media (max-width: 1219px) {
+    .row h3{
+      font-size: 2vw;
+    }
+    .overlay p {
+      font-size: 2vw;
+    }
+  }
+  @media (max-width: 337px) {
+    .overlay p {
+      font-size: 2vw; 
+      max-height: 80%; 
+      overflow-y: auto; 
+    }
+  }
+  
+
+@media (max-width: 1219px) {
+  .row {
+    overflow-y: auto; 
+  }
+
+  .overlay {
+    padding: 10px; 
+    max-height: 100%; 
+  }
+
+  .overlay p {
+    font-size: 2vw; 
+    max-height: 80%; 
+    overflow-y: auto; 
+  }
+
+  .row .content {
+    font-size: 2em; 
+  }
+} */
+
+/* Media query for screen sizes between 702px and 1219px */
+/* Media query for screen sizes between 702px and 1219px */
+@media (min-width: 702px) and (max-width: 1219px) {
+  .row {
+    overflow-y: auto; /* Enable vertical scrolling inside each row */
+    padding: 1em;
+  }
+
+  .overlay {
+    padding: 15px; /* Adjust padding for overlay */
+    max-height: 100%; /* Ensure overlay fits within the row */
+  }
+
+  .overlay p {
+    font-size: 2vw; /* Adjust font size to make it larger */
+    max-height: 80%; /* Limit the height of the paragraph */
+    overflow-y: auto; /* Enable vertical scroll within the paragraph */
+  }
+
+  .row .content {
+    font-size: 2em; /* Adjust font size for smaller screens */
+  }
+}
+
+/* Media query for screen sizes between 430px and 700px */
+@media (min-width: 430px) and (max-width: 700px) {
+  .row {
+    overflow-y: auto; /* Enable vertical scrolling inside each row */
+    padding: 1em;
+  }
+
+  .overlay {
+    padding: 15px; /* Adjust padding for overlay */
+    max-height: 100%; /* Ensure overlay fits within the row */
+  }
+
+  .overlay p {
+    font-size: 2.5vw; /* Adjust font size for readability */
+    max-height: 80%; /* Limit the height of the paragraph */
+    overflow-y: auto; /* Enable vertical scroll within the paragraph */
+  }
+
+  .row .content {
+    font-size: 2em; /* Adjust font size for smaller screens */
+  }
+}
+
+/* Media query for screen sizes 337px and less */
+@media (max-width: 337px) {
+  .overlay p {
+    font-size: 2vw; /* Adjust font size to ensure readability */
+    max-height: 80%; /* Limit the paragraph height */
+    overflow-y: auto; /* Allow scrolling if content overflows */
+  }
+}
+
+/* Adjustments for screen sizes 430px or less */
+@media (max-width: 834px) {
+
+  .row h3{
+    font-size: 0.5rem; /* Adjust font size for smaller screens */
+  }
+  .overlay p {
+    font-size: 3vw; /* Adjust font size to make the paragraph text larger */
+    max-height: 70%; /* Further adjust paragraph height for smaller screens */
+    overflow-y: auto; /* Ensure text scrolling is allowed */
+  }
+}
+
+
+
