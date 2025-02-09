@@ -1,3 +1,5 @@
+"use client";
+
 {/*"use client";
 import React, { useEffect, useRef, useState } from 'react';
 import AOS from "aos";
@@ -205,7 +207,6 @@ const Fifth = () => {
 export default Fifth;
 */}
 
-"use client";
 import React, { useEffect, useRef, useState } from 'react';
 import AOS from "aos";
 import "aos/dist/aos.css";
