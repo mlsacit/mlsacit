@@ -4,8 +4,9 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Image from "next/image";
 import Cookies from "js-cookie";
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from 'react-scroll'; // Ensure correct import here
 import { gsap } from "gsap";
+import Link from 'next/link'; // For Next.js routing
 
 const Navbar = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -16,14 +17,14 @@ const Navbar = () => {
   const hamburgerRef = React.useRef(null); 
 
   useEffect(() => {
-      AOS.init({
-        offset:120,
-        duration: 500,
-        easing: "ease-out",
-        once: true,
-        mirror:false
-      });
-    }, []);
+    AOS.init({
+      offset: 120,
+      duration: 500,
+      easing: "ease-out",
+      once: true,
+      mirror: false
+    });
+  }, []);
 
   useEffect(() => {
     const authStatus = Cookies.get("isAuthenticated") === "true";
@@ -50,7 +51,7 @@ const Navbar = () => {
     if (!isMenuOpen) {
       gsap.fromTo(
         dropdownRef.current,
-        { opacity: 0, scaleY: 0, transformOrigin: "top", ease:"power3.in", duration: 0.5 },
+        { opacity: 0, scaleY: 0, transformOrigin: "top", ease: "power3.in", duration: 0.5 },
         { opacity: 1, scaleY: 1, duration: 0.5, ease: "power3.out" }
       );
 
@@ -131,15 +132,15 @@ const Navbar = () => {
               ref={leftNavRef}
               className="left-nav bg-[#64748b45] bg-opacity-80 text-white rounded-lg p-3 flex items-center justify-start space-x-8 shadow-lg w-full sm:w-1/2 font-[Technor]"
             >
-              <Link
+              <ScrollLink
                 to="home"
                 smooth={true}
                 duration={500}
-                className="hover:text-slate-300 hover:underline text-bold hover:scale-110 transition-transform duration-300 "
+                className="hover:text-slate-300 hover:underline text-bold hover:scale-110 transition-transform duration-300"
               >
                 HOME
-              </Link>
-              <Link
+              </ScrollLink>
+              <ScrollLink
                 to="about"
                 smooth={true}
                 duration={500}
@@ -147,8 +148,8 @@ const Navbar = () => {
                 className="hover:text-slate-300 hover:underline text-bold hover:scale-110 transition-transform duration-300"
               >
                 ABOUT
-              </Link>
-              <Link
+              </ScrollLink>
+              <ScrollLink
                 to="teams"
                 smooth={true}
                 duration={500}
@@ -156,8 +157,8 @@ const Navbar = () => {
                 className="hover:text-slate-300 hover:underline text-bold hover:scale-110 transition-transform duration-300"
               >
                 TEAM
-              </Link>
-              <Link
+              </ScrollLink>
+              <ScrollLink
                 to="events"
                 smooth={true}
                 duration={500}
@@ -165,7 +166,7 @@ const Navbar = () => {
                 className="hover:text-slate-300 hover:underline text-bold hover:scale-110 transition-transform duration-300"
               >
                 EVENTS
-              </Link>
+              </ScrollLink>
             </div>
 
             {/* Right links */}
@@ -202,7 +203,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navbar */}
-      <div className="custom:hidden w-full flex items-center justify-between h-20 px-4 py-3 bg-[#64748b45] relative font-[Technor] " >
+      <div className="custom:hidden w-full flex items-center justify-between h-20 px-4 py-3 bg-[#64748b45] relative font-[Technor]" >
         <button
           className="flex flex-col justify-center items-center space-y-1 focus:outline-none ml-auto" 
           onClick={toggleMenu}
@@ -223,7 +224,7 @@ const Navbar = () => {
             flexDirection: "column",
           }}
         >
-          <Link
+          <ScrollLink
             to="home"
             smooth={true}
             duration={500}
@@ -231,8 +232,8 @@ const Navbar = () => {
             onClick={() => setIsMenuOpen(false)}
           >
             HOME
-          </Link>
-          <Link
+          </ScrollLink>
+          <ScrollLink
             to="about"
             smooth={true}
             duration={500}
@@ -241,8 +242,8 @@ const Navbar = () => {
             onClick={() => setIsMenuOpen(false)}
           >
             ABOUT
-          </Link>
-          <Link
+          </ScrollLink>
+          <ScrollLink
             to="teams"
             smooth={true}
             duration={500}
@@ -251,8 +252,8 @@ const Navbar = () => {
             onClick={() => setIsMenuOpen(false)}
           >
             TEAM
-          </Link>
-          <Link
+          </ScrollLink>
+          <ScrollLink
             to="events"
             smooth={true}
             duration={500}
@@ -261,7 +262,7 @@ const Navbar = () => {
             onClick={() => setIsMenuOpen(false)}
           >
             EVENTS
-          </Link>
+          </ScrollLink>
           {!isAuthenticated ? (
             <>
               <Link
