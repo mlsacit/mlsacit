@@ -43,23 +43,23 @@ const Fifth = () => {
   // Only the optimization hooks above were modified
   return (
     <div className="p-6 sm:p-10">
-      //       <div className="flex flex-col sm:flex-row items-center w-full gap-4">
-//         <div className="w-full sm:w-auto p-[1vw]">
-//           <h1 className="text-[6vw] sm:text-[2.5vw] text-white" data-aos={isMobile ? "fade-right" : "slide-right"}>01</h1>
-//         </div>
-//         <div className="w-full sm:w-auto p-[1vw]" data-aos={isMobile ? "fade-left" : "zoom-in"}>
-//           <div className="box rounded-[12px] w-full sm:w-[27vw] h-[10vw] sm:h-[4vw] bg-[#4793F4] flex items-center justify-center" >
-//             <h1 className="font-[GMVF] text-[4vw] sm:text-[2vw]" data-aos="zoom-in">About MSC Events</h1>
-//           </div>
-//         </div>
-       </div>
+      <div className="flex flex-col sm:flex-row items-center w-full gap-4">
+        <div className="w-full sm:w-auto p-[1vw]">
+          <h1 className="text-[6vw] sm:text-[2.5vw] text-white" data-aos={isMobile ? "fade-right" : "slide-right"}>01</h1>
+        </div>
+        <div className="w-full sm:w-auto p-[1vw]" data-aos={isMobile ? "fade-left" : "zoom-in"}>
+          <div className="box rounded-[12px] w-full sm:w-[27vw] h-[10vw] sm:h-[4vw] bg-[#4793F4] flex items-center justify-center" >
+            <h1 className="font-[GMVF] text-[4vw] sm:text-[2vw]" data-aos="zoom-in">About MSC Events</h1>
+          </div>
+        </div>
+      </div>
 
-       {/* Main Content Section */}
-       <div className="flex flex-col sm:flex-row items-center w-full gap-6 mt-6 ">
-         {/* Left Column */}
-         <div className="w-full sm:w-1/3  mb-auto">
-           <div className="p-[1vw] ">
-             <Image
+      {/* Main Content Section */}
+      <div className="flex flex-col sm:flex-row items-center w-full gap-6 mt-6 ">
+        {/* Left Column */}
+        <div className="w-full sm:w-1/3  mb-auto">
+          <div className="p-[1vw] ">
+            <Image
               src="/fifth/left.svg"
               alt="Left"
               width={403}
@@ -94,10 +94,10 @@ const Fifth = () => {
               <h1 className='font-[Technor] text-[4vw] ' data-aos='zoom-out'>SHARE IT</h1>
               <div className="h-8 w-8 bg-black rounded-full flex items-center justify-center">
                 <Image
-                src="/fifth/arrow.svg"
-                width={12}
-                height={12}
-                data-aos='zoom-out'
+                  src="/fifth/arrow.svg"
+                  width={12}
+                  height={12}
+                  data-aos='zoom-out'
                 />
               </div>
             </div>
