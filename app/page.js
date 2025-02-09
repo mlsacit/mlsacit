@@ -408,7 +408,7 @@ export default function Home() {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 h-full w-full">
+      <div className="relative z-50 h-full w-full">
         <div ref={navbarRef}>
           <Navbar />
         </div>
