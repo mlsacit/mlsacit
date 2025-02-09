@@ -105,4 +105,4 @@ const teamData = [
   { name: "Treasure", path: "treasure", image: "/images/teams/treasure.png" },
 ];
 
-export default Teams;
+export default Teams; 
