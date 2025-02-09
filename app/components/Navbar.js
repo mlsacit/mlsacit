@@ -2,11 +2,10 @@
 import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Image from "next/image";
 import Cookies from "js-cookie";
-import { Link as ScrollLink } from 'react-scroll'; // Ensure correct import here
+import { Link as ScrollLink } from 'react-scroll';
 import { gsap } from "gsap";
-import Link from 'next/link'; // For Next.js routing
+import Link from 'next/link';
 
 const Navbar = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -14,7 +13,7 @@ const Navbar = () => {
   const dropdownRef = React.useRef(null);
   const leftNavRef = React.useRef(null);
   const rightNavRef = React.useRef(null);
-  const hamburgerRef = React.useRef(null); 
+  const hamburgerRef = React.useRef(null);
 
   useEffect(() => {
     AOS.init({
@@ -30,7 +29,6 @@ const Navbar = () => {
     const authStatus = Cookies.get("isAuthenticated") === "true";
     setIsAuthenticated(authStatus);
 
-    // GSAP animation on mount
     gsap.fromTo(
       [leftNavRef.current, rightNavRef.current],
       { opacity: 0, y: -50 },
@@ -47,15 +45,13 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
 
-    // GSAP animation for the dropdown menu
     if (!isMenuOpen) {
       gsap.fromTo(
         dropdownRef.current,
-        { opacity: 0, scaleY: 0, transformOrigin: "top", ease: "power3.in", duration: 0.5 },
+        { opacity: 0, scaleY: 0, transformOrigin: "top" },
         { opacity: 1, scaleY: 1, duration: 0.5, ease: "power3.out" }
       );
 
-      // GSAP animation for the hamburger icon (3 dashes to cross)
       gsap.to(hamburgerRef.current, {
         rotate: 45,
         transformOrigin: "center",
@@ -63,13 +59,11 @@ const Navbar = () => {
         ease: "power3.out",
       });
 
-      // Animate the second line to form the cross
       gsap.to(hamburgerRef.current.querySelector(".line2"), {
         opacity: 0,
         duration: 0.3,
       });
 
-      // Animate the third line to form the cross
       gsap.to(hamburgerRef.current.querySelector(".line3"), {
         rotate: -90,
         y: -11,
@@ -77,7 +71,6 @@ const Navbar = () => {
         ease: "power3.out",
       });
 
-      // Make the circle visible
       gsap.to(hamburgerRef.current.querySelector(".circle1"), {
         opacity: 1,
         y: -25, x: -6,
@@ -92,20 +85,17 @@ const Navbar = () => {
         ease: "power3.in",
       });
 
-      // GSAP animation for the hamburger icon (cross to 3 dashes)
       gsap.to(hamburgerRef.current, {
         rotate: 0,
         duration: 0.3,
         ease: "power3.in",
       });
 
-      // Revert the second line opacity to make it visible again
       gsap.to(hamburgerRef.current.querySelector(".line2"), {
         opacity: 1,
         duration: 0.3,
       });
 
-      // Revert the third line rotation to its original position
       gsap.to(hamburgerRef.current.querySelector(".line3"), {
         rotate: 0,
         y: 0,
@@ -113,7 +103,6 @@ const Navbar = () => {
         ease: "power3.in",
       });
 
-      // Make the circle invisible again
       gsap.to(hamburgerRef.current.querySelector(".circle1"), {
         opacity: 0,
         duration: 0.3,
@@ -167,12 +156,18 @@ const Navbar = () => {
               >
                 EVENTS
               </ScrollLink>
+              <Link
+                href="/newsletter"
+                className="hover:text-slate-300 hover:underline text-bold hover:scale-110 transition-transform duration-300"
+              >
+                NEWSLETTER
+              </Link>
             </div>
 
             {/* Right links */}
             <div
               ref={rightNavRef}
-              className="right-nav z-50 bg-[#64748b45] bg-opacity-80 text-white rounded-lg p-3 flex items-center justify-end space-x-8 shadow-lg w-full sm:w-1/2 font-[Technor]"
+              className="right-nav z-50 bg-[#64748b45] text-white rounded-lg p-3 flex items-center justify-end space-x-8 shadow-lg w-full sm:w-1/2"
             >
               {!isAuthenticated ? (
                 <div className="flex items-center space-x-8">
@@ -203,22 +198,22 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navbar */}
-      <div className="custom:hidden w-full flex items-center justify-between h-20 px-4 py-3 bg-[#64748b45] relative font-[Technor]" >
+      <div className="custom:hidden w-full flex items-center justify-between h-20 px-4 py-3 bg-[#64748b45] relative font-[Technor]">
         <button
-          className="flex flex-col justify-center items-center space-y-1 focus:outline-none ml-auto" 
+          className="flex flex-col justify-center items-center space-y-1 focus:outline-none ml-auto"
           onClick={toggleMenu}
           ref={hamburgerRef}
         >
           <div className="w-6 h-0.5 bg-white line1"></div>
           <div className="w-6 h-0.5 bg-white line2"></div>
           <div className="w-6 h-0.5 bg-white line3"></div>
-          <div className="w-1 h-1 rounded opacity-0 bg-white circle1"></div> {/* Circle element */}
+          <div className="w-1 h-1 rounded opacity-0 bg-white circle1"></div>
         </button>
 
         {/* Dropdown menu */}
         <div
           ref={dropdownRef}
-          className="absolute top-full left-0 right-0 bg-gradient-to-b from-[#02008400] to-[#00014900] backdrop-blur-md bg-opacity-80 text-white rounded-lg shadow-lg mt-2 p-4 flex flex-col space-y-4 z-50 max-sm:ml-3 max-sm:mr-3  border-[1px] border-[#ffffff56]"
+          className="absolute top-full left-0 right-0 bg-gradient-to-b from-[#02008400] to-[#00014900] backdrop-blur-md bg-opacity-80 text-white rounded-lg shadow-lg mt-2 p-4 flex flex-col space-y-4 z-50 max-sm:ml-3 max-sm:mr-3 border-[1px] border-[#ffffff56]"
           style={{
             display: isMenuOpen ? "flex" : "none",
             flexDirection: "column",
@@ -228,7 +223,7 @@ const Navbar = () => {
             to="home"
             smooth={true}
             duration={500}
-            className="hover:text-slate-500 text-bold hover:scale-110 transition-transform duration-300  pl-1 "
+            className="hover:text-slate-500 text-bold hover:scale-110 transition-transform duration-300 pl-1"
             onClick={() => setIsMenuOpen(false)}
           >
             HOME
@@ -238,7 +233,7 @@ const Navbar = () => {
             smooth={true}
             duration={500}
             offset={-80}
-            className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300  pl-1 border-[#ffffff5e]"
+            className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300 pl-1 border-[#ffffff5e]"
             onClick={() => setIsMenuOpen(false)}
           >
             ABOUT
@@ -248,7 +243,7 @@ const Navbar = () => {
             smooth={true}
             duration={500}
             offset={-80}
-            className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300  pl-1 border-[#ffffff5e]"
+            className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300 pl-1 border-[#ffffff5e]"
             onClick={() => setIsMenuOpen(false)}
           >
             TEAM
@@ -258,23 +253,30 @@ const Navbar = () => {
             smooth={true}
             duration={500}
             offset={-80}
-            className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300  pl-1 border-[#ffffff5e]"
+            className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300 pl-1 border-[#ffffff5e]"
             onClick={() => setIsMenuOpen(false)}
           >
             EVENTS
           </ScrollLink>
+          <Link
+            href="/newsletter"
+            className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300 pl-1 border-[#ffffff5e]"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            NEWSLETTER
+          </Link>
           {!isAuthenticated ? (
             <>
               <Link
                 href="/login"
-                className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300  pl-1 border-[#ffffff5e]"
+                className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300 pl-1 border-[#ffffff5e]"
                 onClick={() => setIsMenuOpen(false)}
               >
                 LOGIN
               </Link>
               <Link
                 href="/signup"
-                className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300  pl-1 border-[#ffffff5e]"
+                className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300 pl-1 border-[#ffffff5e]"
                 onClick={() => setIsMenuOpen(false)}
               >
                 SIGN UP
