@@ -172,7 +172,7 @@ const Navbar = () => {
             {/* Right links */}
             <div
               ref={rightNavRef}
-              className="right-nav bg-[#64748b45] text-white rounded-lg p-3 flex items-center justify-end space-x-8 shadow-lg w-full sm:w-1/2"
+              className="right-nav z-50 bg-[#64748b45] bg-opacity-80 text-white rounded-lg p-3 flex items-center justify-end space-x-8 shadow-lg w-full sm:w-1/2 font-[Technor]"
             >
               {!isAuthenticated ? (
                 <div className="flex items-center space-x-8">
