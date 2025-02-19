@@ -49,7 +49,7 @@ const LoginPage: React.FC = () => {
       if (!response.ok) throw new Error(data.message || 'Failed to log in');
 
       setShowToast({ message: 'Login successful!', type: 'success' });
-      login(userDetails.email);
+      login(data.email); 
       const redirectPath = Cookies.get('redirectPath') || '/';
       router.push(redirectPath);
       Cookies.remove('redirectPath');
@@ -79,10 +79,8 @@ const LoginPage: React.FC = () => {
               className={`mt-1 py-2 block w-full rounded-lg bg-white/20 text-white placeholder-gray-300 shadow-sm border ${
                 validated && !userDetails.email ? 'border-red-500' : 'border-transparent'
               } focus:ring-blue-500 focus:border-blue-500`}
+              disabled
             />
-            {validated && !userDetails.email && (
-              <p className="text-red-400 text-sm mt-1">Please provide your email.</p>
-            )}
           </div>
 
           <div>
