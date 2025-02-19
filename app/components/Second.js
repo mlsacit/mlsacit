@@ -54,6 +54,7 @@ const Second = () => {
           <div className=" mt-auto w-full h-auto relative  max-sm:bg-gradient-to-br from-[#3a3a3a82] to-[#00000000] max-sm:rounded-tl-[23.69px] max-sm:rounded-bl-[23.69px] max-sm:ml-[4rem] ">
             <Image
               src="/boxes/left.svg"
+              alt="Left box"
               width={245}
               height={223}
               layout="responsive"
@@ -63,6 +64,7 @@ const Second = () => {
             />
             <Image
               src="/boxes/left-tp.svg"
+              alt="Left border"
               width={245}
               height={223}
               layout="responsive"
@@ -83,6 +85,7 @@ const Second = () => {
           <div className=" w-full  h-full mb-auto relative  max-sm:bg-gradient-to-r from-[#dcdcdc00] to-[#767676] max-sm:rounded-tr-[23.69px] max-sm:rounded-br-[23.69px] max-sm:mr-[4rem]">
             <Image
               src="/boxes/center.svg"
+              alt="center image"
               width={245}
               height={223}
               layout="responsive"
@@ -92,6 +95,7 @@ const Second = () => {
             />
             <Image
               src="/boxes/right-tp.svg"
+              alt="right border"
               width={245}
               height={223}
               layout="responsive"
@@ -110,6 +114,7 @@ const Second = () => {
           <div className=" w-full mt-auto h-full relative   max-sm:bg-gradient-to-tr from-[#3a3a3acc] to-[#00000000] max-sm:rounded-tl-[23.69px] max-sm:rounded-bl-[23.69px] max-sm:ml-[4rem]">
             <Image
               src="/boxes/right.svg"
+              alt="right image"
               width={245}
               height={223}
               layout="responsive"
@@ -119,6 +124,7 @@ const Second = () => {
             />
             <Image
               src="/boxes/bor.svg"
+              alt="left border"
               width={245}
               height={223}
               layout="responsive"
