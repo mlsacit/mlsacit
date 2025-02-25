@@ -82,7 +82,7 @@ const About = () => {
       {/* Header */}
       <div className="text-center mb-12">
         <h1 className="text-2xl font-[CB] sm:text-3xl lg:text-4xl font-bold mb-4" data-aos="flip-up">
-          About  <span className="text-blue-500"> MLSA Club</span>
+          About  <span className="text-blue-500"> MLSA CIT Chapter</span>
         </h1>
         <p className="text-sm sm:text-base max-w-3xl mx-auto font-mono" data-aos="flip-down">
           Aligning learning, innovation, and leadership to redefine the tech landscape
