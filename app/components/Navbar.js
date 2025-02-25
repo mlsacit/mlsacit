@@ -111,7 +111,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="top-0 left-0 w-full z-50 bg-transparent">
+    <div className="top-0 left-0 w-full z-50 bg-transparent ">
       {/* Desktop Navbar */}
       <div className="hidden custom:flex justify-center w-full">
         <div className="w-full px-4">
@@ -156,12 +156,7 @@ const Navbar = () => {
               >
                 EVENTS
               </ScrollLink>
-              <Link
-                href="/newsletter"
-                className="hover:text-slate-300 hover:underline text-bold hover:scale-110 transition-transform duration-300"
-              >
-                NEWSLETTER
-              </Link>
+              
             </div>
 
             {/* Right links */}
@@ -172,14 +167,20 @@ const Navbar = () => {
               {!isAuthenticated ? (
                 <div className="flex items-center space-x-8">
                   <Link
+                    href="/newsletter"
+                    className="hover:text-slate-300 hover:underline text-bold hover:scale-110 transition-transform duration-300"
+                  >
+                    NEWSLETTER
+                  </Link>
+                  <Link
                     href="/login"
-                    className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300"
+                    className="hover:text-slate-300 text-bold hover:underline hover:scale-110 transition-transform duration-300"
                   >
                     LOGIN
                   </Link>
                   <Link
                     href="/signup"
-                    className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300"
+                    className="hover:text-slate-300 text-bold hover:underline hover:scale-110 transition-transform duration-300"
                   >
                     SIGN UP
                   </Link>

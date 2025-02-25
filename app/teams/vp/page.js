@@ -76,11 +76,7 @@ const Page = () => {
         <div className="mb-6" data-aos="fade-left">
           <h2 className="text-2xl font-semibold text-blue-400 mb-4 font-[Khand]">Biography</h2>
           <p className="text-white leading-7 font-[GMVF]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel
-            metus scelerisque ante sollicitudin commodo. Suspendisse potenti.
-            Fusce tristique lorem non massa tristique, vel consequat eros
-            viverra. Quisque ut semper nulla. Pellentesque habitant morbi
-            tristique senectus et netus et malesuada fames ac turpis egestas.
+            Aaron Rohan Raj, our esteemed vice president and a Beta MLSA, excels in team management and community engagement. As the driving force of our club, he supports the team on a dedicated path toward impactful destinations. His leadership fosters collaboration and inclusivity at every step, ensuring a cohesive and thriving community.
           </p>
         </div>
 

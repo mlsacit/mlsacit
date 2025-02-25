@@ -39,7 +39,7 @@
     opacity: 1;
     text-align: center;
     transition: opacity 0.5s ease, transform 0.5s ease;
-    color: white;
+    color: rgba(255, 255, 255, 0);
     font-family: 'wowala';
     font-size: 1.5em;
     z-index: 2; 
