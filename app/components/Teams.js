@@ -70,25 +70,25 @@ const Teams = () => {
     </div>
 
     {/* Scroll Buttons Container */}
-    <div className="flex justify-between w-full px-4 mt-4">
+    {/* <div className="flex justify-between w-full px-4 mt-4">/ */}
       {/* Left Scroll Button */}
-      <button
+      {/* <button
         onClick={scrollLeft}
         className="flex justify-center items-center p-2 bg-gray-600 rounded-full shadow-lg hover:bg-gray-400 transition-all duration-300 text-black 
                    w-[40px] h-[40px] md:w-[60px] md:h-[60px]" data-aos="slide-right"
       >
         <IoIosArrowRoundBack size={30} />
-      </button>
+      </button> */}
 
       {/* Right Scroll Button */}
-      <button
+      {/* <button
         onClick={scrollRight}
         className="flex justify-center items-center p-2 bg-gray-600 text-black rounded-full shadow-lg hover:bg-gray-400 transition-all duration-300 
                    w-[40px] h-[40px] md:w-[60px] md:h-[60px]" data-aos="slide-left"
       >
         <IoIosArrowRoundForward size={30} />
-      </button>
-    </div>
+      </button> */}
+    {/* </div> */}
   </div>
 );
 };

@@ -76,11 +76,7 @@ const Page = () => {
         <div className="mb-6" data-aos="fade-left">
           <h2 className="text-2xl font-semibold text-blue-400 mb-4 font-[Khand]">Biography</h2>
           <p className="text-white leading-7 font-[GMVF]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel
-            metus scelerisque ante sollicitudin commodo. Suspendisse potenti.
-            Fusce tristique lorem non massa tristique, vel consequat eros
-            viverra. Quisque ut semper nulla. Pellentesque habitant morbi
-            tristique senectus et netus et malesuada fames ac turpis egestas.
+          Since assuming the role in September 2024, Dilip B has embodied visionary leadership. As a beta MLSA, his unwavering commitment to turning ambitions into achievements has not only inspired but also elevated our community, driving us to new heights of excellence and collaboration.
           </p>
         </div>
 

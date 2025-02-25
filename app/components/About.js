@@ -82,11 +82,10 @@ const About = () => {
       {/* Header */}
       <div className="text-center mb-12">
         <h1 className="text-2xl font-[CB] sm:text-3xl lg:text-4xl font-bold mb-4" data-aos="flip-up">
-          About  <span className="text-blue-500"> MLSA Club</span>
+          About  <span className="text-blue-500"> MLSA CIT Chapter</span>
         </h1>
-        <p className="text-sm sm:text-base max-w-3xl mx-auto font-[MB]" data-aos="flip-down">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum corrupti aliquam tempore quas, ab,
-          perspiciatis quaerat eum cum exercitationem et reiciendis sequi, adipisci culpa.
+        <p className="text-sm sm:text-base max-w-3xl mx-auto font-mono" data-aos="flip-down">
+          Aligning learning, innovation, and leadership to redefine the tech landscape
         </p>
       </div>
 
@@ -101,8 +100,8 @@ const About = () => {
           <div className="flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 mb-6 rounded-full border-4 border-white bg-gray-800" >
             <FaEye className="text-4xl sm:text-5xl text-white" />
           </div>
-          <h2 className="text-lg sm:text-xl font-semibold mb-4 text-center font-[Array] " >Vision</h2>
-          <p className="text-xs sm:text-sm lg:text-base text-center font-[MB]" >
+          <h2 className="text-lg sm:text-2xl font-semibold mb-4 text-center font-[Array] " >Vision</h2>
+          <p className="text-xs sm:text-sm lg:text-base text-center font-mono" >
             At MLSA CIT, the vision is a world where technology is not just a tool, but a force for good—transforming
             ideas into impactful solutions and empowering individuals to shape a better future.
           </p>
@@ -117,8 +116,8 @@ const About = () => {
           <div className="flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 mb-6 rounded-full border-4 border-white bg-gray-800" >
             <IoIosRocket className="text-4xl sm:text-5xl text-white" />
           </div>
-          <h2 className="text-lg sm:text-xl font-semibold mb-4 text-center font-[Array]" >Mission</h2>
-          <p className="text-xs sm:text-sm lg:text-base text-center font-[MB]" >
+          <h2 className="text-lg sm:text-2xl font-semibold mb-4 text-center font-[Array]" >Mission</h2>
+          <p className="text-xs sm:text-sm lg:text-base text-center font-mono" >
             MLSA CIT is committed to going beyond textbooks by equipping individuals with the knowledge, skills, and
             resources to make an impact through hands-on learning opportunities such as workshops, webinars, and events.
           </p>
@@ -133,8 +132,8 @@ const About = () => {
           <div className="flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 mb-6 rounded-full border-4 border-white bg-gray-800">
             <GoGoal className="text-4xl sm:text-5xl text-white" />
           </div>
-          <h2 className="text-lg sm:text-xl font-semibold mb-4 text-center font-[Array]">Goal</h2>
-          <p className="text-xs sm:text-sm lg:text-base text-center font-[MB]">
+          <h2 className="text-lg sm:text-2xl font-semibold mb-4 text-center font-[Array]">Goal</h2>
+          <p className="text-xs sm:text-sm lg:text-base text-center font-mono">
             To build a strong, connected tech community that not only learns and innovates but excels in using
             technology to create opportunities, spark change, and drive progress for the greater good.
           </p>

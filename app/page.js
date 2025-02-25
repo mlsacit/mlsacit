@@ -433,18 +433,16 @@ export default function Home() {
               className="text-white lg:w-auto text-center lg:text-left m-2 mb-8 lg:mb-0 bg-b z-10 lg:absolute lg:left-0 lg:ml-0 max-sm:p-3 lg:overflow-visible"
             >
               <h1 className="font-extrabold text-3xl md:text-5xl lg:text-6xl font-[CB] max-sm:mt-[2.5vh] bg-clip-text text-transparent bg-gradient-to-r from-[#8AAAE5] max-sm:-ml-[25vw] max-sm:text-[8vw]">
-                Microsoft Learn
+                Microsoft  Learn
               </h1>
-              <h1 className="font-extrabold text-3xl md:text-5xl lg:text-6xl whitespace-nowrap font-[CB] max-sm:text-[8vw] max-sm:ml-[1vw]  bg-clip-text text-transparent bg-gradient-to-r from-transparent  to-[#FFFFFF] max-sm:-mt-[1vh] ">
-                Student Ambassadors
+              <h1 className="font-extrabold text-3xl md:text-5xl lg:text-6xl whitespace-nowrap font-[CB] max-sm:text-[8vw] max-sm:ml-[1vw]  bg-clip-text text-transparent bg-gradient-to-r from-[#333333]  to-[#FFFFFF] max-sm:-mt-[1vh] ">
+                Student  Ambassador
               </h1>
               <h2 className="font-extrabold  md:text-3xl lg:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-[#1E2761]  to-[#408EC6] font-[CB]  max-sm:text-[5vw] max-sm:-ml-[56vw]">
                 CIT CHAPTER
               </h2>
-              <p className="p-3 text-sm md:text-base mt-4 font-[CB] max-sm:mt-[42vh] max-sm:text-left bg-[#11182784] max-sm:p-3 rounded-2xl max-sm:text-[3.5vw]">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
-                pariatur porro mollitia, necessitatibus tenetur optio fugiat aut
-                molestiae ea, velit totam dolore quam ratione?
+              <p className="p-3 font-mono font-semibold text-sm md:text-base mt-4 max-sm:mt-[42vh] max-sm:text-left bg-[#11182784] max-sm:p-3 rounded-2xl max-sm:text-[3.5vw]">
+              More than a chapter — where every mind pens the next big page.
               </p>
             </div>
 

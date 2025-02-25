@@ -107,11 +107,11 @@ const Events = () => {
                 <div className="flex justify-between items-center w-full mb-2">
                   <div className="flex items-center">
                     <div className="bg-white w-1 h-6 rounded-lg mr-2"></div>
-                    <p className="text-sm md:text-base font-semibold">Event 1</p>
+                    <p className="text-sm md:text-base font-semibold">The Zeitgeist</p>
                   </div>
-                  <p className="text-xs text-gray-400">26/14/2023</p>
+                  {/* <p className="text-xs text-gray-400">26/14/2023</p> */}
                 </div>
-                <p className="text-xs">Lorem ipsum dolor sit amet consectetur.</p>
+                <p className="text-xs">350+ participants, AI transforming engineering.</p>
               </div>
             </div>
           </div>
@@ -140,11 +140,11 @@ const Events = () => {
                 <div className="flex justify-between items-center w-full mb-2">
                   <div className="flex items-center">
                     <div className="bg-white w-1 h-6 rounded-lg mr-2"></div>
-                    <p className="text-sm md:text-base font-semibold">Event 2</p>
+                    <p className="text-sm md:text-base font-semibold">Understanding UI/UX</p>
                   </div>
-                  <p className="text-xs text-gray-400">26/14/2023</p>
+                  {/* <p className="text-xs text-gray-400">26/14/2023</p> */}
                 </div>
-                <p className="text-xs">Lorem ipsum dolor sit amet consectetur.</p>
+                <p className="text-xs">100+ attendees, mastering design strategies.</p>
               </div>
             </div>
           </div>
@@ -173,11 +173,11 @@ const Events = () => {
                 <div className="flex justify-between items-center w-full mb-2">
                   <div className="flex items-center">
                     <div className="bg-white w-1 h-6 rounded-lg mr-2"></div>
-                    <p className="text-sm md:text-base font-semibold">Event 3</p>
+                    <p className="text-sm md:text-base font-semibold">GenAI & RAG</p>
                   </div>
-                  <p className="text-xs text-gray-400">26/14/2023</p>
+                  {/* <p className="text-xs text-gray-400">26/14/2023</p> */}
                 </div>
-                <p className="text-xs">Lorem ipsum dolor sit amet consectetur.</p>
+                <p className="text-xs">5 days, deep dive into AI.</p>
               </div>
             </div>
           </div>
@@ -186,16 +186,16 @@ const Events = () => {
 
       {/* Content Section */}
       <div className="text-white max-sm:mt-32 sm:mt-24" >
-        <h1 className="text-3xl md:text-4xl font-bold mb-4 font-[CB]" data-aos="fade-left">
+        <h1 className="text-4xl md:text-4xl font-bold mb-4 font-[CB]" data-aos="fade-left">
           Our Past <span className="text-blue-500">Events</span>
         </h1>
         <p className="text-sm md:text-base mb-4" data-aos="fade-left">
           Stay tuned for upcoming events and explore our past highlights.
         </p>
-        <div className="space-y-4 text-sm" data-aos="fade-left">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <div className="space-y-4 text-lg" data-aos="fade-left">
+          <p><span className='font-bold'>The Zeitgeist:</span> AI and Redefined Engineering – An exploration of AI&apos;s impact on modern engineering, led by Mr. Lalit Rawat and Mr. Lakshit Pant.</p>
+          <p><span className='font-bold'>Understanding UI/UX :</span> A deep dive into design principles and industry trends with expert Imthiyaz Ahmed.</p>
+          <p><span className='font-bold'>Building Intelligent Systems with GenAI and RAG –</span> A comprehensive workshop on AI, LLMs, and LangChain, led by expert Deepak Chawla.</p>
         </div>
         <Link href="/events">
           <button className="mt-6 px-6 py-2 bg-blue-600 rounded-lg hover:bg-blue-700 transition" data-aos="zoom-up">
