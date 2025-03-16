@@ -107,7 +107,7 @@ const Page = () => {
             <div className="mt-8 relative px-6" data-aos="fade-right">
               <FaQuoteLeft className="text-blue-400/50 absolute top-0 left-0 text-2xl" />
               <p className="text-white/80 italic text-lg leading-relaxed px-8">
-                "Innovation and collaboration are the keys to unlocking our community's potential."
+                Innovation and collaboration are the keys to unlocking our community's potential.
               </p>
               <FaQuoteRight className="text-blue-400/50 absolute bottom-0 right-0 text-2xl" />
             </div>
