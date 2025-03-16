@@ -36,7 +36,7 @@ const Page = () => {
   return (
     <div className="relative min-h-screen w-full bg-gradient-to-b from-[#020084] to-[#000149] flex flex-col items-center py-16 px-4 overflow-hidden">
       {/* Floating finance-themed elements */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      {/* <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         {[...Array(15)].map((_, i) => (
           <div
             key={i}
@@ -52,7 +52,32 @@ const Page = () => {
             {[<FaCoins />, <GiMoneyStack />, <GiCash />, <FaWallet />][Math.floor(Math.random() * 4)]}
           </div>
         ))}
+      </div> */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        {[...Array(15)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute opacity-10"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              fontSize: `${Math.random() * 30 + 10}px`,
+              animation: `float ${Math.random() * 20 + 10}s linear infinite`,
+              color: ['#4361ee', '#3a86ff', '#4cc9f0', '#7209b7'][Math.floor(Math.random() * 4)]
+            }}
+          >
+            {
+              [
+                <FaCoins key={`coins-${i}`} />,
+                <GiMoneyStack key={`money-${i}`} />,
+                <GiCash key={`cash-${i}`} />,
+                <FaWallet key={`wallet-${i}`} />,
+              ][Math.floor(Math.random() * 4)]
+            }
+          </div>
+        ))}
       </div>
+
 
       {/* Background Vector with enhanced opacity */}
       <div
@@ -63,7 +88,7 @@ const Page = () => {
       {/* Enhanced Back Button */}
       <button
         onClick={handleBackButtonClick}
-        className="absolute top-8 left-8 z-10 px-4 py-2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-lg shadow-md hover:from-blue-600 hover:to-indigo-700 transition-all font-[Excon] flex items-center gap-2" 
+        className="absolute top-8 left-8 z-10 px-4 py-2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-lg shadow-md hover:from-blue-600 hover:to-indigo-700 transition-all font-[Excon] flex items-center gap-2"
         data-aos="flip-left"
       >
         <IoArrowBackOutline /> Go Back
@@ -93,7 +118,7 @@ const Page = () => {
       >
         {/* Decorative top bar */}
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-blue-500"></div>
-        
+
         <h2
           className="text-3xl font-bold text-center bg-clip-text font-[Excon] text-transparent bg-gradient-to-r from-blue-400 to-indigo-500 mb-12"
           data-aos="fade-up"
@@ -103,7 +128,7 @@ const Page = () => {
 
         <div className="flex flex-col md:flex-row items-center gap-8">
           <div className="md:w-1/3 flex justify-center" data-aos="fade-right">
-            <div 
+            <div
               className="relative group"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
@@ -125,13 +150,13 @@ const Page = () => {
               Prithviraj K P
             </h3>
             <p className="text-blue-300 mb-4 text-lg">Treasurer</p>
-            
+
             <p className="text-gray-300 mb-6 text-lg leading-relaxed font-[GMVF]">
-              As the treasurer of MLSA CIT, Prithviraj ensures efficient financial management of the club. 
-              With a keen eye for detail and strong analytical skills, he handles all monetary aspects 
+              As the treasurer of MLSA CIT, Prithviraj ensures efficient financial management of the club.
+              With a keen eye for detail and strong analytical skills, he handles all monetary aspects
               with utmost transparency and accountability.
             </p>
-            
+
             <div className="flex space-x-4 mb-8">
               <a
                 href="https://www.linkedin.com/in/prithviraj-k-p-b3a9a3249/"
@@ -150,7 +175,7 @@ const Page = () => {
                 <FaInstagram size={24} />
               </a>
             </div>
-            
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="bg-gray-800/50 backdrop-blur p-6 rounded-xl shadow-lg border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300 transform hover:-translate-y-1">
                 <div className="text-blue-400 mb-3">
@@ -186,7 +211,7 @@ const Page = () => {
       >
         {/* Decorative top bar */}
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-blue-500"></div>
-        
+
         <h2 className="text-3xl font-bold text-center bg-clip-text font-[Excon] text-transparent bg-gradient-to-r from-blue-400 to-indigo-500 mb-12"
           data-aos="fade-up"
         >

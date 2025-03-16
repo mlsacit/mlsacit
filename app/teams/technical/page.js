@@ -29,7 +29,7 @@ const Page = () => {
   return (
     <div className="relative min-h-screen w-full bg-gradient-to-b from-[#020084] to-[#000149] flex flex-col items-center py-16 px-4 overflow-hidden">
       {/* Tech-themed floating elements */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
+      {/* <div className="absolute inset-0 z-0 overflow-hidden">
         {[...Array(20)].map((_, i) => (
           <div
             key={i}
@@ -45,12 +45,37 @@ const Page = () => {
             {[<FaCode />, <BiCodeAlt />, <BiChip />, <FaGithub />][Math.floor(Math.random() * 4)]}
           </div>
         ))}
+      </div> */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute opacity-10"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              fontSize: `${Math.random() * 30 + 10}px`,
+              animation: `float ${Math.random() * 20 + 10}s linear infinite`,
+              color: ['#4287f5', '#42c5f5', '#4254f5', '#8042f5'][Math.floor(Math.random() * 4)]
+            }}
+          >
+            {
+              [
+                <FaCode key={`code-${i}`} />,
+                <BiCodeAlt key={`alt-${i}`} />,
+                <BiChip key={`chip-${i}`} />,
+                <FaGithub key={`github-${i}`} />,
+              ][Math.floor(Math.random() * 4)]
+            }
+          </div>
+        ))}
       </div>
+
 
       {/* Back Button - Enhanced */}
       <button
         onClick={handleBackButtonClick}
-        className="absolute top-8 left-8 z-10 px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg shadow-md hover:from-blue-600 hover:to-purple-600 transition-all font-[Excon] flex items-center gap-2" 
+        className="absolute top-8 left-8 z-10 px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg shadow-md hover:from-blue-600 hover:to-purple-600 transition-all font-[Excon] flex items-center gap-2"
         data-aos="flip-left"
       >
         <IoMdArrowRoundBack /> Go Back
@@ -82,7 +107,7 @@ const Page = () => {
       <div className="container mx-auto px-4 sm:px-6 md:px-8 z-10 max-sm:mt-10 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-white/10 shadow-2xl p-8 relative" data-aos="slide-down">
         {/* Decorative top bar */}
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500"></div>
-        
+
         <h2
           className="text-3xl font-bold text-center bg-clip-text font-[Excon] text-transparent bg-gradient-to-r from-blue-400 to-purple-400 mb-12"
           data-aos="fade-up"
@@ -272,7 +297,7 @@ const Page = () => {
       <div className="mt-16 sm:mt-32 py-6 sm:py-10 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-white/10 shadow-2xl overflow-hidden relative" data-aos="flip-right">
         {/* Decorative top bar */}
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500"></div>
-        
+
         <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             className="text-3xl sm:text-4xl font-bold text-center mb-6 sm:mb-10 text-white"
@@ -284,13 +309,13 @@ const Page = () => {
           </h2>
           <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-12">
             <div className="md:w-1/2" data-aos="fade-right">
-            <Image 
-              src="/TechTeam.png" 
-              alt="Group Picture" 
-              className="rounded-lg shadow-lg border border-blue-500/20"
-              width={640} 
-              height={500} // You can adjust the width and height as per your requirement
-            />
+              <Image
+                src="/TechTeam.png"
+                alt="Group Picture"
+                className="rounded-lg shadow-lg border border-blue-500/20"
+                width={640}
+                height={500} // You can adjust the width and height as per your requirement
+              />
             </div>
 
             <div className="w-full md:w-1/2 md:pl-12" data-aos="fade-left">
@@ -379,14 +404,14 @@ const Page = () => {
       <div className="mt-32 z-10 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-white/10 shadow-2xl p-12 relative" data-aos="slide-up">
         {/* Decorative top bar */}
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500"></div>
-        
+
         <h2
           className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 font-[Excon]"
           data-aos="fade-up"
         >
           Team Volunteers
         </h2>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Member 1 - Enhanced */}
           <div
@@ -528,7 +553,7 @@ const Page = () => {
               </a>
             </div>
           </div>
-          
+
           {/* Member 5 - Enhanced */}
           <div
             className="team-card bg-gray-800/60 backdrop-blur-lg rounded-xl p-8 text-center border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-blue-500/20 hover:shadow-xl"

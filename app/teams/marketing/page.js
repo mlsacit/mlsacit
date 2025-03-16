@@ -33,7 +33,7 @@ const Page = () => {
   return (
     <div className="relative min-h-screen w-full bg-gradient-to-b from-[#001e63] to-[#000149] flex flex-col items-center py-16 px-4 overflow-hidden">
       {/* Marketing-themed floating elements */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      {/* <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         {[...Array(20)].map((_, i) => (
           <div
             key={i}
@@ -49,7 +49,33 @@ const Page = () => {
             {[<FaChartLine />, <FaHashtag />, <FaBullhorn />, <MdCampaign />, <TbSocial />][Math.floor(Math.random() * 5)]}
           </div>
         ))}
+      </div> */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute opacity-10"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              fontSize: `${Math.random() * 30 + 10}px`,
+              animation: `float ${Math.random() * 20 + 10}s linear infinite`,
+              color: ['#4361ee', '#3a86ff', '#4cc9f0', '#7209b7'][Math.floor(Math.random() * 4)],
+            }}
+          >
+            {
+              [
+                <FaChartLine key={`chart-${i}`} />,
+                <FaHashtag key={`hashtag-${i}`} />,
+                <FaBullhorn key={`bullhorn-${i}`} />,
+                <MdCampaign key={`campaign-${i}`} />,
+                <TbSocial key={`social-${i}`} />,
+              ][Math.floor(Math.random() * 5)]
+            }
+          </div>
+        ))}
       </div>
+
 
       {/* Background Vector with enhanced opacity */}
       <div
@@ -60,7 +86,7 @@ const Page = () => {
       {/* Back Button - Enhanced */}
       <button
         onClick={handleBackButtonClick}
-        className="absolute top-8 left-8 z-10 px-4 py-2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-lg shadow-md hover:from-blue-600 hover:to-indigo-700 transition-all font-[Excon] flex items-center gap-2" 
+        className="absolute top-8 left-8 z-10 px-4 py-2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-lg shadow-md hover:from-blue-600 hover:to-indigo-700 transition-all font-[Excon] flex items-center gap-2"
         data-aos="flip-left"
       >
         <IoMdArrowRoundBack /> Go Back
@@ -86,7 +112,7 @@ const Page = () => {
       <div className="relative bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-lg rounded-xl p-8 shadow-2xl border border-white/10 max-sm:mt-10 w-full max-w-4xl" data-aos="slide-down">
         {/* Decorative top bar */}
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-blue-500"></div>
-        
+
         <h2
           className="text-3xl font-bold text-center bg-clip-text font-[Excon] text-transparent bg-gradient-to-r from-blue-400 to-indigo-500 mb-12"
           data-aos="fade-up"
@@ -159,7 +185,7 @@ const Page = () => {
       <div className="mt-24 rounded-lg bg-gradient-to-br from-gray-900/80 to-gray-800/30 backdrop-blur-sm border border-white/10 py-10 shadow-2xl w-full max-w-6xl relative" data-aos="flip-up">
         {/* Decorative top bar */}
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-blue-500"></div>
-        
+
         <div className="container mx-auto px-4">
           <h2
             className="text-4xl font-bold text-center mb-10 text-white"
@@ -272,7 +298,7 @@ const Page = () => {
         <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-500 to-indigo-600 p-3 rounded-full">
           <FaChartPie className="text-white" size={24} />
         </div>
-        
+
         <h2
           className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-500 font-[Excon] mt-4"
           data-aos="fade-up"
@@ -393,7 +419,7 @@ const Page = () => {
       </div>
 
       {/* Marketing-themed floating elements */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      {/* <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         {[...Array(15)].map((_, i) => (
           <div
             key={i}
@@ -408,7 +434,30 @@ const Page = () => {
             {[<FaChartPie />, <BiSolidBullseye />, <FaHandshake />][Math.floor(Math.random() * 3)]}
           </div>
         ))}
+      </div> */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        {[...Array(15)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute text-blue-500/10"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              fontSize: `${Math.random() * 30 + 10}px`,
+              animation: `float ${Math.random() * 20 + 10}s linear infinite`,
+            }}
+          >
+            {
+              [
+                <FaChartPie key={`chart-${i}`} />,
+                <BiSolidBullseye key={`bullseye-${i}`} />,
+                <FaHandshake key={`handshake-${i}`} />,
+              ][Math.floor(Math.random() * 3)]
+            }
+          </div>
+        ))}
       </div>
+
 
       {/* Add floating animation */}
       <style jsx global>{`
