@@ -1,252 +1,192 @@
- #container {
-    height: 75vh;
-    padding: 1em;
-    width: 95%;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 8px 32px 0 rgba(252, 251, 251, 0.37);
-    display: flex;
-    flex-direction: column; 
-    border-radius: 20px;
-    margin: 3vw;
-    gap: 1em;
-  }
-  
-  .row {
-    flex: 1;
-    border: 2px solid rgba(232, 222, 222, 0.308);
-    border-radius: 20px;
-    /* cursor: pointer; */
-    position: relative;
-    overflow: hidden;
-    transition: flex 0.4s ease;
-    height: 100%;
-    display: flex;
-    flex-direction: row; /* Default: side-by-side */
-  }
-  
-  .row:hover {
-    flex: 3;
-  }
-  
-  .row .content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-    text-align: center;
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    color: rgba(255, 255, 255, 0);
-    font-family: 'wowala';
-    font-size: 1.5em;
-    z-index: 2; 
-  }
-  
-  .row:hover .content {
-    opacity: 0; 
-    transform: translate(-50%, -50%) scale(1);
-  }
-  
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    
-    color: white;
-    opacity: 0;
-    visibility: hidden;
-    display: flex;
-    flex-direction: row; 
-    justify-content: flex-start;
-    align-items: center;
-    text-align: left;
-    padding: 20px; 
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-  }
-  
-  .overlay img {
-    max-width: 40%; 
-    max-height: 90%;
-    margin-right: 20px; 
-  }
-  
-  
-  .overlay p {
-    font-size: 1.2em;
-    color: white;
-    max-width: 80%; 
-    text-align: left;
-  }
-  
-  .row:hover .overlay {
-    opacity: 1;
-    visibility: visible;
-  }
-  
-  .contentL {
-    position: relative;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.8);
-    opacity: 1;
-    text-align: left;
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    color: white;
-    font-family: 'wowala';
-    font-size: 1.5em;
-  }
-  
-  .row1 h3 {
-    color: rgba(127, 255, 212, 0.63);
-    font-family:"CB" ;
-    position: relative;
-    font-size: 1vw;
-    text-align: center;
-    transform: scale(2);
-    top: 15%;
-  }
-  .row2 h3 {
-    color: rgba(127, 255, 212, 0.63);
-    font-family:"CB" ;
-    position: relative;
-    font-size: 1vw;
-    text-align: center;
-    transform: scale(2);
-    top: 15%;
-  }
-  .row3 h3 {
-    color: rgba(127, 255, 212, 0.63);
-    font-family:"CB" ;
-    position: relative;
-    font-size: 1vw;
-    text-align: center;
-    transform: scale(2);
-    top: 15%;
-  }
-  
-  .row1:hover {
-    background-color: #1E3D8F;
-  }
-  
-  .row2:hover {
-    background-color: #1E3D8F;
-  }
-  
-  .row3:hover {
-    background-color: #1E3D8F;
-  }
-
-  /* @media (max-width: 1219px) {
-    .row h3{
-      font-size: 2vw;
-    }
-    .overlay p {
-      font-size: 2vw;
-    }
-  }
-  @media (max-width: 337px) {
-    .overlay p {
-      font-size: 2vw; 
-      max-height: 80%; 
-      overflow-y: auto; 
-    }
-  }
-  
-
-@media (max-width: 1219px) {
-  .row {
-    overflow-y: auto; 
-  }
-
-  .overlay {
-    padding: 10px; 
-    max-height: 100%; 
-  }
-
-  .overlay p {
-    font-size: 2vw; 
-    max-height: 80%; 
-    overflow-y: auto; 
-  }
-
-  .row .content {
-    font-size: 2em; 
-  }
-} */
-
-/* Media query for screen sizes between 702px and 1219px */
-/* Media query for screen sizes between 702px and 1219px */
-@media (min-width: 702px) and (max-width: 1219px) {
-  .row {
-    overflow-y: auto; /* Enable vertical scrolling inside each row */
-    padding: 1em;
-  }
-
-  .overlay {
-    padding: 15px; /* Adjust padding for overlay */
-    max-height: 100%; /* Ensure overlay fits within the row */
-  }
-
-  .overlay p {
-    font-size: 2vw; /* Adjust font size to make it larger */
-    max-height: 80%; /* Limit the height of the paragraph */
-    overflow-y: auto; /* Enable vertical scroll within the paragraph */
-  }
-
-  .row .content {
-    font-size: 2em; /* Adjust font size for smaller screens */
-  }
+/* Glassmorphism Base */
+#container {
+  width: 90%;
+  margin: 3vw auto;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.5rem;
+  box-shadow: 0 0.5rem 2rem rgba(0, 255, 255, 0.15);
+  overflow-x: hidden; /* No horizontal scrollbar */
+  overflow-y: hidden; /* No vertical scrollbar */
 }
 
-/* Media query for screen sizes between 430px and 700px */
-@media (min-width: 430px) and (max-width: 700px) {
-  .row {
-    overflow-y: auto; /* Enable vertical scrolling inside each row */
-    padding: 1em;
-  }
-
-  .overlay {
-    padding: 15px; /* Adjust padding for overlay */
-    max-height: 100%; /* Ensure overlay fits within the row */
-  }
-
-  .overlay p {
-    font-size: 2.5vw; /* Adjust font size for readability */
-    max-height: 80%; /* Limit the height of the paragraph */
-    overflow-y: auto; /* Enable vertical scroll within the paragraph */
-  }
-
-  .row .content {
-    font-size: 2em; /* Adjust font size for smaller screens */
-  }
+.card-stack {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 300px)); /* 3 cards + button side by side */
+  grid-template-rows: 1fr; /* Single row */
+  gap: 1rem;
+  justify-content: center; /* Center cards if fewer than 4 */
 }
 
-/* Media query for screen sizes 337px and less */
-@media (max-width: 337px) {
-  .overlay p {
-    font-size: 2vw; /* Adjust font size to ensure readability */
-    max-height: 80%; /* Limit the paragraph height */
-    overflow-y: auto; /* Allow scrolling if content overflows */
-  }
+/* Photo Card Styling */
+.photo-card {
+  position: relative;
+  height: 200px; /* Default height matches assumed image height */
+  width: 300px; /* Fixed width for consistency */
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: height 0.5s ease, transform 0.4s ease, box-shadow 0.4s ease;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 255, 0.3);
 }
 
-/* Adjustments for screen sizes 430px or less */
+.photo-card:hover {
+  height: 350px; /* Expands downward */
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.6), 0 0 40px rgba(0, 255, 255, 0.4);
+}
+
+.card-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 200px; /* Fixed height matches default card */
+  transition: none; /* No height change on hover */
+}
+
+.event-image {
+  object-fit: contain; /* Shows whole image */
+  border-radius: 1rem 1rem 0 0;
+}
+
+/* Info Panel */
+.info-panel {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px; /* Fixed info panel height */
+  padding: 0.75rem;
+  color: #ffffff;
+  opacity: 0;
+  transform: translateY(100%); /* Hidden below by default */
+  transition: opacity 0.3s ease, transform 0.5s ease;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.photo-card:hover .info-panel {
+  opacity: 1;
+  transform: translateY(0); /* Slides up into view */
+}
+
+.info-panel h3 {
+  font-family: "CB";
+  font-size: clamp(0.875rem, 1.5vw, 1.5rem);
+  color: #00ffff;
+  text-shadow: 0 0 6px rgba(0, 255, 255, 0.8);
+  margin-bottom: 0.25rem;
+}
+
+.info-panel p {
+  font-size: clamp(0.625rem, 1.25vw, 1rem);
+  line-height: 1.3;
+  overflow-y: auto;
+  max-height: calc(100% - 2rem);
+}
+
+/* Title Container */
+.title-container {
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.neon-glow {
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff, 0 0 30px #00ffff;
+}
+
+/* Back Button */
+.back-button {
+  display: grid;
+  place-items: center;
+  height: 200px; /* Matches card height */
+  width: 300px;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 0, 255, 0.3);
+}
+
+.shadow-neon {
+  box-shadow: 0 0 12px rgba(255, 0, 255, 0.6);
+}
+
+/* Responsive Design */
 @media (max-width: 834px) {
-
-  .row h3{
-    font-size: 0.5rem; /* Adjust font size for smaller screens */
+  #container {
+    width: 95%;
   }
-  .overlay p {
-    font-size: 3vw; /* Adjust font size to make the paragraph text larger */
-    max-height: 70%; /* Further adjust paragraph height for smaller screens */
-    overflow-y: auto; /* Ensure text scrolling is allowed */
+
+  .card-stack {
+    grid-template-columns: repeat(4, minmax(0, 250px)); /* Smaller cards */
+  }
+
+  .photo-card,
+  .back-button {
+    height: 180px;
+    width: 250px;
+  }
+
+  .photo-card:hover {
+    height: 320px;
+  }
+
+  .image-wrapper {
+    height: 180px;
+  }
+
+  .info-panel {
+    height: 140px;
   }
 }
 
+@media (max-width: 430px) {
+  #container {
+    padding: 1rem;
+  }
 
+  .card-stack {
+    grid-template-columns: repeat(1, minmax(0, 200px)); /* Stack vertically on mobile */
+  }
 
+  .photo-card,
+  .back-button {
+    height: 150px;
+    width: 200px;
+  }
+
+  .photo-card:hover {
+    height: 280px;
+  }
+
+  .image-wrapper {
+    height: 150px;
+  }
+
+  .info-panel {
+    height: 130px;
+  }
+
+  .info-panel h3 {
+    font-size: clamp(0.75rem, 1.5vw, 1.25rem);
+  }
+
+  .info-panel p {
+    font-size: clamp(0.5rem, 1.25vw, 0.875rem);
+  }
+
+  .title-container h1 {
+    font-size: 1.5rem;
+  }
+}
