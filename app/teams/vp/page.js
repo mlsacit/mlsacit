@@ -149,7 +149,7 @@ const Page = () => {
                 Role & Responsibilities
               </h2>
               <p className="text-white/80 leading-7 font-[GMVF]">
-                As Vice President, Aaron works closely with the President to implement the club's vision and strategic initiatives. He excels in team management and community engagement, serving as the driving force that supports the team on their path toward impactful destinations. His leadership fosters collaboration and inclusivity at every step.
+                As Vice President, Aaron works closely with the President to implement the club&apos;s vision and strategic initiatives. He excels in team management and community engagement, serving as the driving force that supports the team on their path toward impactful destinations. His leadership fosters collaboration and inclusivity at every step.
               </p>
             </div>
 
@@ -157,7 +157,7 @@ const Page = () => {
             <div className="mb-8 bg-white/5 rounded-xl p-6 border border-white/10" data-aos="fade-left" data-aos-delay="100">
               <h2 className="text-2xl font-semibold text-indigo-400 mb-4 font-[Khand]">Biography</h2>
               <p className="text-white/80 leading-7 font-[GMVF]">
-                Aaron Rohan Raj, our esteemed vice president and a Beta MLSA, brings a wealth of technical expertise and leadership experience to his role. His passion for technology and education has been instrumental in shaping our club's direction and fostering a culture of continuous learning. As a key supporting leader, he ensures a cohesive and thriving community.
+                Aaron Rohan Raj, our esteemed vice president and a Beta MLSA, brings a wealth of technical expertise and leadership experience to his role. His passion for technology and education has been instrumental in shaping our club&apos;s direction and fostering a culture of continuous learning. As a key supporting leader, he ensures a cohesive and thriving community.
               </p>
             </div>
 

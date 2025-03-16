@@ -194,7 +194,7 @@ const Page = () => {
                 Role & Vision
               </h2>
               <p className="text-white/80 leading-7 font-[GMVF]">
-                As the Social Media Team Lead, Neha orchestrates our club's digital presence with creativity and strategic insight. She leads a talented team that crafts engaging content, builds our online community, and ensures our message reaches the right audience at the right time.
+                As the Social Media Team Lead, Neha orchestrates our club&apos;s digital presence with creativity and strategic insight. She leads a talented team that crafts engaging content, builds our online community, and ensures our message reaches the right audience at the right time.
               </p>
             </div>
           </div>
