@@ -1,5 +1,5 @@
 "use client";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import AOS from "aos";
 import { useRouter } from "next/navigation";
@@ -26,12 +26,12 @@ const Page = () => {
       duration: 1000,
       once: true,
     });
-  },[]);
+  }, []);
 
   return (
     <div className="relative min-h-screen w-full bg-gradient-to-b from-[#1a0033] to-[#000000] flex flex-col items-center py-16 px-4 overflow-hidden">
       {/* Design-themed floating elements */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      {/* <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         {[...Array(20)].map((_, i) => (
           <div
             key={i}
@@ -47,7 +47,30 @@ const Page = () => {
             {[<FaPaintBrush />, <MdPalette />, <FaPencilRuler />, <RiPaletteLine />][Math.floor(Math.random() * 4)]}
           </div>
         ))}
+      </div> */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        {[...Array(20)].map((_, i) => {
+          const icons = [<FaPaintBrush key="paint" />, <MdPalette key="palette" />, <FaPencilRuler key="ruler" />, <RiPaletteLine key="paletteLine" />];
+          const randomIcon = icons[Math.floor(Math.random() * icons.length)];
+
+          return (
+            <div
+              key={i}
+              className="absolute opacity-10"
+              style={{
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                fontSize: `${Math.random() * 30 + 10}px`,
+                animation: `float ${Math.random() * 20 + 10}s linear infinite`,
+                color: ['#ff6b6b', '#4ecdc4', '#ffbe0b', '#a786df'][Math.floor(Math.random() * 4)]
+              }}
+            >
+              {randomIcon}
+            </div>
+          );
+        })}
       </div>
+
 
       {/* Background Vector */}
       <div
@@ -58,7 +81,7 @@ const Page = () => {
       {/* Back Button - Enhanced */}
       <button
         onClick={handleBackButtonClick}
-        className="absolute top-8 left-8 z-10 px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg shadow-md hover:from-purple-600 hover:to-pink-600 transition-all font-[Excon] flex items-center gap-2" 
+        className="absolute top-8 left-8 z-10 px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg shadow-md hover:from-purple-600 hover:to-pink-600 transition-all font-[Excon] flex items-center gap-2"
         data-aos="flip-left"
       >
         <IoMdArrowRoundBack /> Go Back
@@ -84,7 +107,7 @@ const Page = () => {
       <div className="container mx-auto sm:px-6 md:px-8 z-10 max-sm:mt-10 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-white/10 shadow-2xl p-8 relative" data-aos="slide-down">
         {/* Decorative top bar */}
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500"></div>
-        
+
         <h2
           className="text-3xl font-bold text-center bg-clip-text font-[Excon] text-transparent bg-gradient-to-r from-purple-400 to-pink-400 mb-12"
           data-aos="fade-up"
@@ -95,8 +118,8 @@ const Page = () => {
         {/* Profile Section - Enhanced with hover effects */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8" data-aos="zoom-in-up">
           {/* Member 1: Debasis Maharana - Enhanced */}
-          <div 
-            className="relative bg-gray-800/60 backdrop-blur-lg rounded-xl p-8 text-center shadow-lg border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-purple-500/20 hover:shadow-xl w-full max-w-xs mx-auto" 
+          <div
+            className="relative bg-gray-800/60 backdrop-blur-lg rounded-xl p-8 text-center shadow-lg border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-purple-500/20 hover:shadow-xl w-full max-w-xs mx-auto"
             data-aos="zoom-in-right"
           >
             {/* Profile Image with glow effect */}
@@ -156,8 +179,8 @@ const Page = () => {
           </div>
 
           {/* Member 2: Hadiya Tareen - Enhanced */}
-          <div 
-            className="relative bg-gray-800/60 backdrop-blur-lg rounded-xl p-8 text-center shadow-lg border border-pink-500/20 hover:border-pink-500/40 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-pink-500/20 hover:shadow-xl w-full max-w-xs mx-auto" 
+          <div
+            className="relative bg-gray-800/60 backdrop-blur-lg rounded-xl p-8 text-center shadow-lg border border-pink-500/20 hover:border-pink-500/40 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-pink-500/20 hover:shadow-xl w-full max-w-xs mx-auto"
             data-aos="zoom-in-left"
           >
             {/* Profile Image with glow effect */}
@@ -222,7 +245,7 @@ const Page = () => {
       <div className="mt-16 sm:mt-32 py-6 sm:py-10 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-white/10 shadow-2xl overflow-hidden relative" data-aos="flip-right">
         {/* Decorative top bar */}
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500"></div>
-        
+
         <div className="mx-auto px-4">
           <h2
             className="text-3xl sm:text-4xl font-bold text-center mb-6 sm:mb-10 text-white"
@@ -333,7 +356,7 @@ const Page = () => {
         <div className="absolute -top-6 left-1/2 -translate-x-1/2  p-3 ">
           {/* <MdPalette className="text-white" size={24} /> */}
         </div>
-        
+
         <h2
           className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400 font-[Excon] mt-4"
           data-aos="fade-up"
@@ -452,9 +475,9 @@ const Page = () => {
           </div>
         </div>
       </div>
-      
+
       {/* Design-themed floating elements */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      {/* <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         {[...Array(15)].map((_, i) => (
           <div
             key={i}
@@ -469,7 +492,28 @@ const Page = () => {
             {[<FaPaintBrush />, <MdPalette />, <FaPencilRuler />][Math.floor(Math.random() * 3)]}
           </div>
         ))}
+      </div> */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        {[...Array(15)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute text-purple-500/10"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              fontSize: `${Math.random() * 30 + 10}px`,
+              animation: `float ${Math.random() * 20 + 10}s linear infinite`,
+            }}
+          >
+            {[
+              <FaPaintBrush key={`paint-${i}`} />,
+              <MdPalette key={`palette-${i}`} />,
+              <FaPencilRuler key={`ruler-${i}`} />,
+            ][Math.floor(Math.random() * 3)]}
+          </div>
+        ))}
       </div>
+
 
       {/* Add floating animation */}
       <style jsx global>{`
