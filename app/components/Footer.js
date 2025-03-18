@@ -1,4 +1,5 @@
 "use client";
+import Image from 'next/image';
 import React from "react";
 import { FaInstagram, FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
 import Link from "next/link";
@@ -11,7 +12,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between mb-8">
           {/* Left: Logo and Title */}
           <div className="flex items-center space-x-3 mb-4 md:mb-0">
-            <img
+            <Image
               src="/msc-logo.png"
               alt="Microsoft Learn Student Ambassador Logo"
               className="h-14 w-auto"
@@ -25,7 +26,7 @@ const Footer = () => {
           </div>
           {/* Right: Tagline */}
           <p className="text-center md:text-right text-sm max-w-md text-gray-300 italic">
-            "Every new question is a doorway to an amazing discovery; dare to step through."
+            &quot;Every new question is a doorway to an amazing discovery; dare to step through.&quot;
           </p>
         </div>
 

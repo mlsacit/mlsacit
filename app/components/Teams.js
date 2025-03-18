@@ -25,7 +25,7 @@
 //   const handleMouseMove = useCallback((e) => {
 //     setMousePosition({ x: e.clientX, y: e.clientY });
 //   }, []);
-  
+
 //   // Add event listener with cleanup
 //   useEffect(() => {
 //     window.addEventListener('mousemove', handleMouseMove);
@@ -48,17 +48,17 @@
 //   // Memoize 3D effect calculation to reduce calculations
 //   const calculate3DEffect = useCallback((index) => {
 //     if (hoveredIndex !== index) return {};
-    
+
 //     const card = document.querySelectorAll('.team-card')[index];
 //     if (!card) return {};
-    
+
 //     const rect = card.getBoundingClientRect();
 //     const centerX = rect.left + rect.width / 2;
 //     const centerY = rect.top + rect.height / 2;
-    
+
 //     const rotateY = (mousePosition.x - centerX) / 20;
 //     const rotateX = (centerY - mousePosition.y) / 20;
-    
+
 //     return {
 //       transform: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`,
 //     };
@@ -93,7 +93,7 @@
 //         >
 //           <div className="w-full h-full rounded-full bg-[#0a0a1a]"></div>
 //         </div>
-        
+
 //         {/* Enhanced Holographic circle */}
 //         <div 
 //           className={`absolute inset-2 rounded-full transition-all duration-300 ${
@@ -104,7 +104,7 @@
 //             boxShadow: hoveredIndex === index ? '0 0 30px rgba(71,147,244,0.5)' : 'none'
 //           }}
 //         ></div>
-        
+
 //         {/* Digital circuit pattern - only render when hovered */}
 //         {hoveredIndex === index && (
 //           <div className="absolute inset-4 rounded-full opacity-20 z-0">
@@ -113,7 +113,7 @@
 //             <div className="absolute top-1/2 left-1/2 w-3 h-3 rounded-full bg-blue-400 transform -translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
 //           </div>
 //         )}
-        
+
 //         {/* Enhanced Image container */}
 //         <div 
 //           className="relative z-10"
@@ -129,7 +129,7 @@
 //             height={90}
 //             className="relative max-sm:w-[70px] transition-all duration-300"
 //           />
-          
+
 //           {/* Enhanced Futuristic scan effect - only render when hovered */}
 //           {hoveredIndex === index && (
 //             <>
@@ -147,7 +147,7 @@
 //             </>
 //           )}
 //         </div>
-        
+
 //         {/* Enhanced Futuristic name display */}
 //         <div 
 //           className={`mt-4 transition-all duration-500 relative ${
@@ -167,7 +167,7 @@
 //     <div className="relative w-full flex flex-col items-center justify-center h-auto py-8 gap-8 bg-[rgba(10,10,26,0.7)] backdrop-blur-lg border border-white/10 rounded-[2rem]">
 //       <div className="absolute inset-0 overflow-hidden">
 //         <div className="absolute w-full h-full bg-[url('/images/grid.svg')] bg-repeat opacity-5"></div>
-        
+
 //         {/* Digital circuit lines */}
 //         <div className="absolute top-0 left-0 w-full h-full opacity-10">
 //           <div className="absolute top-1/4 left-0 w-full h-[1px] bg-blue-400"></div>
@@ -194,7 +194,7 @@
 //           <div className="absolute -inset-1 blur-lg bg-gradient-to-r from-blue-400/20 via-indigo-500/20 to-blue-500/20 rounded-lg z-0"></div>
 //         </div>
 //         <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto mb-4 rounded-full"></div>
-        
+
 //         {/* Futuristic subtitle */}
 //         <p className="text-blue-300/80 max-w-md mx-auto mb-4 text-sm" data-aos="fade-up" data-aos-delay="100">
 //           <span className="inline-block w-2 h-2 bg-blue-400 rounded-full mr-2 animate-pulse"></span>
@@ -218,10 +218,10 @@
 //             animation: 'scanEffect 8s linear infinite'
 //           }}
 //         ></div>
-        
+
 //         {teamCards}
 //       </div>
-      
+
 //       {/* Enhanced Futuristic scroll indicator */}
 //       <div className="text-blue-400/70 text-sm flex items-center gap-2 mt-2">
 //         <div className="w-12 h-[1px] bg-gradient-to-r from-transparent to-blue-400/70 animate-pulse"></div>
@@ -230,7 +230,7 @@
 //         </div>
 //         <div className="w-12 h-[1px] bg-gradient-to-l from-transparent to-blue-400/70 animate-pulse"></div>
 //       </div>
-      
+
 //       {/* Enhanced CSS for animations and effects */}
 //       <style jsx global>{`
 //         .no-scrollbar::-webkit-scrollbar {
@@ -342,7 +342,7 @@ const Teams = () => {
     throttle((e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     }, 100),
-    []
+    [setMousePosition]
   );
 
   useEffect(() => {
@@ -351,9 +351,23 @@ const Teams = () => {
   }, [handleMouseMove]);
 
   // Memoize scroll distance
-  const scrollDistance = useMemo(() => {
-    return 0.5 * (containerRef.current?.offsetWidth || 210);
-  }, [containerRef.current?.offsetWidth]);
+  // const scrollDistance = useMemo(() => {
+  //   return 0.5 * (containerRef.current?.offsetWidth || 210);
+  // }, [containerRef.current?.offsetWidth]);
+
+  const [scrollDistance, setScrollDistance] = useState(210);  // Default value
+
+  useEffect(() => {
+    const updateScrollDistance = () => {
+      setScrollDistance(0.5 * (containerRef.current?.offsetWidth || 210));
+    };
+
+    updateScrollDistance();  // Set initial value
+    window.addEventListener("resize", updateScrollDistance);
+
+    return () => window.removeEventListener("resize", updateScrollDistance);
+  }, [containerRef]);
+
 
   const scrollLeft = () => {
     if (containerRef.current) containerRef.current.scrollLeft -= scrollDistance;
@@ -384,7 +398,7 @@ const Teams = () => {
 
   return (
     <div className="relative w-full flex flex-col items-center justify-center h-auto py-8 gap-8 bg-[rgba(10,10,26,0.7)] backdrop-blur-lg border border-white/10 rounded-[2rem]">
-      
+
       {/* Background Grid */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute w-full h-full bg-[url('/images/grid.svg')] bg-repeat opacity-5"></div>
@@ -417,7 +431,7 @@ const Teams = () => {
             data-aos-delay={index * 50}
           >
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 to-indigo-600"></div>
-            
+
             {/* Image */}
             <div className="relative z-10">
               <Image
