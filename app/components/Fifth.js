@@ -11,7 +11,6 @@ const Fifth = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const aosInitialized = useRef(false);
-  const galleryRef = useRef(null);
 
   useEffect(() => {
     const handleResize = debounce(() => {
@@ -30,13 +29,10 @@ const Fifth = () => {
   useEffect(() => {
     if (!aosInitialized.current) {
       AOS.init({
-        offset: 150,
-        duration: 600,
-        easing: 'ease-out-quad',
+        offset: 120,
+        duration: 800,
+        easing: 'ease-out',
         once: true,
-        mirror: false,
-        debounceDelay: 50,
-        throttleDelay: 99,
       });
       aosInitialized.current = true;
     }
@@ -98,17 +94,16 @@ const Fifth = () => {
   };
 
   return (
-    <div className="p-6 sm:p-10 bg-gradient-to-b from-[#121212] to-[#1E1E1E] min-h-screen">
-      {/* Gallery Heading */}
-      <div className="flex flex-col sm:flex-row items-center w-full gap-4 mb-12">
-        <div className="w-full sm:w-auto p-[1vw]">
-          <h1 className="text-[6vw] sm:text-[2.5vw] text-white font-light" data-aos={isMobile ? "fade-right" : "slide-right"}>01</h1>
-        </div>
-        <div className="w-full sm:w-auto p-[1vw]" data-aos={isMobile ? "fade-left" : "zoom-in"}>
-          <div className="box rounded-[12px] w-full sm:w-[27vw] h-[10vw] sm:h-[4vw] bg-gradient-to-r from-[#4793F4] to-[#45a6f5] flex items-center justify-center shadow-lg">
-            <h1 className="font-[GMVF] text-[4vw] sm:text-[2vw] text-white">Event Gallery</h1>
-          </div>
-        </div>
+    <div className="p-6 sm:p-10 bg-gradient-to-b from-[#070726] to-[#070726] w-auto m-[2rem] border border-[#334155] rounded-[2rem] max-sm:m-[1rem]">
+      {/* Header Section */}
+      <div className="mb-12 text-center" data-aos="fade-up">
+        <h1 className="text-3xl sm:text-5xl font-[CB] font-bold text-white mb-4">
+          <span className="text-transparent bg-clip-text bg-[#3B82F6]">Memorabilia</span>
+        </h1>
+        <div className="w-[12em] h-1.5 mx-auto mb-6 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 rounded-full shadow-lg shadow-blue-500/20"></div>
+        {/* <p className="text-gray-300 max-w-2xl mx-auto">
+          Explore our impactful tech events that have inspired hundreds of students and professionals.
+        </p> */}
       </div>
 
       {/* Featured Event Showcase */}
@@ -125,11 +120,11 @@ const Fifth = () => {
           
           <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-10">
             <h2 className="text-white text-2xl sm:text-4xl font-bold mb-2">{events[activeIndex].title}</h2>
-            <p className="text-gray-300 mb-4">{events[activeIndex].date}</p>
+            <p className="text-blue-400 mb-4">{events[activeIndex].date}</p>
             <p className="text-white/80 max-w-2xl line-clamp-3 sm:line-clamp-none">{events[activeIndex].description}</p>
             
             <button 
-              className="mt-4 bg-white/20 backdrop-blur-sm text-white px-6 py-2 rounded-full border border-white/30 hover:bg-white/30 transition-colors"
+              className="mt-4 bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg transition-colors"
               onClick={() => handleImageClick(events[activeIndex])}
             >
               View Details
@@ -165,7 +160,7 @@ const Fifth = () => {
               <button
                 key={index}
                 className={`w-2 h-2 rounded-full transition-all ${
-                  activeIndex === index ? 'bg-white w-4' : 'bg-white/50'
+                  activeIndex === index ? 'bg-blue-500 w-4' : 'bg-white/50'
                 }`}
                 onClick={() => setActiveIndex(index)}
               />
@@ -174,71 +169,85 @@ const Fifth = () => {
         </div>
       </div>
 
-      {/* Event Cards */}
-      <div className="mb-12">
-        <h2 className="text-white text-xl font-semibold mb-6">Recent Events</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* Event Grid */}
+      <div className="mb-16">
+        <h2 className="text-white text-2xl font-bold mb-8 border-l-4 border-blue-500 pl-4">Past Events</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {events.map((event, index) => (
             <div 
               key={index}
-              className="bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:translate-y-[-5px]"
+              className="bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg border border-white/10 hover:border-blue-500/30 transition-all duration-300 hover:translate-y-[-5px] group"
               data-aos="fade-up"
               data-aos-delay={index * 100}
+              onClick={() => handleImageClick(event)}
             >
-              <div className="relative h-48">
+              <div className="relative h-48 overflow-hidden">
                 <Image
                   src={event.images[0]}
                   alt={event.title}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-70"></div>
+                <div className="absolute top-4 right-4 bg-blue-500 text-white text-xs px-2 py-1 rounded">
+                  {event.date}
+                </div>
               </div>
               <div className="p-5">
-                <h3 className="text-white text-lg font-semibold mb-2">{event.title}</h3>
-                <p className="text-blue-400 text-sm mb-3">{event.date}</p>
+                <h3 className="text-white text-lg font-semibold mb-3 group-hover:text-blue-400 transition-colors">{event.title}</h3>
                 <p className="text-gray-400 text-sm line-clamp-3">{event.description}</p>
-                <button 
-                  className="mt-4 text-blue-400 hover:text-white transition-colors text-sm font-medium flex items-center"
-                  onClick={() => handleImageClick(event)}
-                >
-                  View Details
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
+                <div className="mt-4 flex justify-end">
+                  <span className="text-blue-400 text-sm font-medium flex items-center group-hover:translate-x-1 transition-transform">
+                    View Details
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Gallery Grid with Elegant Hover Effects */}
-      <div className="mb-12">
-        <h2 className="text-white text-xl font-semibold mb-6">Gallery</h2>
-        <div ref={galleryRef} className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-          {events.map((event, eventIndex) =>
-            event.images.map((src, imgIndex) => (
-              <div 
-                key={`${eventIndex}-${imgIndex}`} 
-                className="group relative overflow-hidden rounded-xl aspect-square"
-                data-aos="fade-up"
-                data-aos-delay={`${(eventIndex + imgIndex) * 50}`}
-              >
-                <Image
-                  src={src}
-                  alt={`${event.title} ${imgIndex}`}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
+      {/* Photo Wall - Simplified */}
+      <div className="mt-16">
+        <h2 className="text-white text-2xl font-bold mb-8 border-l-4 border-blue-500 pl-4">Event Gallery</h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 auto-rows-[180px]">
+          {events.flatMap((event, eventIndex) => 
+            event.images.map((src, imgIndex) => {
+              // Create a pattern of different sized images
+              const isWide = (eventIndex + imgIndex) % 5 === 0;
+              const isTall = (eventIndex + imgIndex) % 7 === 0;
+              
+              let className = "col-span-1 row-span-1";
+              if (isWide) className = "col-span-2 row-span-1";
+              if (isTall) className = "col-span-1 row-span-2";
+              
+              return (
                 <div 
-                  className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 cursor-pointer"
+                  key={`${eventIndex}-${imgIndex}`} 
+                  className={`${className} relative group overflow-hidden rounded-lg cursor-pointer`}
+                  data-aos="fade-up"
+                  data-aos-delay={(eventIndex + imgIndex) * 50}
                   onClick={() => handleImageClick(event)}
                 >
-                  <h3 className="text-white text-sm font-semibold">{event.title}</h3>
-                  <p className="text-gray-300 text-xs">{event.date}</p>
+                  <Image
+                    src={src}
+                    alt={`${event.title} ${imgIndex}`}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div 
+                    className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 cursor-pointer"
+                    onClick={() => handleImageClick(event)}
+                  >
+                    <h3 className="text-white text-sm font-semibold">{event.title}</h3>
+                    <p className="text-blue-400 text-xs">{event.date}</p>
+                  </div>
                 </div>
-              </div>
-            ))
+              );
+            })
           )}
         </div>
       </div>
@@ -247,14 +256,14 @@ const Fifth = () => {
       {selectedEvent && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4" onClick={closeModal}>
           <div 
-            className="bg-gradient-to-b from-[#2E2E2E] to-[#222222] p-6 rounded-xl max-w-2xl w-full shadow-2xl transform transition-all" 
+            className="bg-[#1e293b] p-6 rounded-xl max-w-2xl w-full shadow-2xl border border-blue-500/20" 
             onClick={e => e.stopPropagation()}
             data-aos="zoom-in"
           >
-            <div className="flex justify-between items-start mb-4">
+            <div className="flex justify-between items-start mb-6">
               <div>
                 <h1 className="text-xl sm:text-2xl text-white font-bold mb-1">{selectedEvent.title}</h1>
-                <p className="text-sm text-[#4793F4]">{selectedEvent.date}</p>
+                <p className="text-sm text-blue-400">{selectedEvent.date}</p>
               </div>
               <button 
                 className="text-gray-400 hover:text-white transition-colors"
@@ -266,16 +275,16 @@ const Fifth = () => {
               </button>
             </div>
             
-            <div className="grid grid-cols-2 gap-3 mb-4">
+            <div className="grid grid-cols-2 gap-4 mb-6">
               {selectedEvent.images.map((src, index) => (
-                <Image
-                  key={index}
-                  src={src}
-                  alt={`${selectedEvent.title} ${index}`}
-                  width={300}
-                  height={200}
-                  className="w-full h-auto rounded-lg object-cover"
-                />
+                <div key={index} className="relative aspect-video rounded-lg overflow-hidden">
+                  <Image
+                    src={src}
+                    alt={`${selectedEvent.title} ${index}`}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               ))}
             </div>
             

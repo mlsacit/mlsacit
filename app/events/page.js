@@ -1,208 +1,209 @@
-// "use client"; 
-// import { useEffect, useRef, useState } from "react";
-// import { gsap } from "gsap/gsap-core";
-// import React from "react"; 
-// import Navbar from "../components/Navbar"; 
-// import Footer from "../components/Footer"; 
-// import "../events/eventpage.css";
-// import Image from "next/image";
-// import Link from "next/link";
-// import { FaArrowLeft } from "react-icons/fa";
-
-// const Page = () => {
-//   const logoRef = useRef(null);
-//   const navbarRef = useRef(null);
-//   const [isMobile, setIsMobile] = useState(false);
-
-//   useEffect(() => {
-//     const handleResize = () => {
-//       setIsMobile(window.matchMedia("(max-width: 642px)").matches);
-//     };
-
-//     handleResize(); // Check screen size on load
-//     window.addEventListener("resize", handleResize);
-
-//     return () => window.removeEventListener("resize", handleResize);
-//   }, []);
-
-//   useEffect(() => {
-//     const animateLogo = () => {
-//       const logoPosition = isMobile
-//         ? { x: "-47vw", y: "-5vh", scale: 0.75 } // Mobile position: top-left
-//         : { x: "0.5vw", y: "-1vh", scale: 1.2 }; // Desktop position: center
-
-//       gsap.to(logoRef.current, {
-//         ...logoPosition,
-//         duration: 0.75,
-//         ease: "power2.out",
-//       });
-//     };
-
-//     animateLogo();
-//   }, [isMobile]);
-
-//   return (
-//     <div className="relative w-full max-h-full bg-gradient-to-b from-[#0f0f30] to-[#020365] z-0">
-      
-//       <Image
-//         src="/Vector up.png"
-//         alt="vector 1"
-//         layout="fill"
-//         objectFit="cover"
-//         className="absolute top-0 left-0 z-0 opacity-60"
-//       />
-      
-//       <div className="flex justify-center items-center pt-8">
-//         <h1 className="text-4xl font-extrabold text-white">EVENTS</h1>
-//       </div>
-      
-//       <div id="container" className="overflow-y-auto pb-16">
-//         <div className="row row1">
-//           <div className="content">
-//             <h3>Generative AI (GenAI) Workshop</h3>
-//           </div>
-//           <div className="overlay">
-//             <Image src="/events/images/GAI.jpg" width={100} height={100} alt="Image 1" />
-//             <p className="font-sans">Generative AI is revolutionizing how we interact with technology, enabling machines to create content from scratch—whether it&apos;s text, images, music, or code. In this workshop, we&apos;ll dive into the concepts behind GenAI and explore its applications in creative fields, business, and more. You&apos;ll learn about popular frameworks like GPT-3 and DALL·E, and how these AI models are trained to generate realistic and contextually appropriate outputs. Join us to uncover the immense potential of Generative AI, experiment with building your own AI models, and gain insights into the future of AI-driven creativity.</p>
-//           </div>
-//         </div>
-
-//         <div className="row row2">
-//           <div className="content">
-//             <h3>LinkedIn Workshop</h3>
-//           </div>
-//           <div className="overlay">
-//             <Image src="/events/images/link.jpg" width={100} height={100} alt="Image 2" />
-//             <p className="font-sans">LinkedIn has become the premier platform for professionals to network, showcase their skills, and advance their careers. In this workshop, we&apos;ll guide you through the essential steps to build a standout LinkedIn profile, from crafting an impactful headline to optimizing your work experience and skills. We will also cover strategies for expanding your professional network, engaging with thought leaders, and utilizing LinkedIn features to enhance your visibility in your industry. Whether you&apos;re looking to make connections, land a job, or grow your personal brand, this workshop will equip you with the tools to leverage LinkedIn effectively.</p>
-//           </div>
-//         </div>
-
-//         <div className="row row3">
-//           <div className="content">
-//             <h3>Web Development (WebDev) Workshop</h3>
-//           </div>
-//           <div className="overlay">
-//             <Image src="/events/images/Webdev.jpg" width={100} height={100} alt="Image 3" />
-//             <p className="font-sans">Web development is the backbone of the digital world, powering everything from personal blogs to complex enterprise applications. This workshop will introduce you to the fundamentals of web development, covering both front-end and back-end technologies. You&apos;ll learn about HTML, CSS, and JavaScript for building dynamic websites, along with an overview of popular frameworks like React and Node.js. With hands-on projects and practical tips, this workshop will help you start your journey as a web developer and give you the skills to build interactive, user-friendly websites that work seamlessly across devices.</p>
-//           </div>
-//         </div>
-
-//         <div className="flex justify-center items-center mt-8">
-//           <Link href="/">
-//             <button className="px-6 py-2 bg-blue-600 bg-opacity-60 flex gap-2 justify-between items-center text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition-all duration-300 ease-in-out shadow-lg">
-//               <FaArrowLeft />
-//               Back to HomePage
-//             </button>
-//           </Link>
-//         </div>
-
-//       </div>
-
-//       <Footer />
-//     </div>
-//   );
-// };
-
-// export default Page;
-
-
 "use client";
-import { useEffect, useRef, useState } from "react";
-import { gsap } from "gsap/gsap-core";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FaArrowLeft } from "react-icons/fa";
-import "../events/eventpage.css";
+import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
+import "./eventpage.css";
 
-const EventCard = ({ title, imageSrc, description }) => (
-  <div className="photo-card">
-    <div className="card-content">
-      <div className="image-wrapper">
-        <Image
-          src={imageSrc}
-          alt={`${title} event image`}
-          layout="fill"
-          objectFit="contain" // Shows whole image
-          className="event-image"
-        />
-      </div>
-      <div className="info-panel">
-        <h3>{title}</h3>
-        <p className="font-sans">{description}</p>
-      </div>
-    </div>
-  </div>
-);
+// Event data
+const events = [
+  {
+    id: 1,
+    title: "Tech Workshop 2023",
+    image: "/events/event1.jpg",
+    description: "An immersive workshop on the latest technologies and frameworks. Participants learned about AI, cloud computing, and modern web development techniques.",
+    date: "October 15, 2023",
+    fileName: "workshop.js",
+  },
+  {
+    id: 2,
+    title: "Hackathon Challenge",
+    image: "/events/event2.jpg",
+    description: "A 24-hour coding marathon where teams competed to build innovative solutions for real-world problems. Projects ranged from healthcare apps to sustainable tech.",
+    date: "November 5, 2023",
+    fileName: "hackathon.js",
+  },
+  {
+    id: 3,
+    title: "Developer Conference",
+    image: "/events/event3.jpg",
+    description: "Industry experts shared insights on software development best practices, career growth, and emerging technologies in this day-long conference.",
+    date: "December 10, 2023",
+    fileName: "conference.js",
+  },
+  {
+    id: 4,
+    title: "AI Summit",
+    image: "/events/event4.jpg",
+    description: "Exploring the frontiers of artificial intelligence with hands-on demonstrations, expert panels, and networking opportunities.",
+    date: "January 20, 2024",
+    fileName: "ai_summit.js",
+  },
+  {
+    id: 5,
+    title: "Web3 Workshop",
+    image: "/events/event5.jpg",
+    description: "Introduction to blockchain, cryptocurrencies, and decentralized applications. Participants built their first smart contract.",
+    date: "February 15, 2024",
+    fileName: "web3.js",
+  },
+  {
+    id: 6,
+    title: "Design Thinking Masterclass",
+    image: "/events/event6.jpg",
+    description: "A collaborative session on user-centered design approaches, prototyping techniques, and creating intuitive user experiences.",
+    date: "March 5, 2024",
+    fileName: "design.js",
+  },
+  {
+    id: 7,
+    title: "Cloud Computing Bootcamp",
+    image: "/events/event7.jpg",
+    description: "Intensive training on cloud platforms, serverless architecture, and deploying scalable applications in the cloud.",
+    date: "April 12, 2024",
+    fileName: "cloud.js",
+  },
+];
 
-const Page = () => {
-  const logoRef = useRef(null);
-  const [isMobile, setIsMobile] = useState(false);
+export default function EventsPage() {
+  const router = useRouter();
+  const [isLoading, setIsLoading] = useState(true);
+  const [selectedEvent, setSelectedEvent] = useState(null);
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 642);
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 800);
+
+    return () => clearTimeout(timer);
   }, []);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const logoPosition = isMobile
-        ? { x: "-47vw", y: "-5vh", scale: 0.75 }
-        : { x: "0.5vw", y: "-1vh", scale: 1.2 };
+  const handleViewEvent = (event) => {
+    setSelectedEvent(event);
+  };
 
-      gsap.to(logoRef.current, {
-        ...logoPosition,
-        duration: 0.75,
-        ease: "power2.out",
-      });
-    }, logoRef);
+  const handleBackToEvents = () => {
+    setSelectedEvent(null);
+  };
 
-    return () => ctx.revert();
-  }, [isMobile]);
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5
+      }
+    }
+  };
 
   return (
-    <div className="relative w-full min-h-screen bg-gradient-to-b from-[#1a0b2e] to-[#0d3b66] z-0">
-      <Image
-        src="/Vector up.png"
-        alt="Background vector illustration"
-        layout="fill"
-        objectFit="cover"
-        className="absolute top-0 left-0 z-0 opacity-40"
-      />
-      <div className="title-container">
-        <h1 className="text-4xl font-extrabold text-[#00ffff] neon-glow">EVENTS</h1>
-      </div>
-      <div id="container" className="card-stack">
-        <EventCard
-          title="Generative AI (GenAI) Workshop"
-          imageSrc="/events/images/GAI.jpg"
-          description="Generative AI is revolutionizing how we interact with technology... (rest of your description)"
-        />
-        <EventCard
-          title="LinkedIn Workshop"
-          imageSrc="/events/images/link.jpg"
-          description="LinkedIn has become the premier platform for professionals... (rest of your description)"
-        />
-        <EventCard
-          title="Web Development (WebDev) Workshop"
-          imageSrc="/events/images/Webdev.jpg"
-          description="Web development is the backbone of the digital world... (rest of your description)"
-        />
-        <div className="back-button">
-          <Link href="/">
-            <button className="px-6 py-2 bg-[#ff00ff] bg-opacity-50 inline-block text-white font-semibold rounded-lg hover:bg-[#00ffff] hover:text-[#1a0b2e] transition-all duration-300 ease-in-out shadow-neon glass-effect">
-              <FaArrowLeft className="inline mr-2" />
-              Back to HomePage
-            </button>
-          </Link>
+    <div className="min-h-screen bg-[var(--bg-primary)]">
+      {isLoading ? (
+        <div className="loading-container">
+          <div className="loading-text">Loading<span className="cursor"></span></div>
         </div>
-      </div>
-      <Footer />
+      ) : (
+        <div id="container">
+          <div className="terminal-header">
+            <div className="terminal-dots">
+              <div className="dot dot-red"></div>
+              <div className="dot dot-yellow"></div>
+              <div className="dot dot-green"></div>
+            </div>
+            <div className="terminal-title">mlsa-events.js - MLSA CIT</div>
+          </div>
+          
+          <div className="title-container">
+            <h1>MLSA CIT Events</h1>
+            <p>// Browse our past and upcoming events</p>
+          </div>
+          
+          {selectedEvent ? (
+            <motion.div 
+              className="event-detail"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="detail-header">
+                <h2 className="detail-title">{selectedEvent.title}</h2>
+                <div className="detail-date">{selectedEvent.date}</div>
+              </div>
+              
+              <div className="detail-content">
+                <div className="detail-description">
+                  {selectedEvent.description}
+                </div>
+                
+                <div className="detail-actions">
+                  <button className="register-button">Register Now</button>
+                  <button className="back-to-events" onClick={handleBackToEvents}>
+                    Back to Events
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          ) : (
+            <motion.div 
+              className="events-grid"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              {events.map((event, index) => (
+                <motion.div 
+                  key={event.id} 
+                  className="code-block"
+                  variants={itemVariants}
+                  style={{ "--index": index }}
+                  onClick={() => handleViewEvent(event)}
+                >
+                  <div className="code-header">
+                    <div className="file-name">{event.fileName}</div>
+                    <div className="event-date">{event.date}</div>
+                  </div>
+                  
+                  <div className="code-content">
+                    <div className="function-name">{event.title}</div>
+                    <div className="code-description">{event.description.substring(0, 80)}...</div>
+                    <div className="code-line">return <span>event</span>.<span className="string">"success"</span>;</div>
+                  </div>
+                  
+                  <div className="code-footer">
+                    <button className="view-button">View Details</button>
+                    <div className="line-numbers">Lines: 1-24</div>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          )}
+          
+          <div className="back-container">
+            <button 
+              className="back-button"
+              onClick={() => router.push('/')}
+            >
+              cd ../home
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
-};
+}
 
-export default Page;
+
