@@ -180,7 +180,7 @@ export default function EventsPage() {
                   <div className="code-content">
                     <div className="function-name">{event.title}</div>
                     <div className="code-description">{event.description.substring(0, 80)}...</div>
-                    <div className="code-line">return <span>event</span>.<span className="string">"success"</span>;</div>
+                    <div className="code-line">return <span>event</span>.<span className="string">&quot;success&quot;</span>;</div>
                   </div>
                   
                   <div className="code-footer">
