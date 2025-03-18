@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, useMemo, useCallback } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Image from "next/image";
@@ -21,29 +21,32 @@ const Teams = () => {
     });
   }, []);
 
-  // Track mouse position for holographic effect
+  // Optimize mouse tracking with useCallback to prevent recreation on each render
+  const handleMouseMove = useCallback((e) => {
+    setMousePosition({ x: e.clientX, y: e.clientY });
+  }, []);
+  
+  // Add event listener with cleanup
   useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-    
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+  }, [handleMouseMove]);
 
-  // Scroll dynamically based on container width
-  const scrollDistance = 0.5 * (containerRef.current?.offsetWidth || 210);
+  // Memoize scroll distance calculation
+  const scrollDistance = useMemo(() => {
+    return 0.5 * (containerRef.current?.offsetWidth || 210);
+  }, [containerRef.current?.offsetWidth]);
 
-  const scrollLeft = () => {
+  const scrollLeft = useCallback(() => {
     if (containerRef.current) containerRef.current.scrollLeft -= scrollDistance;
-  };
+  }, [scrollDistance]);
 
-  const scrollRight = () => {
+  const scrollRight = useCallback(() => {
     if (containerRef.current) containerRef.current.scrollLeft += scrollDistance;
-  };
+  }, [scrollDistance]);
 
-  // Calculate 3D rotation based on mouse position
-  const calculate3DEffect = (index) => {
+  // Memoize 3D effect calculation to reduce calculations
+  const calculate3DEffect = useCallback((index) => {
     if (hoveredIndex !== index) return {};
     
     const card = document.querySelectorAll('.team-card')[index];
@@ -59,14 +62,111 @@ const Teams = () => {
     return {
       transform: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`,
     };
-  };
+  }, [hoveredIndex, mousePosition]);
+
+  // Memoize team cards to prevent unnecessary re-renders
+  const teamCards = useMemo(() => {
+    return teamData.map((member, index) => (
+      <div
+        key={index}
+        onClick={() => router.push(`/teams/${member.path}`)}
+        onMouseEnter={() => setHoveredIndex(index)}
+        onMouseLeave={() => setHoveredIndex(null)}
+        className="team-card flex flex-shrink-0 flex-col justify-center items-center cursor-pointer w-[200px] h-[200px] max-sm:w-[150px] max-sm:h-[150px] transition-all duration-300 relative"
+        style={{
+          ...calculate3DEffect(index),
+          transition: 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
+        }}
+        data-aos="zoom-out"
+        data-aos-delay={index * 50}
+      >
+        {/* Enhanced Futuristic border */}
+        <div 
+          className={`absolute inset-0 rounded-full transition-all duration-500 ${
+            hoveredIndex === index ? 'opacity-100' : 'opacity-40'
+          }`}
+          style={{
+            background: `conic-gradient(from ${Date.now() / 20 % 360}deg at 50% 50%, #4793F4, #6366F1, #4793F4)`,
+            padding: '2px',
+            animation: hoveredIndex === index ? 'spin 4s linear infinite' : 'none'
+          }}
+        >
+          <div className="w-full h-full rounded-full bg-[#0a0a1a]"></div>
+        </div>
+        
+        {/* Enhanced Holographic circle */}
+        <div 
+          className={`absolute inset-2 rounded-full transition-all duration-300 ${
+            hoveredIndex === index ? 'opacity-30' : 'opacity-0'
+          }`}
+          style={{
+            background: 'radial-gradient(circle, rgba(71,147,244,0.2) 0%, rgba(17,24,39,0) 70%)',
+            boxShadow: hoveredIndex === index ? '0 0 30px rgba(71,147,244,0.5)' : 'none'
+          }}
+        ></div>
+        
+        {/* Digital circuit pattern - only render when hovered */}
+        {hoveredIndex === index && (
+          <div className="absolute inset-4 rounded-full opacity-20 z-0">
+            <div className="absolute top-1/2 left-0 w-full h-[1px] bg-blue-400"></div>
+            <div className="absolute top-0 left-1/2 w-[1px] h-full bg-blue-400"></div>
+            <div className="absolute top-1/2 left-1/2 w-3 h-3 rounded-full bg-blue-400 transform -translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
+          </div>
+        )}
+        
+        {/* Enhanced Image container */}
+        <div 
+          className="relative z-10"
+          style={{
+            filter: hoveredIndex === index ? 'drop-shadow(0 0 15px rgba(71,147,244,0.7))' : 'none',
+            transition: 'all 0.3s ease-out',
+          }}
+        >
+          <Image
+            src={member.image}
+            alt={member.name}
+            width={90}
+            height={90}
+            className="relative max-sm:w-[70px] transition-all duration-300"
+          />
+          
+          {/* Enhanced Futuristic scan effect - only render when hovered */}
+          {hoveredIndex === index && (
+            <>
+              <div 
+                className="absolute inset-0 bg-gradient-to-b from-blue-500/0 via-blue-500/30 to-blue-500/0 opacity-70"
+                style={{
+                  animation: 'scanline 1.5s linear infinite',
+                  height: '10px',
+                  width: '100%',
+                  top: '50%',
+                  transform: 'translateY(-50%)'
+                }}
+              ></div>
+              <div className="absolute inset-0 rounded-full border border-blue-500/50 animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite]"></div>
+            </>
+          )}
+        </div>
+        
+        {/* Enhanced Futuristic name display */}
+        <div 
+          className={`mt-4 transition-all duration-500 relative ${
+            hoveredIndex === index ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-4'
+          }`}
+        >
+          <p className="text-sm font-bold text-white relative z-10 px-3 py-1 rounded-full bg-gradient-to-r from-blue-500/20 to-indigo-500/20 backdrop-blur-sm border border-blue-500/30">
+            {member.name}
+          </p>
+          <div className="absolute inset-0 blur-sm bg-blue-500/20 rounded-full"></div>
+        </div>
+      </div>
+    ));
+  }, [hoveredIndex, calculate3DEffect, router]);
 
   return (
-<div className="relative w-full flex flex-col items-center justify-center h-auto py-8 gap-8 bg-[rgba(10,10,26,0.7)] backdrop-blur-lg border border-white/10 rounded-[2rem]">
+    <div className="relative w-full flex flex-col items-center justify-center h-auto py-8 gap-8 bg-[rgba(10,10,26,0.7)] backdrop-blur-lg border border-white/10 rounded-[2rem]">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute w-full h-full bg-[url('/images/grid.svg')] bg-repeat opacity-5"></div>
-        
-        
         
         {/* Digital circuit lines */}
         <div className="absolute top-0 left-0 w-full h-full opacity-10">
@@ -93,9 +193,7 @@ const Teams = () => {
           </h1>
           <div className="absolute -inset-1 blur-lg bg-gradient-to-r from-blue-400/20 via-indigo-500/20 to-blue-500/20 rounded-lg z-0"></div>
         </div>
-        <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto mb-4 rounded-full">
-          {/* Simple dash with no animation */}
-        </div>
+        <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto mb-4 rounded-full"></div>
         
         {/* Futuristic subtitle */}
         <p className="text-blue-300/80 max-w-md mx-auto mb-4 text-sm" data-aos="fade-up" data-aos-delay="100">
@@ -104,8 +202,6 @@ const Teams = () => {
           <span className="inline-block w-2 h-2 bg-blue-400 rounded-full ml-2 animate-pulse"></span>
         </p>
       </div>
-
-      {/* Removed the navigation controls section */}
 
       {/* Enhanced Team Member Images Container */}
       <div
@@ -123,102 +219,7 @@ const Teams = () => {
           }}
         ></div>
         
-        {teamData.map((member, index) => (
-          <div
-            key={index}
-            onClick={() => router.push(`/teams/${member.path}`)}
-            onMouseEnter={() => setHoveredIndex(index)}
-            onMouseLeave={() => setHoveredIndex(null)}
-            className="team-card flex flex-shrink-0 flex-col justify-center items-center cursor-pointer w-[200px] h-[200px] max-sm:w-[150px] max-sm:h-[150px] transition-all duration-300 relative"
-            style={{
-              ...calculate3DEffect(index),
-              transition: 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
-            }}
-            data-aos="zoom-out"
-            data-aos-delay={index * 50}
-          >
-            {/* Enhanced Futuristic border */}
-            <div 
-              className={`absolute inset-0 rounded-full transition-all duration-500 ${
-                hoveredIndex === index ? 'opacity-100' : 'opacity-40'
-              }`}
-              style={{
-                background: `conic-gradient(from ${Date.now() / 20 % 360}deg at 50% 50%, #4793F4, #6366F1, #4793F4)`,
-                padding: '2px',
-                animation: hoveredIndex === index ? 'spin 4s linear infinite' : 'none'
-              }}
-            >
-              <div className="w-full h-full rounded-full bg-[#0a0a1a]"></div>
-            </div>
-            
-            {/* Enhanced Holographic circle */}
-            <div 
-              className={`absolute inset-2 rounded-full transition-all duration-300 ${
-                hoveredIndex === index ? 'opacity-30' : 'opacity-0'
-              }`}
-              style={{
-                background: 'radial-gradient(circle, rgba(71,147,244,0.2) 0%, rgba(17,24,39,0) 70%)',
-                boxShadow: hoveredIndex === index ? '0 0 30px rgba(71,147,244,0.5)' : 'none'
-              }}
-            ></div>
-            
-            {/* Digital circuit pattern */}
-            {hoveredIndex === index && (
-              <div className="absolute inset-4 rounded-full opacity-20 z-0">
-                <div className="absolute top-1/2 left-0 w-full h-[1px] bg-blue-400"></div>
-                <div className="absolute top-0 left-1/2 w-[1px] h-full bg-blue-400"></div>
-                <div className="absolute top-1/2 left-1/2 w-3 h-3 rounded-full bg-blue-400 transform -translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
-              </div>
-            )}
-            
-            {/* Enhanced Image container */}
-            <div 
-              className="relative z-10"
-              style={{
-                filter: hoveredIndex === index ? 'drop-shadow(0 0 15px rgba(71,147,244,0.7))' : 'none',
-                transition: 'all 0.3s ease-out',
-              }}
-            >
-              <Image
-                src={member.image}
-                alt={member.name}
-                width={90}
-                height={90}
-                className="relative max-sm:w-[70px] transition-all duration-300"
-              />
-              
-              {/* Enhanced Futuristic scan effect */}
-              {hoveredIndex === index && (
-                <>
-                  <div 
-                    className="absolute inset-0 bg-gradient-to-b from-blue-500/0 via-blue-500/30 to-blue-500/0 opacity-70"
-                    style={{
-                      animation: 'scanline 1.5s linear infinite',
-                      height: '10px',
-                      width: '100%',
-                      top: '50%',
-                      transform: 'translateY(-50%)'
-                    }}
-                  ></div>
-                  <div className="absolute inset-0 rounded-full border border-blue-500/50 animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite]"></div>
-                </>
-              )}
-            </div>
-            
-            {/* Enhanced Futuristic name display */}
-            <div 
-              className={`mt-4 transition-all duration-500 relative ${
-                hoveredIndex === index ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-4'
-              }`}
-            >
-              <p className="text-sm font-bold text-white relative z-10 px-3 py-1 rounded-full bg-gradient-to-r from-blue-500/20 to-indigo-500/20 backdrop-blur-sm border border-blue-500/30">
-                {member.name}
-      
-              </p>
-              <div className="absolute inset-0 blur-sm bg-blue-500/20 rounded-full"></div>
-            </div>
-          </div>
-        ))}
+        {teamCards}
       </div>
       
       {/* Enhanced Futuristic scroll indicator */}
@@ -307,3 +308,5 @@ const teamData = [
 ];
 
 export default Teams;
+
+
