@@ -68,16 +68,11 @@ const Second = () => {
               className="sm:hidden"
               data-aos="slide-left"
             />
-            {/* Decorative elements */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
-              <div className="absolute bottom-4 right-4 w-12 h-12 rounded-full border-2 border-blue-500 opacity-40"></div>
-              <div className="absolute top-4 left-4 w-8 h-8 rounded-full border border-blue-400 opacity-30"></div>
-              <div className="absolute top-[40%] right-[30%] w-16 h-1 bg-blue-500 opacity-20 rotate-45"></div>
-              <div className="absolute bottom-[30%] left-[20%] w-10 h-10 border border-blue-300 opacity-30 rotate-12"></div>
-            </div>
-            <h1 className="absolute inset-0 text-[1.2vw] font-semibold p-[2vw] h-full w-full text-white max-sm:p-[10vw] max-sm:text-[3vw]" data-aos="zoom-out">
+            {/* <div className="absolute inset-0 pl-5 flex z-0 text-white text-[1.5vw] font-bold font-[LM] bg-yellow-500"> */}
+              <h1 className="absolute inset-0 text-[1.2vw] font-semibold p-[2vw] h-full w-full text-white max-sm:p-[10vw] max-sm:text-[3vw]" data-aos="zoom-out">
               Founded in 2020, MLSA CIT began with a single Alpha Microsoft Learn Student Ambassador, laying the foundation for a thriving tech-driven initiative.
-            </h1>
+              </h1>
+            {/* </div> */}
           </div>
 
           {/* Center Image */}
@@ -102,16 +97,9 @@ const Second = () => {
               className="sm:hidden"
               data-aos="slide-right"
             />
-            {/* Decorative elements */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
-              <div className="absolute top-6 right-6 w-14 h-14 border-2 border-white opacity-30 rotate-45"></div>
-              <div className="absolute bottom-8 left-8 w-10 h-10 border border-white opacity-20"></div>
-              <div className="absolute top-[30%] left-[25%] w-20 h-1 bg-white opacity-30 -rotate-45"></div>
-              <div className="absolute bottom-[40%] right-[15%] w-12 h-12 rounded-full border border-white opacity-20"></div>
-            </div>
             <h1 className="absolute inset-0 text-[1.2vw] font-semibold p-[2vw] h-full w-full max-sm:p-[10vw] max-sm:text-[3vw] text-black" data-aos="zoom-out">
             Now in its third generation of leaders, MLSA CIT stands stronger than ever, successfully conducting impactful workshops and learning initiatives—driven by the commitment to push boundaries and shape the future of tech.
-            </h1>
+              </h1>
           </div>
 
           {/* Right Image */}
@@ -136,16 +124,9 @@ const Second = () => {
               className="sm:hidden"
               data-aos="slide-left"
             />
-            {/* Decorative elements */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
-              <div className="absolute top-5 left-5 w-16 h-16 border-2 border-blue-400 opacity-30 rotate-12"></div>
-              <div className="absolute bottom-6 right-6 w-10 h-10 rounded-full border border-blue-300 opacity-25"></div>
-              <div className="absolute top-[45%] right-[20%] w-14 h-1 bg-blue-400 opacity-30 rotate-45"></div>
-              <div className="absolute bottom-[35%] left-[25%] w-8 h-8 border border-blue-500 opacity-20 -rotate-12"></div>
-            </div>
             <h1 className="absolute inset-0 text-[1.2vw] font-semibold p-[2vw] h-full w-full text-white max-sm:p-[10vw] max-sm:text-[3vw]" data-aos="zoom-out">
             What followed was a surge of innovation and learning, rapidly producing seven Beta MLSAs and expanding the chapter into a dynamic and engaged network of tech enthusiasts. 
-            </h1>
+              </h1>
           </div>
         </div>
       </div>
