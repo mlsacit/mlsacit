@@ -338,12 +338,15 @@ const Teams = () => {
   }, []);
 
   // Throttle mouse movement for better performance
-  const handleMouseMove = useCallback(
-    throttle((e) => {
+  const handleMouseMove = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
-    }, 100),
-    [setMousePosition]
-  );
+};
+  // const handleMouseMove = useCallback(
+  //   throttle((e) => {
+  //     setMousePosition({ x: e.clientX, y: e.clientY });
+  //   }, 100),
+  //   [setMousePosition]
+  // );
 
   useEffect(() => {
     window.addEventListener("mousemove", handleMouseMove);
