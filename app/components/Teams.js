@@ -338,9 +338,28 @@ const Teams = () => {
   }, []);
 
   // Throttle mouse movement for better performance
-  const handleMouseMove = (e) => {
+  // const handleMouseMove = (e) => {
+  //   setMousePosition({ x: e.clientX, y: e.clientY });
+  // };
+  // useEffect(() => {
+  //   window.addEventListener("mousemove", handleMouseMove);
+  //   return () => window.removeEventListener("mousemove", handleMouseMove);
+  // }, [handleMouseMove]);
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
-};
+    };
+  
+    window.addEventListener("mousemove", handleMouseMove);
+  
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);  // ✅ Empty dependency array
+  
+
+
   // const handleMouseMove = useCallback(
   //   throttle((e) => {
   //     setMousePosition({ x: e.clientX, y: e.clientY });
@@ -348,10 +367,6 @@ const Teams = () => {
   //   [setMousePosition]
   // );
 
-  useEffect(() => {
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [handleMouseMove]);
 
   // Memoize scroll distance
   // const scrollDistance = useMemo(() => {
