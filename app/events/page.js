@@ -129,7 +129,7 @@ export default function EventsPage() {
           
           <div className="title-container">
             <h1>MLSA CIT Events</h1>
-            <p>// Browse our past and upcoming events</p>
+            <p>Browse our past and upcoming events</p>
           </div>
           
           {selectedEvent ? (
