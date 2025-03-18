@@ -16,6 +16,8 @@ const Footer = () => {
               src="/msc-logo.png"
               alt="Microsoft Learn Student Ambassador Logo"
               className="h-14 w-auto"
+              width={200}
+              height={50}
             />
             <div>
               <h1 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
