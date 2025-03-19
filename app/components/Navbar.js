@@ -111,21 +111,21 @@ const Navbar = () => {
   };
 
   return (
-    <div className="top-0 left-0 w-full z-50 bg-transparent ">
+    <div className="top-0 left-0 w-full z-50 bg-transparent">
       {/* Desktop Navbar */}
       <div className="hidden custom:flex justify-center w-full">
         <div className="w-full px-4">
           <div className="flex items-center justify-between py-8 gap-28">
-            {/* Left links */}
+            {/* Left links - darker theme */}
             <div
               ref={leftNavRef}
-              className="left-nav bg-[#64748b45] bg-opacity-80 text-white rounded-lg p-3 flex items-center justify-start space-x-8 shadow-lg w-full sm:w-1/2 font-[Technor]"
+              className="left-nav bg-[#1e293b99] text-white rounded-lg p-3 flex items-center justify-start space-x-8 shadow-lg border border-[#334155] w-full sm:w-1/2 font-[Technor]"
             >
               <ScrollLink
                 to="home"
                 smooth={true}
                 duration={500}
-                className="hover:text-slate-300 hover:underline text-bold hover:scale-110 transition-transform duration-300"
+                className="hover:text-blue-400 hover:underline text-bold hover:scale-110 transition-transform duration-300"
               >
                 HOME
               </ScrollLink>
@@ -134,7 +134,7 @@ const Navbar = () => {
                 smooth={true}
                 duration={500}
                 offset={-80}
-                className="hover:text-slate-300 hover:underline text-bold hover:scale-110 transition-transform duration-300"
+                className="hover:text-blue-400 hover:underline text-bold hover:scale-110 transition-transform duration-300"
               >
                 ABOUT
               </ScrollLink>
@@ -143,7 +143,7 @@ const Navbar = () => {
                 smooth={true}
                 duration={500}
                 offset={-80}
-                className="hover:text-slate-300 hover:underline text-bold hover:scale-110 transition-transform duration-300"
+                className="hover:text-blue-400 hover:underline text-bold hover:scale-110 transition-transform duration-300"
               >
                 TEAM
               </ScrollLink>
@@ -152,35 +152,34 @@ const Navbar = () => {
                 smooth={true}
                 duration={500}
                 offset={-80}
-                className="hover:text-slate-300 hover:underline text-bold hover:scale-110 transition-transform duration-300"
+                className="hover:text-blue-400 hover:underline text-bold hover:scale-110 transition-transform duration-300"
               >
                 EVENTS
               </ScrollLink>
-              
             </div>
 
-            {/* Right links */}
+            {/* Right links - darker theme */}
             <div
               ref={rightNavRef}
-              className="right-nav z-50 bg-[#64748b45] text-white rounded-lg p-3 flex items-center justify-end space-x-8 shadow-lg w-full sm:w-1/2 font-[Technor]"
+              className="right-nav z-50 bg-[#1e293b99] text-white rounded-lg p-3 flex items-center justify-end space-x-8 shadow-lg border border-[#334155] w-full sm:w-1/2 font-[Technor]"
             >
               {!isAuthenticated ? (
                 <div className="flex items-center space-x-8">
                   <Link
                     href="/newsletter"
-                    className="hover:text-slate-300 hover:underline text-bold hover:scale-110 transition-transform duration-300"
+                    className="hover:text-blue-400 hover:underline text-bold hover:scale-110 transition-transform duration-300"
                   >
                     NEWSLETTER
                   </Link>
                   <Link
                     href="/login"
-                    className="hover:text-slate-300 text-bold hover:underline hover:scale-110 transition-transform duration-300"
+                    className="hover:text-blue-400 text-bold hover:underline hover:scale-110 transition-transform duration-300"
                   >
                     LOGIN
                   </Link>
                   <Link
                     href="/signup"
-                    className="hover:text-slate-300 text-bold hover:underline hover:scale-110 transition-transform duration-300"
+                    className="hover:text-blue-400 text-bold hover:underline hover:scale-110 transition-transform duration-300"
                   >
                     SIGN UP
                   </Link>
@@ -188,7 +187,7 @@ const Navbar = () => {
               ) : (
                 <button
                   onClick={handleSignOut}
-                  className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300"
+                  className="hover:text-red-400 text-bold hover:scale-110 transition-transform duration-300"
                 >
                   SIGN OUT
                 </button>
@@ -198,8 +197,8 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Navbar */}
-      <div className="custom:hidden w-full flex items-center justify-between h-20 px-4 py-3 bg-[#64748b45] relative font-[Technor]">
+      {/* Mobile Navbar - darker theme */}
+      <div className="custom:hidden w-full flex items-center justify-between h-20 px-4 py-3 bg-[#1e293b99] border border-[#334155] relative font-[Technor]">
         <button
           className="flex flex-col justify-center items-center space-y-1 focus:outline-none ml-auto"
           onClick={toggleMenu}
@@ -211,10 +210,10 @@ const Navbar = () => {
           <div className="w-1 h-1 rounded opacity-0 bg-white circle1"></div>
         </button>
 
-        {/* Dropdown menu */}
+        {/* Dropdown menu - darker theme */}
         <div
           ref={dropdownRef}
-          className="absolute top-full left-0 right-0 bg-gradient-to-b from-[#02008400] to-[#00014900] backdrop-blur-md bg-opacity-80 text-white rounded-lg shadow-lg mt-2 p-4 flex flex-col space-y-4 z-50 max-sm:ml-3 max-sm:mr-3 border-[1px] border-[#ffffff56]"
+          className="absolute top-full left-0 right-0 bg-[#0f172a] backdrop-blur-md text-white rounded-lg shadow-lg mt-2 p-4 flex flex-col space-y-4 z-50 max-sm:ml-3 max-sm:mr-3 border border-[#334155]"
           style={{
             display: isMenuOpen ? "flex" : "none",
             flexDirection: "column",
@@ -224,7 +223,7 @@ const Navbar = () => {
             to="home"
             smooth={true}
             duration={500}
-            className="hover:text-slate-500 text-bold hover:scale-110 transition-transform duration-300 pl-1"
+            className="hover:text-blue-400 text-bold hover:scale-110 transition-transform duration-300 pl-1"
             onClick={() => setIsMenuOpen(false)}
           >
             HOME
@@ -234,7 +233,7 @@ const Navbar = () => {
             smooth={true}
             duration={500}
             offset={-80}
-            className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300 pl-1 border-[#ffffff5e]"
+            className="hover:text-blue-400 text-bold hover:scale-110 transition-transform duration-300 pl-1 border-[#334155]"
             onClick={() => setIsMenuOpen(false)}
           >
             ABOUT
@@ -244,7 +243,7 @@ const Navbar = () => {
             smooth={true}
             duration={500}
             offset={-80}
-            className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300 pl-1 border-[#ffffff5e]"
+            className="hover:text-blue-400 text-bold hover:scale-110 transition-transform duration-300 pl-1 border-[#334155]"
             onClick={() => setIsMenuOpen(false)}
           >
             TEAM
@@ -254,14 +253,14 @@ const Navbar = () => {
             smooth={true}
             duration={500}
             offset={-80}
-            className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300 pl-1 border-[#ffffff5e]"
+            className="hover:text-blue-400 text-bold hover:scale-110 transition-transform duration-300 pl-1 border-[#334155]"
             onClick={() => setIsMenuOpen(false)}
           >
             EVENTS
           </ScrollLink>
           <Link
             href="/newsletter"
-            className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300 pl-1 border-[#ffffff5e]"
+            className="hover:text-blue-400 text-bold hover:scale-110 transition-transform duration-300 pl-1 border-[#334155]"
             onClick={() => setIsMenuOpen(false)}
           >
             NEWSLETTER
@@ -270,14 +269,14 @@ const Navbar = () => {
             <>
               <Link
                 href="/login"
-                className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300 pl-1 border-[#ffffff5e]"
+                className="hover:text-blue-400 text-bold hover:scale-110 transition-transform duration-300 pl-1 border-[#334155]"
                 onClick={() => setIsMenuOpen(false)}
               >
                 LOGIN
               </Link>
               <Link
                 href="/signup"
-                className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300 pl-1 border-[#ffffff5e]"
+                className="hover:text-blue-400 text-bold hover:scale-110 transition-transform duration-300 pl-1 border-[#334155]"
                 onClick={() => setIsMenuOpen(false)}
               >
                 SIGN UP
@@ -289,7 +288,7 @@ const Navbar = () => {
                 handleSignOut();
                 setIsMenuOpen(false);
               }}
-              className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300"
+              className="hover:text-red-400 text-bold hover:scale-110 transition-transform duration-300"
             >
               SIGN OUT
             </button>
