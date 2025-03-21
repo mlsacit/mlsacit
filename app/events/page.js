@@ -1,12 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
-import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import "./eventpage.css";
+import Image from "next/image";
+import "./eventpage.css"
 
-// Event data
 const events = [
   {
     id: 1,
@@ -72,11 +70,9 @@ export default function EventsPage() {
   const [selectedEvent, setSelectedEvent] = useState(null);
 
   useEffect(() => {
-    // Simulate loading time
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 800);
-
     return () => clearTimeout(timer);
   }, []);
 
@@ -88,14 +84,11 @@ export default function EventsPage() {
     setSelectedEvent(null);
   };
 
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
+      transition: { staggerChildren: 0.1 }
     }
   };
 
@@ -104,62 +97,55 @@ export default function EventsPage() {
     visible: {
       y: 0,
       opacity: 1,
-      transition: {
-        duration: 0.5
-      }
+      transition: { duration: 0.5 }
     }
   };
 
   return (
-    <div className="min-h-screen bg-[var(--bg-primary)]">
+    <div className="min-h-screen bg-[var(--bg-primary)] text-white p-6">
       {isLoading ? (
-        <div className="loading-container">
-          <div className="loading-text">Loading<span className="cursor"></span></div>
-        </div>
+        <div className="flex items-center justify-center h-screen text-lg">Loading...</div>
       ) : (
-        <div id="container">
-          <div className="terminal-header">
-            <div className="terminal-dots">
-              <div className="dot dot-red"></div>
-              <div className="dot dot-yellow"></div>
-              <div className="dot dot-green"></div>
+        <div id="container" className="font-mono max-w-5xl mx-auto bg-[var(--bg-secondary)] p-6 rounded-lg shadow-lg border border-[var(--border-color)]">
+          <div className="terminal-header flex items-center justify-between border-b border-[var(--border-color)] pb-3 mb-6">
+            <div className="terminal-dots flex space-x-2">
+              <span className="w-3 h-3 bg-red-500 rounded-full"></span>
+              <span className="w-3 h-3 bg-yellow-500 rounded-full"></span>
+              <span className="w-3 h-3 bg-green-500 rounded-full"></span>
             </div>
-            <div className="terminal-title">mlsa-events.js - MLSA CIT</div>
+            <span className="text-[var(--text-primary)] opacity-80">mlsa-events.js - MLSA CIT</span>
           </div>
           
-          <div className="title-container">
-            <h1>MLSA CIT Events</h1>
-            <p>Browse our past and upcoming events</p>
-          </div>
-          
+          <h1 className="text-3xl font-bold text-center text-[var(--accent-1)] mb-4">MLSA CIT Events</h1>
+          <p className="text-[var(--comment-color)] text-center mb-6">Browse our past and upcoming events</p>
+          <hr className="m-4 text-[var(--comment-color)]"></hr>
           {selectedEvent ? (
+            <motion.div className="flex justify-center items-center">
             <motion.div 
-              className="event-detail"
+              className="w-2/3  event-detail bg-[var(--bg-primary)] p-6 rounded-lg shadow-lg border border-[var(--border-color)]"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <div className="detail-header">
-                <h2 className="detail-title">{selectedEvent.title}</h2>
-                <div className="detail-date">{selectedEvent.date}</div>
+              <div className="bg-[var(--border-color)] p-4 rounded-lg mb-4">
+              <h2 className="text-2xl font-semibold text-[var(--accent-2)] mb-2">{selectedEvent.title}</h2>
+              <p className="text-[var(--comment-color)] mb-2">{selectedEvent.date}</p>
               </div>
-              
-              <div className="detail-content">
-                <div className="detail-description">
-                  {selectedEvent.description}
-                </div>
-                
-                <div className="detail-actions">
-                  <button className="register-button">Register Now</button>
-                  <button className="back-to-events" onClick={handleBackToEvents}>
-                    Back to Events
-                  </button>
-                </div>
+              <p className="text-[var(--comment-color)] italic text-sm mb-4 w-1/3">
+                <span className="block">/ **</span>
+                <span className="text-white text-lg">{selectedEvent.description}</span>
+                <span className="block">*/</span>
+              </p>
+
+              <div className="flex space-x-4">
+                <button className="register-button bg-[var(--accent-2)] text-[var(--bg-primary)] px-4 py-2 rounded font-medium">Register Now</button>
+                <button className="back-to-events bg-transparent text-[var(--accent-1)] border border-[var(--accent-1)] px-4 py-2 rounded" onClick={handleBackToEvents}>Back to Events</button>
               </div>
+            </motion.div>
             </motion.div>
           ) : (
             <motion.div 
-              className="events-grid"
+              className="events-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
               variants={containerVariants}
               initial="hidden"
               animate="visible"
@@ -167,43 +153,36 @@ export default function EventsPage() {
               {events.map((event, index) => (
                 <motion.div 
                   key={event.id} 
-                  className="code-block"
+                  className="code-block bg-[var(--bg-primary)] p-4 rounded-lg shadow-lg border border-[var(--border-color)] cursor-pointer hover:translate-y-[-5px] transition"
                   variants={itemVariants}
                   style={{ "--index": index }}
                   onClick={() => handleViewEvent(event)}
                 >
-                  <div className="code-header">
-                    <div className="file-name">{event.fileName}</div>
-                    <div className="event-date">{event.date}</div>
+                  <div className="code-header flex justify-between items-center border-b border-[var(--border-color)] pb-2 mb-3">
+                    <span className="file-name text-[var(--accent-2)]">{event.fileName}</span>
+                    <span className="event-date text-[var(--comment-color)]">{event.date}</span>
                   </div>
                   
                   <div className="code-content">
-                    <div className="function-name">{event.title}</div>
-                    <div className="code-description">{event.description.substring(0, 80)}...</div>
-                    <div className="code-line">return <span>event</span>.<span className="string">&quot;success&quot;</span>;</div>
+                    <h3 className="function-name text-[var(--accent-1)] text-lg ">{`function`} <span className="text-[var(--accent-3)]">{event.title}</span> <span className="text-white">{`() {`}</span></h3>
+                    <p className="pt-2 code-description text-[var(--text-primary)] font-mono text-md">{event.description.substring(0, 80)}...</p>
+                    <div className="code-line pt-2">return <span className="text-[var(--accent-1)]">event</span>.<span className="text-[var(--accent-2)]">&quot;success&quot;</span>;</div>
                   </div>
                   
-                  <div className="code-footer">
-                    <button className="view-button">View Details</button>
-                    <div className="line-numbers">Lines: 1-24</div>
+                  <div className="code-footer flex justify-between items-center mt-3 border-t border-[var(--border-color)] pt-2">
+                    <button className="view-button bg-transparent text-[var(--accent-1)] border border-[var(--accent-1)] px-3 py-1 rounded text-sm">View Details</button>
+                    <span className="line-numbers text-[var(--comment-color)] text-sm">Lines: 1-24</span>
                   </div>
                 </motion.div>
               ))}
             </motion.div>
           )}
           
-          <div className="back-container">
-            <button 
-              className="back-button"
-              onClick={() => router.push('/')}
-            >
-              cd ../home
-            </button>
+          <div className="back-container mt-6 text-center">
+            <button className="back-button bg-transparent text-[var(--accent-1)] border border-[var(--accent-1)] px-6 py-2 rounded text-sm" onClick={() => router.push('/')}>cd ../home</button>
           </div>
         </div>
       )}
     </div>
   );
 }
-
-
