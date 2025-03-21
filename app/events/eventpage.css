@@ -1,192 +1,235 @@
-/* Glassmorphism Base */
+/* ✅ Root Variables (Keeps Colors Consistent) */
+:root {
+  --bg-primary: #1e1e2e;
+  --bg-secondary: #282a36;
+  --text-primary: #f8f8f2;
+  --text-secondary: #bd93f9;
+  --accent-1: #8be9fd;
+  --accent-2: #50fa7b;
+  --accent-3: #ff79c6;
+  --border-color: #44475a;
+  --comment-color: #6272a4;
+}
+
+/* ✅ Container */
 #container {
   width: 90%;
-  margin: 3vw auto;
+  max-width: 1200px;
+  margin: 2rem auto;
   padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 1.5rem;
-  box-shadow: 0 0.5rem 2rem rgba(0, 255, 255, 0.15);
-  overflow-x: hidden; /* No horizontal scrollbar */
-  overflow-y: hidden; /* No vertical scrollbar */
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.card-stack {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 300px)); /* 3 cards + button side by side */
-  grid-template-rows: 1fr; /* Single row */
-  gap: 1rem;
-  justify-content: center; /* Center cards if fewer than 4 */
+/* ✅ Terminal Header */
+.terminal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background: var(--border-color);
+  border-radius: 0.5rem 0.5rem 0 0;
+  margin: -1.5rem -1.5rem 1.5rem -1.5rem;
 }
 
-/* Photo Card Styling */
-.photo-card {
-  position: relative;
-  height: 200px; /* Default height matches assumed image height */
-  width: 300px; /* Fixed width for consistency */
-  border-radius: 1rem;
-  overflow: hidden;
-  transition: height 0.5s ease, transform 0.4s ease, box-shadow 0.4s ease;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(0, 255, 255, 0.3);
+.terminal-dots {
+  display: flex;
+  gap: 8px;
 }
 
-.photo-card:hover {
-  height: 350px; /* Expands downward */
-  transform: scale(1.03);
-  box-shadow: 0 0 20px rgba(255, 0, 255, 0.6), 0 0 40px rgba(0, 255, 255, 0.4);
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
 }
 
-.card-content {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
+.dot-red { background-color: #ff5f56; }
+.dot-yellow { background-color: #ffbd2e; }
+.dot-green { background-color: #27c93f; }
 
-.image-wrapper {
-  position: relative;
-  width: 100%;
-  height: 200px; /* Fixed height matches default card */
-  transition: none; /* No height change on hover */
-}
-
-.event-image {
-  object-fit: contain; /* Shows whole image */
-  border-radius: 1rem 1rem 0 0;
-}
-
-/* Info Panel */
-.info-panel {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 150px; /* Fixed info panel height */
-  padding: 0.75rem;
-  color: #ffffff;
-  opacity: 0;
-  transform: translateY(100%); /* Hidden below by default */
-  transition: opacity 0.3s ease, transform 0.5s ease;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(0, 255, 255, 0.2);
-}
-
-.photo-card:hover .info-panel {
-  opacity: 1;
-  transform: translateY(0); /* Slides up into view */
-}
-
-.info-panel h3 {
-  font-family: "CB";
-  font-size: clamp(0.875rem, 1.5vw, 1.5rem);
-  color: #00ffff;
-  text-shadow: 0 0 6px rgba(0, 255, 255, 0.8);
-  margin-bottom: 0.25rem;
-}
-
-.info-panel p {
-  font-size: clamp(0.625rem, 1.25vw, 1rem);
-  line-height: 1.3;
-  overflow-y: auto;
-  max-height: calc(100% - 2rem);
-}
-
-/* Title Container */
+/* ✅ Title */
 .title-container {
   text-align: center;
-  padding-top: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
 }
 
-.neon-glow {
-  text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff, 0 0 30px #00ffff;
+.title-container h1 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--accent-1);
 }
 
-/* Back Button */
-.back-button {
+.title-container h1::before {
+  content: "// ";
+  color: var(--comment-color);
+}
+
+/* ✅ Event Grid */
+.events-grid {
   display: grid;
-  place-items: center;
-  height: 200px; /* Matches card height */
-  width: 300px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
 }
 
-.glass-effect {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 0, 255, 0.3);
+/* ✅ Event Cards */
+.code-block {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.shadow-neon {
-  box-shadow: 0 0 12px rgba(255, 0, 255, 0.6);
+.code-block:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive Design */
-@media (max-width: 834px) {
+.code-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background: var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* ✅ Event Details */
+.event-detail {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+.detail-header {
+  padding: 1rem;
+  background: var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.detail-content {
+  padding: 1.5rem;
+}
+
+.detail-title {
+  color: var(--accent-2);
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.detail-description {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* ✅ Buttons */
+.view-button, .register-button, .back-to-events {
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-button {
+  background: transparent;
+  border: 1px solid var(--accent-1);
+  color: var(--accent-1);
+}
+
+.view-button:hover {
+  background: var(--accent-1);
+  color: var(--bg-primary);
+}
+
+.register-button {
+  background: var(--accent-2);
+  color: var(--bg-primary);
+  border: none;
+}
+
+.back-to-events {
+  background: transparent;
+  border: 1px solid var(--accent-1);
+  color: var(--accent-1);
+}
+
+/* ✅ Loading Animation */
+@keyframes loadingDots {
+  0%, 20% { content: "."; }
+  40% { content: ".."; }
+  60%, 100% { content: "..."; }
+}
+
+.loading-text::after {
+  content: "";
+  animation: loadingDots 1.5s infinite;
+}
+
+/* ✅ Fade-In Animation */
+@keyframes simpleFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.event-card, .back-button {
+  animation: simpleFadeIn 0.6s ease forwards;
+  animation-delay: calc(var(--index) * 0.1s);
+  opacity: 0;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 768px) {
+  .events-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+  
+  .terminal-title {
+    display: none;
+  }
+  
+  .detail-container {
+    flex-direction: column;
+  }
+  
+  .detail-image-container,
+  .detail-content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
   #container {
     width: 95%;
+    padding: 1rem;
   }
-
-  .card-stack {
-    grid-template-columns: repeat(4, minmax(0, 250px)); /* Smaller cards */
+  
+  .events-grid {
+    grid-template-columns: 1fr;
   }
-
-  .photo-card,
-  .back-button {
-    height: 180px;
-    width: 250px;
-  }
-
-  .photo-card:hover {
-    height: 320px;
-  }
-
-  .image-wrapper {
-    height: 180px;
-  }
-
-  .info-panel {
-    height: 140px;
+  
+  .detail-actions {
+    flex-direction: column;
   }
 }
 
-@media (max-width: 430px) {
-  #container {
-    padding: 1rem;
-  }
+/* ✅ Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
 
-  .card-stack {
-    grid-template-columns: repeat(1, minmax(0, 200px)); /* Stack vertically on mobile */
-  }
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
 
-  .photo-card,
-  .back-button {
-    height: 150px;
-    width: 200px;
-  }
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 3px;
+}
 
-  .photo-card:hover {
-    height: 280px;
-  }
-
-  .image-wrapper {
-    height: 150px;
-  }
-
-  .info-panel {
-    height: 130px;
-  }
-
-  .info-panel h3 {
-    font-size: clamp(0.75rem, 1.5vw, 1.25rem);
-  }
-
-  .info-panel p {
-    font-size: clamp(0.5rem, 1.25vw, 0.875rem);
-  }
-
-  .title-container h1 {
-    font-size: 1.5rem;
-  }
+::-webkit-scrollbar-thumb:hover {
+  background: var(--comment-color);
 }
