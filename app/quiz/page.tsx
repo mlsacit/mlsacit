@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect, FormEvent } from 'react';
+import React, { useState, useEffect, FormEvent, useCallback} from 'react';
 import LoadingComponent from "../components/Loader";
 import { useAuth } from '../context/AuthContext';
 import { usePathname, useRouter } from 'next/navigation';
@@ -36,7 +36,7 @@ const QuizPage: React.FC = () => {
     const fetchQuestions = async () => {
         setLoading(true);
         try {
-            
+
             const response = await fetch('/api/getQuizQuestions');
             const data = await response.json();
 
@@ -79,7 +79,44 @@ const QuizPage: React.FC = () => {
         setAnswers((prev) => ({ ...prev, [questionId]: option }));
     };
 
-    const handleSubmit = async (e: FormEvent, autoSubmit = false) => {
+    // const handleSubmit = async (e: FormEvent, autoSubmit = false) => {
+    //     e.preventDefault();
+
+    //     if (quizSubmitted || isSubmitting) return;
+
+    //     setIsSubmitting(true);
+
+    //     try {
+    //         const response = await fetch('/api/submitQuizAnswers', {
+    //             method: 'POST',
+    //             headers: { 'Content-Type': 'application/json' },
+    //             body: JSON.stringify({ usn: userDetails.usn, email: userDetails.email, answers }),
+    //         });
+
+    //         const data = await response.json();
+
+    //         if (!response.ok) throw new Error(data.message || 'Failed to submit answers.');
+
+    //         if (!autoSubmit) {
+    //             setShowToast({
+    //                 message: `Quiz submitted successfully! Your score: ${data.result}/${questions.length}`,
+    //                 type: 'success',
+    //             });
+    //         }
+
+    //         setQuizSubmitted(true);
+    //         setAnswers({});
+    //         setQuizStarted(false);
+    //         if (timerInterval) clearInterval(timerInterval);
+    //     } catch (error: any) {
+    //         setShowToast({ message: error.message || 'Error submitting quiz answers.', type: 'error' });
+    //     } finally {
+    //         setIsSubmitting(false);
+    //     }
+    // };
+
+    // ✅ Memoized handleSubmit function using useCallback
+    const handleSubmit = useCallback(async (e: FormEvent, autoSubmit = false) => {
         e.preventDefault();
 
         if (quizSubmitted || isSubmitting) return;
@@ -113,13 +150,30 @@ const QuizPage: React.FC = () => {
         } finally {
             setIsSubmitting(false);
         }
-    };
+    }, [userDetails, answers, quizSubmitted, isSubmitting, questions.length, timerInterval]);
+
 
     const formatTime = (seconds: number) => {
         const minutes = Math.floor(seconds / 60);
         const secs = seconds % 60;
         return `${minutes}:${secs < 10 ? `0${secs}` : secs}`;
     };
+
+    // useEffect(() => {
+    //     const handleVisibilityChange = () => {
+    //         if (document.visibilityState === 'hidden' && quizStarted && !quizSubmitted) {
+    //             setShowToast({ message: 'Quiz automatically submitted due to tab change.', type: 'info' });
+    //             setIsAutoSubmitted(true);
+    //             handleSubmit({ preventDefault: () => { }, target: {} } as FormEvent<HTMLFormElement>, true);
+    //         }
+    //     };
+
+    //     document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    //     return () => {
+    //         document.removeEventListener('visibilitychange', handleVisibilityChange);
+    //     };
+    // }, [quizStarted, quizSubmitted, handleSubmit]);
 
     useEffect(() => {
         const handleVisibilityChange = () => {
@@ -129,13 +183,14 @@ const QuizPage: React.FC = () => {
                 handleSubmit({ preventDefault: () => { }, target: {} } as FormEvent<HTMLFormElement>, true);
             }
         };
-
+    
         document.addEventListener('visibilitychange', handleVisibilityChange);
-
+    
         return () => {
             document.removeEventListener('visibilitychange', handleVisibilityChange);
         };
-    }, [quizStarted, quizSubmitted, handleSubmit]);
+    }, [quizStarted, quizSubmitted, handleSubmit]);  // ✅ Use the memoized handleSubmit
+    
 
     useEffect(() => {
         const storedAuth = Cookies.get('isAuthenticated');
