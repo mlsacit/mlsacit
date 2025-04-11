@@ -106,14 +106,14 @@ export default function EventsPage() {
       {isLoading ? (
         <div className="flex items-center justify-center h-screen text-lg">Loading...</div>
       ) : (
-        <div id="container" className="font-mono max-w-5xl mx-auto bg-[var(--bg-secondary)] p-6 rounded-lg shadow-lg border border-[var(--border-color)]">
-          <div className="terminal-header flex items-center justify-between border-b border-[var(--border-color)] pb-3 mb-6">
-            <div className="terminal-dots flex space-x-2">
+          <div id="container" className="font-mono w-full max-w-5xl mx-auto bg-[var(--bg-secondary)] p-6 rounded-lg shadow-lg border border-[var(--border-color)] overflow-hidden">
+           <div className="terminal-header flex items-center w-auto justify-between border-b border-[var(--border-color)] mb-6">
+             <div className="terminal-dots flex pt-2 space-x-2">
               <span className="w-3 h-3 bg-red-500 rounded-full"></span>
               <span className="w-3 h-3 bg-yellow-500 rounded-full"></span>
               <span className="w-3 h-3 bg-green-500 rounded-full"></span>
             </div>
-            <span className="text-[var(--text-primary)] opacity-80">mlsa-events.js - MLSA CIT</span>
+            <span className="text-[var(--text-primary)] pt-2 opacity-80">mlsa-events.js - MLSA CIT</span>
           </div>
           
           <h1 className="text-3xl font-bold text-center text-[var(--accent-1)] mb-4">MLSA CIT Events</h1>
