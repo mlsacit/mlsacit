@@ -406,6 +406,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Image from "next/image";
 import { debounce } from "lodash";
+import { title } from "process";
 
 const Fifth = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -446,7 +447,31 @@ const Fifth = () => {
       title: "Building Intelligent Systems with GEN AI and RAG",
       date: "11/11/2024",
       description: "Deepak Chawla's 5-day workshop on AI, RAG, and LangChain covering career opportunities and innovation."
-    }
+    },
+    {
+      images: ["/fifth/git-workshop-2.jpg", "/fifth/git-workshop-1.jpg"],
+      title: "Git & Github Workshop",
+      date: "17/05/2024",
+      description: "An interactive, hands-on workshop on Git and GitHub essentials was conducted by team tech member Ayushman & Chetan KP."
+    },
+    {
+      images: ["/fifth/linkedIn-1.jpg", "/fifth/linkedIn-2.jpg"],
+      title: "LinkedIn Workshop",
+      date: "16/12/2024",
+      description: "A LinkedIn workshop by team member Bharat Kumar S guided students on building a strong professional presence, optimizing profiles, and leveraging networking opportunities."
+    },
+    {
+      images: ["/fifth/webdev-2.jpg", "/fifth/webdev-1.jpg"],
+      title: "Webcraft: Fundamentals of web development",
+      date: "25/09/2024",
+      description: "The Web Development workshop, conducted by tech team member Chintu Rai, covered HTML, CSS and JavaScript providing a strong foundation in programming and web technologies."
+    },
+    {
+      images: ["/fifth/gamedev-1.jpg", "/fifth/gamedev-2.jpg"],
+      title: "GAME DEV WORKSHOP",
+      date: "08/02/2025",
+      description: "The Game Development Workshop, conducted by team member Sreejith S, guided participants in using Godot and Pygame to develop their own games. "
+    },
   ];
 
   const navigateGallery = (direction) => {
@@ -509,7 +534,7 @@ const Fifth = () => {
 
       {/* Event Grid */}
       <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {events.map((event, index) => (
+        {events.slice(0,3).map((event, index) => (
           <div
             key={index}
             className="bg-[#1e293b] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all cursor-pointer"

@@ -62,6 +62,38 @@ const events = [
     date: "April 12, 2024",
     fileName: "cloud.js",
   },
+  {
+    id: 8,
+    title: "Git & Github Worksop",
+    image: "/events/event8.jpg",
+    description: "An interactive, hands-on workshop on Git and GitHub essentials was conducted by team tech member Ayushman & Chetan KP.",
+    date: "May 17, 2024",
+    fileName: "git.js",
+  },
+  {
+    id: 9,
+    title: "LinkedIn Workshop",
+    image: "/events/event9.jpg",
+    description: "A LinkedIn workshop by team member Bharat Kumar S guided students on building a strong professional presence, optimizing profiles, and leveraging networking opportunities.",
+    date: "December 16, 2024",
+    fileName: "linkedin.js",
+  },
+  {
+    id: 10,
+    title: "Webcraft: Web Development Workshop",
+    image: "/events/event10.jpg",
+    description: "The Web Development workshop, conducted by tech team member Chintu Rai, covered HTML, CSS and JavaScript providing a strong foundation in programming and web technologies.",
+    date: "September 25, 2024",
+    fileName: "webdev.js",
+  },
+  {
+    id: 11,
+    title: "Gamedev Workshop",
+    image: "/events/event11.jpg",
+    description: "The Game Development Workshop, conducted by team member Sreejith S, guided participants in using Godot and Pygame to develop their own games.",
+    date: "February 08, 2025",
+    fileName: "gamedev.js",
+  },
 ];
 
 export default function EventsPage() {
