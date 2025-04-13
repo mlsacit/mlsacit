@@ -152,29 +152,38 @@ export default function EventsPage() {
           <p className="text-[var(--comment-color)] text-center mb-6">Browse our past and upcoming events</p>
           <hr className="m-4 text-[var(--comment-color)]"></hr>
           {selectedEvent ? (
-            <motion.div className="flex justify-center items-center">
+            <motion.div className="flex justify-center items-center px-4 py-6">
             <motion.div 
-              className="w-2/3  event-detail bg-[var(--bg-primary)] p-6 rounded-lg shadow-lg border border-[var(--border-color)]"
+              className="w-full max-w-xl event-detail bg-[var(--bg-primary)] p-4 sm:p-6 rounded-lg shadow-lg border border-[var(--border-color)]"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
             >
               <div className="bg-[var(--border-color)] p-4 rounded-lg mb-4">
-              <h2 className="text-2xl font-semibold text-[var(--accent-2)] mb-2">{selectedEvent.title}</h2>
-              <p className="text-[var(--comment-color)] mb-2">{selectedEvent.date}</p>
+                <h2 className="text-2xl font-semibold text-[var(--accent-2)] mb-2">{selectedEvent.title}</h2>
+                <p className="text-[var(--comment-color)] mb-2">{selectedEvent.date}</p>
               </div>
-              <p className="text-[var(--comment-color)] italic text-sm mb-4 w-1/3">
+          
+              <p className="text-[var(--comment-color)] italic text-sm mb-4 w-full sm:w-2/3">
                 <span className="block">/ **</span>
                 <span className="text-white text-lg">{selectedEvent.description}</span>
                 <span className="block">*/</span>
               </p>
-
-              <div className="flex space-x-4">
-                <button className="register-button bg-[var(--accent-2)] text-[var(--bg-primary)] px-4 py-2 rounded font-medium">Register Now</button>
-                <button className="back-to-events bg-transparent text-[var(--accent-1)] border border-[var(--accent-1)] px-4 py-2 rounded" onClick={handleBackToEvents}>Back to Events</button>
+          
+              <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-3 sm:space-y-0">
+                <button className="register-button bg-[var(--accent-2)] text-[var(--bg-primary)] px-4 py-2 rounded font-medium w-full sm:w-auto">
+                  Register Now
+                </button>
+                <button 
+                  className="back-to-events bg-transparent text-[var(--accent-1)] border border-[var(--accent-1)] px-4 py-2 rounded w-full sm:w-auto"
+                  onClick={handleBackToEvents}
+                >
+                  Back to Events
+                </button>
               </div>
             </motion.div>
-            </motion.div>
+          </motion.div>
+          
           ) : (
             <motion.div 
               className="events-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
