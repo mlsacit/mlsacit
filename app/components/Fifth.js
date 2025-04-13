@@ -534,7 +534,7 @@ const Fifth = () => {
 
       {/* Event Grid */}
       <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {events.slice(0,3).map((event, index) => (
+        {events.map((event, index) => (
           <div
             key={index}
             className="bg-[#1e293b] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all cursor-pointer"
