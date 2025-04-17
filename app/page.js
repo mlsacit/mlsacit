@@ -436,11 +436,15 @@ export default function Home() {
                 Microsoft  Learn
               </h1>
               <h1 className="font-extrabold text-3xl md:text-5xl lg:text-6xl whitespace-nowrap font-[CB] max-sm:text-[8vw] max-sm:ml-[1vw]  bg-clip-text text-transparent bg-gradient-to-r from-[#333333]  to-[#FFFFFF] max-sm:-mt-[1vh] ">
-                Student  Ambassador
+                Student  Ambassadors
               </h1>
+              
               <h2 className="font-extrabold  md:text-3xl lg:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-[#1E2761]  to-[#408EC6] font-[CB]  max-sm:text-[5vw] max-sm:-ml-[56vw]">
                 CIT CHAPTER
               </h2>
+              <h3 className="text-xl md:text-2xl font-thin font-[CB] bg-clip-text text-transparent bg-gradient-to-r from-[#ffffff] to-[#8AAAE5] max-sm:text-[4vw] mb-2">
+                An ISE Dept. Initiative
+              </h3>
               <p className="p-3 font-mono font-semibold text-sm md:text-base mt-4 max-sm:mt-[42vh] max-sm:text-left bg-[#11182784] max-sm:p-3 rounded-2xl max-sm:text-[3.5vw]">
               More than a chapter — where every mind pens the next big page.
               </p>

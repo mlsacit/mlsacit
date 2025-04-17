@@ -125,7 +125,7 @@ const Navbar = () => {
                 to="home"
                 smooth={true}
                 duration={500}
-                className="hover:text-blue-400 hover:underline text-bold hover:scale-110 transition-transform duration-300"
+                className="hover:text-blue-400 hover:underline text-bold hover:scale-110 transition-transform duration-300 cursor-pointer"
               >
                 HOME
               </ScrollLink>
@@ -134,7 +134,7 @@ const Navbar = () => {
                 smooth={true}
                 duration={500}
                 offset={-80}
-                className="hover:text-blue-400 hover:underline text-bold hover:scale-110 transition-transform duration-300"
+                className="hover:text-blue-400 hover:underline text-bold hover:scale-110 transition-transform duration-300 cursor-pointer"
               >
                 ABOUT
               </ScrollLink>
@@ -143,7 +143,7 @@ const Navbar = () => {
                 smooth={true}
                 duration={500}
                 offset={-80}
-                className="hover:text-blue-400 hover:underline text-bold hover:scale-110 transition-transform duration-300"
+                className="hover:text-blue-400 hover:underline text-bold hover:scale-110 transition-transform duration-300 cursor-pointer"
               >
                 TEAM
               </ScrollLink>
@@ -152,7 +152,7 @@ const Navbar = () => {
                 smooth={true}
                 duration={500}
                 offset={-80}
-                className="hover:text-blue-400 hover:underline text-bold hover:scale-110 transition-transform duration-300"
+                className="hover:text-blue-400 hover:underline text-bold hover:scale-110 transition-transform duration-300 cursor-pointer"
               >
                 EVENTS
               </ScrollLink>
