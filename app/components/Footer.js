@@ -7,11 +7,12 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <footer className="bg-gradient-to-b from-gray-900 to-black text-white py-8 relative w-full mt-auto border-t border-gray-800">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-2">
+
         {/* Top section: Logo + Mission Statement */}
         <div className="flex flex-col md:flex-row items-center justify-between mb-8">
           {/* Left: Logo and Title */}
-          <div className="flex items-center space-x-3 mb-4 md:mb-0">
+          <div className="flex items-center space-x-4 mb-4 md:mb-0">
             <Image
               src="/msc-logo.png"
               alt="Microsoft Learn Student Ambassador Logo"
@@ -28,9 +29,19 @@ const Footer = () => {
             </div>
           </div>
           {/* Right: Tagline */}
+          <div className='flex items-center space-x-3 mb-4 md:mb-0'>
+            
           <p className="text-center md:text-right text-sm max-w-md text-gray-300 italic">
             &quot;Every new question is a doorway to an amazing discovery; dare to step through.&quot;
           </p>
+          <Image
+              src="/cit logo.png"
+              alt="Microsoft Learn Student Ambassador Logo"
+              className="h-14 w-auto "
+              width={200}
+              height={50} 
+            />
+          </div>
         </div>
 
         {/* Divider */}

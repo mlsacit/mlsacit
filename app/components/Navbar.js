@@ -171,7 +171,7 @@ const Navbar = () => {
                   >
                     NEWSLETTER
                   </Link>
-                  <Link
+                  {/* <Link
                     href="/login"
                     className="hover:text-blue-400 text-bold hover:underline hover:scale-110 transition-transform duration-300"
                   >
@@ -182,7 +182,7 @@ const Navbar = () => {
                     className="hover:text-blue-400 text-bold hover:underline hover:scale-110 transition-transform duration-300"
                   >
                     SIGN UP
-                  </Link>
+                  </Link> */}
                 </div>
               ) : (
                 <button
@@ -267,7 +267,7 @@ const Navbar = () => {
           </Link>
           {!isAuthenticated ? (
             <>
-              <Link
+              {/* <Link
                 href="/login"
                 className="hover:text-blue-400 text-bold hover:scale-110 transition-transform duration-300 pl-1 border-[#334155]"
                 onClick={() => setIsMenuOpen(false)}
@@ -280,7 +280,7 @@ const Navbar = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 SIGN UP
-              </Link>
+              </Link> */}
             </>
           ) : (
             <button
