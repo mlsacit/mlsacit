@@ -5,6 +5,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { gsap } from "gsap";
 import Lenis from "lenis";
+import WorkshopBanner from "./workshop/WorkshopBanner"; // Still importing the fixed component
 import Navbar from "./components/Navbar";
 import About from "./components/About";
 import Events from "./components/Events";
@@ -131,6 +132,19 @@ export default function Home() {
 
   return (
     <div id="home" className="min-h-full relative overflow-hidden bg-black">
+
+      
+      {/* // WORKSHOP BANNER SECTION START  */}
+       
+     
+      <div className="z-[100]">
+        <WorkshopBanner />
+      </div>
+      
+      {/* // 👆 WORKSHOP BANNER SECTION END 👆 */} 
+      
+
+
       {/* Optimized Background Image */}
       <div className="absolute inset-0 w-full h-full bg-center max-sm:bg-contain lg:bg-cover z-0">
         <Image
