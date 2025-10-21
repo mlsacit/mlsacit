@@ -149,10 +149,10 @@ const Teams = () => {
         </div>
 
         {/* Enhanced Futuristic name display */}
+
+        {/* Enhanced Futuristic name display */}
         <div 
-          className={`mt-4 transition-all duration-500 relative ${
-            hoveredIndex === index ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-4'
-          }`}
+          className="mt-4 transition-all duration-500 relative opacity-100 transform translate-y-0"
         >
           <p className="text-sm font-bold text-white relative z-10 px-3 py-1 rounded-full bg-gradient-to-r from-blue-500/20 to-indigo-500/20 backdrop-blur-sm border border-blue-500/30">
             {member.name}
@@ -302,9 +302,8 @@ const teamData = [
   { name: "Social Media", path: "socmed", image: "/images/teams/social-media.png" },
   { name: "Technical", path: "technical", image: "/images/teams/technical.png" },
   { name: "Designers", path: "designers", image: "/images/teams/designers.png" },
-  { name: "Marketing", path: "marketing", image: "/images/teams/marketing.png" },
   { name: "Curation", path: "curation", image: "/images/teams/curation.png" },
-  { name: "Treasure", path: "treasure", image: "/images/teams/treasure.png" },
+
 ];
 
 export default Teams;

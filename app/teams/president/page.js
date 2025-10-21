@@ -6,6 +6,7 @@ import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { FaInstagram, FaLinkedin, FaArrowLeft, FaQuoteLeft, FaQuoteRight, FaLightbulb, FaAward } from "react-icons/fa";
+import Link from "next/link";
 
 const Page = () => {
   const router = useRouter();
@@ -20,297 +21,185 @@ const Page = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen w-full bg-gradient-to-b from-[#020084] to-[#000149] flex flex-col items-center py-16 px-4 overflow-hidden">
+    <div className="relative min-h-screen w-full flex flex-col items-center py-16 px-4 overflow-hidden">
+      {/* Background Image */}
+      <div className="fixed inset-0 w-full h-full z-0">
+        <Image
+          src="/images/team_bg/Core.jpg" // Replace with your dark blue background image path
+          alt="Background"
+          fill
+          className="object-cover blur-sm brightness-50"
+          priority
+        />
+        {/* Subtle overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30"></div>
+      </div>
+
       {/* Back Button */}
       <button
         onClick={() => router.back()}
-        className="absolute top-8 left-8 z-10 px-4 py-2 bg-gradient-to-r from-blue-400 to-purple-400 text-black font-semibold rounded-lg shadow-md hover:bg-gray-400 transition-all font-[Excon] flex items-center"
-        data-aos="fade-left"
+        className="absolute top-6 left-6 z-20 px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg shadow-lg backdrop-blur-md border border-white/20 transition-all font-[Excon] flex items-center gap-2"
+        data-aos="fade-down"
       >
-        <FaArrowLeft className="mr-2" /> Go Back
+        <FaArrowLeft className="text-sm" /> Back
       </button>
 
-      {/* Background Vector */}
-      <div
-        className="absolute inset-0 w-full h-full bg-center max-sm:bg-contain lg:bg-cover z-0"
-        style={{ backgroundImage: "url('/Background.svg')" }}
-      ></div>
-      
-      {/* Dynamic background elements */}
-      <div className="absolute inset-0 z-0">
-        {/* Leadership-themed decorative elements */}
-        <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-blue-500/5 blur-3xl"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-80 h-80 rounded-full bg-purple-500/5 blur-3xl"></div>
+      {/* Main Content Container */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto">
         
-        {/* Animated particles */}
-        {[...Array(12)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute rounded-full bg-white/30"
-            style={{
-              width: `${Math.random() * 4 + 1}px`,
-              height: `${Math.random() * 4 + 1}px`,
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              animation: `float ${Math.random() * 15 + 10}s linear infinite`,
-              opacity: Math.random() * 0.5 + 0.3,
-            }}
-          ></div>
-        ))}
-      </div>
-
-      {/* Title with leadership emphasis */}
-      <div className="relative z-10 mb-8 mt-4" data-aos="fade-down">
-        <h1 className="text-5xl font-bold text-center text-white font-[Excon]">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+        {/* Title Section */}
+        <div className="mb-16 mt-4" data-aos="fade-down">
+          <h1 className="text-5xl md:text-7xl font-bold text-center text-white font-[Excon] mb-4 tracking-tight">
             Club President
-          </span>
-        </h1>
-        <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-3"></div>
-      </div>
+          </h1>
+          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-blue-400 to-transparent mx-auto mb-4"></div>
+          <p className="text-center text-white/70 text-lg font-[GMVF]">
+            Leading with Vision & Innovation
+          </p>
+        </div>
 
-      {/* Enhanced Profile Section */}
-      <div className="relative z-10 w-full max-w-6xl rounded-xl bg-gray-800/30 backdrop-blur-sm border border-white/10 p-8 shadow-2xl overflow-hidden" data-aos="zoom-in">
-        {/* Decorative top bar */}
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500"></div>
-        
-        <div className="grid md:grid-cols-2 gap-12 items-start">
-          {/* Left Column - Image and basic info */}
-          <div className="flex flex-col items-center">
-            {/* Profile Image with leadership glow effect */}
-            <div className="relative" data-aos="zoom-in">
-              <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/40 to-purple-500/40 rounded-full opacity-70 blur-md"></div>
-              <div className="relative rounded-full p-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20">
-                <Image
-                  src="/images/individual pics/dilip b.png"
-                  alt="President Image"
-                  width={280}
-                  height={280}
-                  className="rounded-full object-cover border-2 border-white/20"
-                />
-              </div>
-              
-              {/* Decorative elements */}
-              <div className="absolute -z-10 -bottom-4 -right-4 w-24 h-24 border border-blue-500/30 rounded-full"></div>
-              <div className="absolute -z-10 -top-4 -left-4 w-16 h-16 border border-purple-500/30 rounded-full"></div>
-            </div>
-
-            {/* Name and Title */}
-            <div className="text-center mt-8" data-aos="fade-up">
-              <h1 className="text-4xl font-bold text-white font-[Khand]">Dilip B</h1>
-              <div className="inline-block px-4 py-1 bg-white/10 rounded-full text-blue-300 text-lg font-medium mt-3">
-                President & Beta MLSA
-              </div>
-            </div>
-
-            {/* Inspirational Quote */}
-            <div className="mt-8 relative px-6" data-aos="fade-right">
-              <FaQuoteLeft className="text-blue-400/50 absolute top-0 left-0 text-2xl" />
-              <p className="text-white/80 italic text-lg leading-relaxed px-8">
-                Innovation and collaboration are the keys to unlocking our community&apos;s potential.
-              </p>
-              <FaQuoteRight className="text-blue-400/50 absolute bottom-0 right-0 text-2xl" />
-            </div>
-
-            {/* Social Links */}
-            <div className="flex justify-center items-center gap-6 mt-8" data-aos="flip-left">
-              <a
-                href="https://www.linkedin.com/in/dilip03/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 bg-white/5 hover:bg-blue-500/20 rounded-full text-white/70 hover:text-white transition-all duration-300"
-              >
-                <FaLinkedin size={30} />
-              </a>
-              <a
-                href="https://www.instagram.com/_iamdilip_/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 bg-white/5 hover:bg-pink-500/20 rounded-full text-white/70 hover:text-white transition-all duration-300"
-              >
-                <FaInstagram size={30} />
-              </a>
-            </div>
-          </div>
+        {/* Profile Section */}
+        <div className="relative" data-aos="fade-up">
           
-          {/* Right Column - Content */}
-          <div>
-            {/* Vision Section */}
-            <div className="mb-8 bg-white/5 rounded-xl p-6 border border-white/10" data-aos="fade-left">
-              <h2 className="text-2xl font-semibold text-blue-400 mb-4 font-[Khand] flex items-center">
-                <FaLightbulb className="mr-3 text-blue-300" />
-                Vision & Leadership
-              </h2>
-              <p className="text-white/80 leading-7 font-[GMVF]">
-                As President, Dilip envisions transforming our MLSA chapter into a hub of innovation and technical excellence. His leadership focuses on creating opportunities for members to develop cutting-edge skills while building a supportive community that fosters growth and collaboration.
-              </p>
-            </div>
-
-            {/* Biography */}
-            <div className="mb-8 bg-white/5 rounded-xl p-6 border border-white/10" data-aos="fade-left" data-aos-delay="100">
-              <h2 className="text-2xl font-semibold text-blue-400 mb-4 font-[Khand]">Biography</h2>
-              <p className="text-white/80 leading-7 font-[GMVF]">
-                Since assuming the role in September 2024, Dilip B has embodied visionary leadership. As a beta MLSA, his unwavering commitment to turning ambitions into achievements has not only inspired but also elevated our community, driving us to new heights of excellence and collaboration.
-              </p>
-            </div>
-
-            {/* Contributions */}
-            <div className="mb-6 bg-white/5 rounded-xl p-6 border border-white/10" data-aos="fade-left" data-aos-delay="200">
-              <h2 className="text-2xl font-semibold text-blue-400 mb-4 font-[Khand] flex items-center">
-                <FaAward className="mr-3 text-blue-300" />
-                Key Initiatives & Achievements
-              </h2>
-              <ul className="space-y-4 text-white/80 font-[GMVF]">
-                {['Guided the club to achieve its mission and vision through strategic planning and execution.', 
-                  'Organized successful events and mentorship programs that increased member engagement by 40%.', 
-                  'Supported club members with professional advice and created networking opportunities with industry experts.',
-                  'Established new partnerships with tech companies and other student organizations to expand our reach.'
-                ].map((item, index) => (
-                  <li key={index} className="flex items-start">
-                    <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
-                      <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
+          {/* Glass morphism container */}
+          <div className="relative bg-gradient-to-br from-white/[0.07] to-white/[0.02] backdrop-blur-2xl rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+            
+            {/* Top accent line */}
+            <div className="h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500"></div>
+            
+            <div className="p-8 md:p-16">
+              
+              <div className="grid md:grid-cols-2 gap-12 items-start">
+                
+                {/* Left Column - Image and basic info */}
+                <div className="flex flex-col items-center" data-aos="fade-right">
+                  
+                  {/* Profile Image with glow effect */}
+                  <div className="relative group">
+                    <div className="absolute -inset-3 bg-gradient-to-r from-blue-500/40 to-purple-500/40 rounded-full opacity-0 group-hover:opacity-70 blur-xl transition-all duration-500"></div>
+                    
+                    <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-full border-2 border-blue-400/30 group-hover:border-blue-400/60 transition-all duration-500 overflow-hidden">
+                      <Image
+                        src="/images/individual pics/vidhula.jpeg"
+                        alt="Vidhula Shree Shankar"
+                        fill
+                        className="object-cover"
+                      />
                     </div>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+                    
+                    {/* Decorative elements */}
+                    <div className="absolute -z-10 -bottom-6 -right-6 w-32 h-32 border-2 border-blue-500/20 rounded-full"></div>
+                    <div className="absolute -z-10 -top-6 -left-6 w-20 h-20 border-2 border-purple-500/20 rounded-full"></div>
+                  </div>
+
+                  {/* Name and Title */}
+                  <div className="text-center mt-10">
+                    <h2 className="text-4xl md:text-5xl font-bold text-white font-[Khand] mb-4">
+                      Vidhula Shree Shankar
+                    </h2>
+                    <div className="inline-flex items-center gap-2 px-6 py-2.5 bg-blue-500/20 backdrop-blur-sm rounded-full border border-blue-400/30">
+                      <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+                      <span className="text-blue-300 text-base font-semibold tracking-wide">President</span>
+                    </div>
+                  </div>
+
+                  {/* Quote */}
+                  <div className="mt-10 relative px-8 max-w-md" data-aos="fade-up" data-aos-delay="100">
+                    <div className="relative bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10">
+                      <FaQuoteLeft className="text-blue-400/40 absolute top-4 left-4 text-xl" />
+                      <p className="text-white/80 italic text-base leading-relaxed px-4 text-center font-[GMVF]">
+                        Innovation starts when we dare to ask questions, when curiosity outshines comfort, and when every idea - no matter how small - is given a chance to grow.
+                      </p>
+                      <FaQuoteRight className="text-blue-400/40 absolute bottom-4 right-4 text-xl" />
+                    </div>
+                  </div>
+
+                  {/* Divider */}
+                  <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent my-8"></div>
+
+                  {/* Social Links */}
+                  <div className="flex justify-center items-center gap-6" data-aos="fade-up" data-aos-delay="200">
+                    <Link
+                      href="https://www.linkedin.com/in/vidhula-shree-shankar-2371062a7/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group/icon relative p-4 bg-white/5 hover:bg-blue-500/20 rounded-xl text-white/70 hover:text-white transition-all duration-300 border border-white/10 hover:border-blue-400/50"
+                    >
+                      <FaLinkedin size={28} />
+                      <div className="absolute inset-0 rounded-xl bg-blue-500/0 group-hover/icon:bg-blue-500/10 blur transition-all duration-300"></div>
+                    </Link>
+                    <Link
+                      href="https://www.instagram.com/_vidhhh__/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group/icon relative p-4 bg-white/5 hover:bg-pink-500/20 rounded-xl text-white/70 hover:text-white transition-all duration-300 border border-white/10 hover:border-pink-400/50"
+                    >
+                      <FaInstagram size={28} />
+                      <div className="absolute inset-0 rounded-xl bg-pink-500/0 group-hover/icon:bg-pink-500/10 blur transition-all duration-300"></div>
+                    </Link>
+                  </div>
+                </div>
+                
+                {/* Right Column - Content */}
+                <div className="space-y-8" data-aos="fade-left">
+                  
+                  {/* Vision Section */}
+                  <div className="group/card relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-blue-400/50 transition-all duration-300 hover:bg-white/[0.07]">
+                    <div className="absolute inset-0 rounded-2xl bg-blue-500/0 group-hover/card:bg-blue-500/5 transition-all duration-300"></div>
+                    <div className="relative">
+                      <h3 className="text-2xl font-semibold text-blue-400 mb-4 font-[Khand] flex items-center">
+                        <FaLightbulb className="mr-3 text-blue-300" />
+                        Vision & Leadership
+                      </h3>
+                      <p className="text-white/70 leading-relaxed font-[GMVF]">
+                        As President, Vidhula aims to shape the MLSA CIT Chapter into a space where members are encouraged to think beyond boundaries and explore out of the box ideas. Her vision focuses on helping students discover their niche, build on their strengths, and embrace the skills that make them stand out, all while growing together as a community driven by curiosity and innovation.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Biography */}
+                  <div className="group/card relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-purple-400/50 transition-all duration-300 hover:bg-white/[0.07]">
+                    <div className="absolute inset-0 rounded-2xl bg-purple-500/0 group-hover/card:bg-purple-500/5 transition-all duration-300"></div>
+                    <div className="relative">
+                      <h3 className="text-2xl font-semibold text-purple-400 mb-4 font-[Khand]">Biography</h3>
+                      <p className="text-white/70 leading-relaxed font-[GMVF]">
+                        Since taking on the role in September 2025, Vidhula strives to bring creativity, structure, and vision to the MLSA CIT Chapter. Starting as a volunteer in the Curation Team, she developed a keen sense for detail. Her journey has been shaped by observing, learning, and contributing to the chapter&apos;s growth from within. Now, as President, she aims to build on that foundation, fostering innovation, empowering members, and creating a community that grows through shared purpose and collaboration.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Contributions */}
+                  <div className="group/card relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-cyan-400/50 transition-all duration-300 hover:bg-white/[0.07]">
+                    <div className="absolute inset-0 rounded-2xl bg-cyan-500/0 group-hover/card:bg-cyan-500/5 transition-all duration-300"></div>
+                    <div className="relative">
+                      <h3 className="text-2xl font-semibold text-cyan-400 mb-4 font-[Khand] flex items-center">
+                        <FaAward className="mr-3 text-cyan-300" />
+                        Key Initiatives & Achievements
+                      </h3>
+                      <ul className="space-y-4 text-white/70 font-[GMVF]">
+                        {[
+                          'Introduced fresh strategies to elevate content quality across platforms, blending structure with creativity.',
+                          'Supported internal documentation efforts, helping streamline communication and preserve club memory through organized archives.',
+                          'Actively contributed to club initiatives as a curator, maintaining content standards and fostering community engagement through collaborative efforts.'
+                        ].map((item, index) => (
+                          <li key={index} className="flex items-start group/item">
+                            <div className="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 group-hover/item:bg-white/20 transition-all duration-300">
+                              <div className="w-2.5 h-2.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
+                            </div>
+                            <span className="leading-relaxed">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Add keyframe animations */}
-      <style jsx global>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0) translateX(0); }
-          25% { transform: translateY(-15px) translateX(10px); }
-          50% { transform: translateY(0) translateX(15px); }
-          75% { transform: translateY(15px) translateX(5px); }
-        }
-      `}</style>
     </div>
   );
 };
 
 export default Page;
-
-
-// "use client";
-// import { useEffect } from "react";
-// import AOS from "aos";
-// import "aos/dist/aos.css";
-// import React from "react";
-// import Image from "next/image";
-// import { useRouter } from "next/navigation";
-// import { FaInstagram, FaLinkedin } from "react-icons/fa";
-
-// const Page = () => {
-//   const router = useRouter();
-
-//   useEffect(() => {
-//     AOS.init({
-//       duration: 1000,
-//       once: true,
-//     });
-//   }, []);
-
-//   return (
-//     <div className="relative min-h-screen w-full bg-gradient-to-b from-[#020084] to-[#000149] flex flex-col items-center py-16 px-4 overflow-hidden">
-//       {/* Back Button */}
-//       <button
-//         onClick={() => {
-//           console.log("Navigating to /");
-//           router.back();
-//         }}
-//         className="absolute top-8 left-8 z-10 px-4 py-2 bg-gradient-to-r from-blue-400 to-purple-400 text-black font-semibold rounded-lg shadow-md hover:bg-gray-400 transition-all font-[Excon]"
-//         data-aos="fade-left"
-//       >
-//         Go Back
-//       </button>
-
-//       {/* Background Vector */}
-//       <div
-//         className="absolute inset-0 w-full h-full bg-center  max-sm:bg-contain lg:bg-cover z-0"
-//         style={{ backgroundImage: "url('/Background.svg')" }}
-//         data-aos="fade-up"
-//       ></div>
-
-//       {/* Profile Section */}
-//       <div
-//         className="relative mt-16 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-white/10 p-7 shadow-2xl"
-//         data-aos="zoom-in"
-//       >
-//         <h2
-//           className="text-4xl font-bold font-[Excon] text-center mb-10 text-white"
-//           data-aos="fade-down"
-//         >
-//           <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
-//             Meet Our President
-//           </span>
-//         </h2>
-
-//         {/* Profile Image */}
-//         <div
-//           className="w-auto h-auto flex justify-center items-center mx-auto mb-6"
-//           data-aos="flip-left"
-//         >
-//           <Image
-//             src="/images/individual pics/dilip b.png"
-//             alt="President Image"
-//             width={228}
-//             height={228}
-//             className="rounded-full object-cover "
-//           />
-//         </div>
-
-//         {/* Name and Title */}
-//         <div className="text-center mb-6" data-aos="fade-up">
-//           <h1 className="text-4xl font-bold text-white font-[Khand]">Dilip B</h1>
-//           <p className="text-white text-lg font-medium font-[Khand]">President of the Club</p>
-//         </div>
-
-//         {/* Biography */}
-//         <div className="mb-6" data-aos="fade-left">
-//           <h2 className="text-2xl font-semibold text-blue-400 mb-4 font-[Khand]">Biography</h2>
-//           <p className="text-white leading-7 font-[GMVF]">
-//           Since assuming the role in September 2024, Dilip B has embodied visionary leadership. As a beta MLSA, his unwavering commitment to turning ambitions into achievements has not only inspired but also elevated our community, driving us to new heights of excellence and collaboration.
-//           </p>
-//         </div>
-
-//         {/* Contributions */}
-//         <div className="mb-6" data-aos="fade-right">
-//           <h2 className="text-2xl font-semibold text-blue-400 mb-4 font-[Khand]">
-//             Contributions to the Club
-//           </h2>
-//           <ul className="list-disc list-inside space-y-3 text-white font-[GMVF]">
-//             <li>Guided the club to achieve its mission and vision.</li>
-//             <li>Organized successful events and mentorship programs.</li>
-//             <li>Supported club members with professional advice.</li>
-//           </ul>
-//         </div>
-
-//         {/* Social Links */}
-//         <div className="flex justify-center items-center gap-8 mt-8" data-aos="zoom-in-up">
-//           <a
-//             href="https://www.linkedin.com/in/dilip03/"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//             className="text-gray-500 hover:text-blue-700 hover:scale-105 duration-300"
-//           >
-//             <FaLinkedin size={40} />
-//           </a>
-//           <a
-//             href="https://www.instagram.com/_iamdilip_/"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//             className="text-gray-500 hover:text-pink-700 hover:scale-105 duration-300"
-//           >
-//             <FaInstagram size={40} />
-//           </a>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Page;

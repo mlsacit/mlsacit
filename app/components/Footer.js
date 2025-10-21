@@ -24,7 +24,7 @@ const Footer = () => {
               <h1 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
                 Microsoft Learn Student Ambassadors
               </h1>
-              <p className='text-sm font-light text-gray-300'>An ISE dept. Initiative</p>
+              {/* <p className='text-sm font-light text-gray-300'>An ISE dept. Initiative</p> */}
               <p className="text-sm font-light text-gray-300">CIT Chapter</p>
             </div>
           </div>
@@ -106,7 +106,7 @@ const Footer = () => {
                 <FaInstagram />
               </a>
               <a
-                href="https://github.com/"
+                href="https://github.com/mlsacit"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gray-800 p-2 rounded-full hover:bg-gray-600 transition-colors"
