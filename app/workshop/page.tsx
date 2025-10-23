@@ -302,7 +302,7 @@ const WorkshopForm: React.FC = () => {
                             <div className="relative w-full max-w-md">
                                 <div className="w-full h-[450px] sm:h-[600px] bg-slate-800/40 rounded-2xl shadow-2xl flex items-center justify-center border-2 border-dashed border-slate-600 overflow-clip">
                                     <Image
-                                        src="/poster.png"
+                                        src="/poster.jpg"
                                         alt="Workshop Banner"
                                         width={400}
                                         height={500}
