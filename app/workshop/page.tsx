@@ -1,6 +1,6 @@
 // ...existing code...
 'use client';
-
+import Image from 'next/image';
 import React, { useState, useEffect, FormEvent } from 'react';
 import { FaArrowLeft, FaCheckCircle } from 'react-icons/fa';
 import { useRouter } from 'next/navigation';
@@ -239,8 +239,8 @@ const WorkshopForm: React.FC = () => {
                         <h3 className="text-xl font-bold text-white mb-4">Workshop Details</h3>
                         <div className="space-y-2 text-blue-100">
                             <p>📅 <strong>Date:</strong> October 25, 2025</p>
-                            <p>⏰ <strong>Time:</strong> 1:30 PM - 3:30 PM</p>
-                            <p>📍 <strong>Venue:</strong> 2nd floor Seminar Hall</p>
+                            <p>⏰ <strong>Time:</strong> 8:30 - 10:20 AM</p>
+                            <p>📍 <strong>Venue:</strong> 116 Lab, ISE Dept.</p>
                         </div>
                     </div>
 
@@ -300,12 +300,14 @@ const WorkshopForm: React.FC = () => {
                         {/* Left Side - Photo Section */}
                         <div className="flex justify-center lg:justify-start order-2 lg:order-1">
                             <div className="relative w-full max-w-md">
-                                <div className="w-full h-[400px] sm:h-[500px] bg-slate-800/40 rounded-2xl shadow-2xl flex items-center justify-center border-2 border-dashed border-slate-600">
-                                    <p className="text-slate-400 text-center px-4">
-                                        📸<br/>
-                                        Add Workshop<br/>
-                                        Instructor Photo Here
-                                    </p>
+                                <div className="w-full h-[450px] sm:h-[600px] bg-slate-800/40 rounded-2xl shadow-2xl flex items-center justify-center border-2 border-dashed border-slate-600 overflow-clip">
+                                    <Image
+                                        src="/poster.png"
+                                        alt="Workshop Banner"
+                                        width={400}
+                                        height={500}
+                                        className="rounded-2xl object-contain w-full h-auto"
+                                    />
                                 </div>
 
                                 {/* Club Badge - Top Right */}
@@ -334,12 +336,12 @@ const WorkshopForm: React.FC = () => {
 
                                 <div className="flex items-center gap-3 text-base sm:text-lg">
                                     <span className="text-blue-400 text-xl sm:text-2xl">🕐</span>
-                                    <span><strong>Time:</strong> 1:30 PM - 3:30 PM</span>
+                                    <span><strong>Time:</strong> 8:30 PM - 10:20 AM</span>
                                 </div>
 
                                 <div className="flex items-center gap-3 text-base sm:text-lg">
                                     <span className="text-blue-400 text-xl sm:text-2xl">📍</span>
-                                    <span><strong>Venue:</strong> 2nd floor Seminar Hall</span>
+                                    <span><strong>Venue:</strong> 116 Lab, ISE Dept.</span>
                                 </div>
                             </div>
 
