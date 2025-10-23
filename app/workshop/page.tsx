@@ -9,12 +9,7 @@
 //     const router = useRouter();
 //     const [showForm, setShowForm] = useState(false);
 //     const [formData, setFormData] = useState({
-//         name: "",
-//         usn: "",
-//         branch: "",
-//         year: "",
-//         officialMail: "",
-//         phoneNumber: "",
+export default WorkshopForm;
 //     });
 
 //     const [validated, setValidated] = useState(false);
