@@ -336,7 +336,7 @@ const WorkshopForm: React.FC = () => {
 
                                 <div className="flex items-center gap-3 text-base sm:text-lg">
                                     <span className="text-blue-400 text-xl sm:text-2xl">🕐</span>
-                                    <span><strong>Time:</strong> 8:30 PM - 10:20 AM</span>
+                                    <span><strong>Time:</strong> 8:30 - 10:20 AM</span>
                                 </div>
 
                                 <div className="flex items-center gap-3 text-base sm:text-lg">
