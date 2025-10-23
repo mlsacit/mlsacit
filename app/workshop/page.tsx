@@ -9,7 +9,12 @@
 //     const router = useRouter();
 //     const [showForm, setShowForm] = useState(false);
 //     const [formData, setFormData] = useState({
-export default WorkshopForm;
+//         name: "",
+//         usn: "",
+//         branch: "",
+//         year: "",
+//         officialMail: "",
+//         phoneNumber: "",
 //     });
 
 //     const [validated, setValidated] = useState(false);
@@ -695,7 +700,7 @@ const WorkshopForm: React.FC = () => {
 
                 {/* Info Message */}
                 <div className="bg-gradient-to-r from-orange-600/20 to-red-600/20 backdrop-blur-sm rounded-2xl p-6 border border-orange-400/30">
-                    <h3 className="text-xl font-bold text-white mb-3">Important Notice</h3>
+                    <h3 className="text-xl font-bold text-white mb-3">📢 Important Notice</h3>
                     <p className="text-orange-100">
                         Thank you for your interest in our workshop! Unfortunately, we have reached our maximum capacity and registrations are now closed. 
                         Please stay tuned for future events and workshops from MLSA Club.
