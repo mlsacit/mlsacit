@@ -127,7 +127,7 @@ const FeedbackForm: React.FC = () => {
                         <span className="text-blue-300 text-xs sm:text-sm font-medium">Event Feedback</span>
                     </div>
                     <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 drop-shadow-2xl">
-                        Content 101 Feedback
+                        Generative AI Systems Workshop feedback
                     </h1>
                     <p className="text-blue-200 text-sm sm:text-base md:text-lg px-2">We&apos;d love to hear your thoughts and experiences!</p>
                 </div>
@@ -251,11 +251,11 @@ const FeedbackForm: React.FC = () => {
 
                         {/* Rating Questions */}
                         <div className="bg-slate-800/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50">
-                            <StarRating name="q1" question="1. Overall, how satisfied were you with the Content 101 event?" />
+                            <StarRating name="q1" question="1. Overall,how satisfied were you with the Generative AI Systems Workshop?" />
                         </div>
                         
                         <div className="bg-slate-800/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50">
-                            <StarRating name="q2" question="2. How well did the sessions meet your expectations?" />
+                            <StarRating name="q2" question="2. How well did the sessions meet your expectations in terms of content quality and relevance?" />
                         </div>
                         
                         <div className="space-y-3 bg-slate-800/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50">
@@ -281,7 +281,7 @@ const FeedbackForm: React.FC = () => {
                         </div>
                         
                         <div className="bg-slate-800/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50">
-                            <StarRating name="q4" question="4. Rate the effectiveness and clarity of the speakers' presentations." />
+                            <StarRating name="q4" question="4. How would you rate the effectiveness and clarity of the speakers' presentations?" />
                         </div>
                         
                         <div className="space-y-3 bg-slate-800/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50">
@@ -342,7 +342,7 @@ const FeedbackForm: React.FC = () => {
                         </div>
                         
                         <div className="bg-slate-800/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50">
-                            <StarRating name="q8" question="8. How likely are you to attend/recommend future events like Content 101?" outOf={10} />
+                            <StarRating name="q8" question="8. How likely are you to attend future events like Building Trustworthy Gen AI systems, or recommend them to others?" outOf={10} />
                         </div>
                         
                         <div className="space-y-3 bg-slate-800/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50">
