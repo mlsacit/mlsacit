@@ -227,7 +227,7 @@ const FeedbackForm: React.FC = () => {
                                     <option value="" disabled hidden className="bg-slate-800 text-white">
                                         Select your branch
                                     </option>
-                                    {['ISE', 'CSE', 'CSE IOT', 'AIML', 'ECE', 'MECH', 'CIVIL', 'EEE'].map(branch => (
+                                    {['ISE', 'CSE', 'CSE IOT', 'AIML', 'ECE', 'MECH', 'CIVIL', 'EEE', 'MCA'].map(branch => (
                                         <option key={branch} value={branch} className="bg-slate-800 text-white">
                                             {branch}
                                         </option>
