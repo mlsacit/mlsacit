@@ -206,7 +206,7 @@ const genAIWorkshop = initEvent('Deep Dive', ['Deepak Chawla']);`}
           {[
             { title: "The Zeitgeist", speaker: "Lalit Rawat & Lakshit Pant", desc: "AI transforming engineering" },
             { title: "Understanding UI/UX", speaker: "Imthiyaz Ahmed", desc: "Mastering design strategies" },
-            { title: "GenAI & RAG", speaker: "Deepak Chawla", desc: "5 days, deep dive into AI" }
+            { title: "GenAI & RAG", speaker: "Deepak Chawla", desc: "5 days, deep dive into AI" } 
           ].map((event, index) => (
             <div key={index} className="p-4 bg-slate-800/50 rounded-lg border border-blue-500/20 hover:border-blue-500/50 transition-all duration-300 font-mono">
               <span className="text-blue-400">const</span> <span className="font-bold text-yellow-400">{event.title.toLowerCase().replace(/\s+/g, '')}</span> = {'{'}
@@ -220,7 +220,7 @@ const genAIWorkshop = initEvent('Deep Dive', ['Deepak Chawla']);`}
 
         <Link href="/events">
           <button className="mt-8 px-6 py-3 bg-blue-600 rounded-lg hover:bg-blue-700 transition-all duration-300 font-mono flex items-center group" data-aos="zoom-up">
-            <span className="mr-2">function(</span> exploreEvents <span className="ml-2">);</span>
+            <span className="mr-2">function(</span>exploreEvents<span className="ml-2">);</span>
           </button>
         </Link>
       </div>

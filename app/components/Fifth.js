@@ -472,6 +472,18 @@ const Fifth = () => {
       date: "08/02/2025",
       description: "The Game Development Workshop, conducted by team member Sreejith S, guided participants in using Godot and Pygame to develop their own games. "
     },
+    {
+      images: ["/fifth/cloud-2.jpeg", "/fifth/cloud-1.jpeg"],
+      title: "CLOUD Seminar",
+      date: "22/03/2025",
+      description: "Led by Microsoft Azure PaaS Engineer Saurav Raghuvanshi, this seminar introduced students to virtualization, cloud infrastructure and Azure services through live demos and interactive discussions."
+    },
+    {
+      images: ["/fifth/101-1.jpeg", "/fifth/101-2.jpeg"],
+      title: "Content 101: Storytelling & Digital Strategy",
+      date: "13/05/2025",
+      description: "A hands-on workshop led by Sakshi, Shibasish, Neelakshi and Anarghya exploring storytelling, branding and audience-focused digital strategy through practical activities."
+    },
   ];
 
   const navigateGallery = (direction) => {

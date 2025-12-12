@@ -94,6 +94,22 @@ const events = [
     date: "February 08, 2025",
     fileName: "gamedev.js",
   },
+  {
+    id: 12,
+    title: "Cloud Seminar",
+    image: "/events/images/GAI.jpg",
+    description: "A hands-on seminar introducing students to virtualization, cloud infrastructure, and Azure services — led by Microsoft Azure PaaS Engineer Saurav Raghuvanshi with live demos and interactive discussions.",
+    date: "March 22, 2025",
+    fileName: "cloud_unlocked.js",
+  },
+  {
+    id: 13,
+    title: "Content 101: Storytelling & Digital Strategy",
+    image: "/events/images/webdev.jpg",
+    description: "A practical workshop on storytelling, branding, and audience-focused content creation. Led by Sakshi, Shibasish, Neelakshi and Anarghya, participants learned hands-on techniques for digital strategy and content design.",
+    date: "May 13, 2025",
+    fileName: "content101.js",
+  },
 ];
 
 export default function EventsPage() {
