@@ -3,7 +3,7 @@ import { GoogleAuth } from 'google-auth-library';
 import { NextResponse } from 'next/server';
 
 // Load environment variables
-const SHEET_ID = process.env.GOOGLE_SHEET_ID;
+const SHEET_ID = process.env.GOOGLE_SHEET_ID1;
 const CLIENT_EMAIL = process.env.GOOGLE_CLIENT_EMAIL;
 const PRIVATE_KEY = (process.env.GOOGLE_PRIVATE_KEY || '').replace(/\\n/g, '\n');
 
@@ -35,9 +35,9 @@ export async function POST(req) {
       Q3: body.q3,
       Q4: body.q4,
       Q5: body.q5,
-      Q6: body.q6,
-      Q7: body.q7,
-      Q8: body.q8,
+      // Q6: body.q6,
+      // Q7: body.q7,
+      // Q8: body.q8,
       Q8Comment: body.q8comment || ''
     });
 

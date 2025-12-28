@@ -14,10 +14,10 @@ const FeedbackForm: React.FC = () => {
         q2: 0,
         q3: '',
         q4: 0,
-        q5: '',
-        q6: 0,
-        q7: '',
-        q8: 0,
+        q5: 0,
+        // q6: '',
+        // q7: ,
+        // q8: 0,
         q8comment: '',
     });
 
@@ -30,7 +30,7 @@ const FeedbackForm: React.FC = () => {
 
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
-        const required = ["name", 'usn', 'branch', 'collegeMail', 'q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8'];
+        const required = ["name", 'usn', 'branch', 'collegeMail', 'q1', 'q2', 'q3', 'q4', 'q5'];
 
         const missing = required.some((field) => {
             const val = formData[field as keyof typeof formData];
@@ -55,7 +55,7 @@ const FeedbackForm: React.FC = () => {
 
             setFormData({
                 name: '', usn: '', branch: '', collegeMail: '',
-                q1: 0, q2: 0, q3: '', q4: 0, q5: '', q6: 0, q7: '', q8: 0, q8comment: ''
+                q1: 0, q2: 0, q3: '', q4: 0, q5: 0, q8comment: '',
             });
             setValidated(false);
             setShowToast({ message: 'Feedback submitted successfully!', type: 'success' });
