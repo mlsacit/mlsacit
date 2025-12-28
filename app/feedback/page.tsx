@@ -79,11 +79,10 @@ const FeedbackForm: React.FC = () => {
                         <span
                             key={index}
                             onClick={() => setFormData(prev => ({ ...prev, [name]: index }))}
-                            className={`text-2xl sm:text-3xl cursor-pointer transition-all duration-200 transform hover:scale-110 ${
-                                index <= (formData[name as keyof typeof formData] as number)
+                            className={`text-2xl sm:text-3xl cursor-pointer transition-all duration-200 transform hover:scale-110 ${index <= (formData[name as keyof typeof formData] as number)
                                     ? 'text-yellow-400 drop-shadow-[0_0_12px_rgba(250,204,21,0.6)]'
                                     : 'text-slate-600 hover:text-slate-500'
-                            }`}
+                                }`}
                         >
                             <FaStar />
                         </span>
@@ -127,7 +126,7 @@ const FeedbackForm: React.FC = () => {
                         <span className="text-blue-300 text-xs sm:text-sm font-medium">Event Feedback</span>
                     </div>
                     <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 drop-shadow-2xl">
-                        Generative AI Systems Workshop feedback
+                        Foundations to Frontiers: ML Basics, Clean Coding, and Research Orientation
                     </h1>
                     <p className="text-blue-200 text-sm sm:text-base md:text-lg px-2">We&apos;d love to hear your thoughts and experiences!</p>
                 </div>
@@ -139,7 +138,7 @@ const FeedbackForm: React.FC = () => {
                             <span className="text-blue-400 text-lg sm:text-xl"></span>
                             <span className="text-base sm:text-2xl">Personal Information</span>
                         </h2>
-                        
+
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                             {/* Name Input */}
                             <div className="space-y-2">
@@ -153,9 +152,8 @@ const FeedbackForm: React.FC = () => {
                                     onChange={handleChange}
                                     placeholder="Enter your full name"
                                     required
-                                    className={`w-full py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg sm:rounded-xl bg-slate-800/50 text-white placeholder-slate-400 border-2 ${
-                                        validated && !formData.name ? 'border-yellow-400' : 'border-slate-700'
-                                    } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 backdrop-blur-sm text-sm sm:text-base`}
+                                    className={`w-full py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg sm:rounded-xl bg-slate-800/50 text-white placeholder-slate-400 border-2 ${validated && !formData.name ? 'border-yellow-400' : 'border-slate-700'
+                                        } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 backdrop-blur-sm text-sm sm:text-base`}
                                     maxLength={100}
                                 />
                                 {validated && !formData.name && (
@@ -177,9 +175,8 @@ const FeedbackForm: React.FC = () => {
                                     onChange={handleChange}
                                     required
                                     placeholder='Enter your USN'
-                                    className={`w-full py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg sm:rounded-xl bg-slate-800/50 text-white placeholder-slate-400 border-2 ${
-                                        validated && !formData.usn ? 'border-yellow-400' : 'border-slate-700'
-                                    } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 backdrop-blur-sm text-sm sm:text-base`}
+                                    className={`w-full py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg sm:rounded-xl bg-slate-800/50 text-white placeholder-slate-400 border-2 ${validated && !formData.usn ? 'border-yellow-400' : 'border-slate-700'
+                                        } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 backdrop-blur-sm text-sm sm:text-base`}
                                 />
                                 {validated && !formData.usn && (
                                     <p className="text-yellow-400 text-xs sm:text-sm flex items-center gap-1">
@@ -200,9 +197,8 @@ const FeedbackForm: React.FC = () => {
                                     onChange={handleChange}
                                     required
                                     placeholder='your.email@college.edu'
-                                    className={`w-full py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg sm:rounded-xl bg-slate-800/50 text-white placeholder-slate-400 border-2 ${
-                                        validated && !formData.collegeMail ? 'border-yellow-400' : 'border-slate-700'
-                                    } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 backdrop-blur-sm text-sm sm:text-base`}
+                                    className={`w-full py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg sm:rounded-xl bg-slate-800/50 text-white placeholder-slate-400 border-2 ${validated && !formData.collegeMail ? 'border-yellow-400' : 'border-slate-700'
+                                        } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 backdrop-blur-sm text-sm sm:text-base`}
                                 />
                                 {validated && !formData.collegeMail && (
                                     <p className="text-yellow-400 text-xs sm:text-sm flex items-center gap-1">
@@ -220,9 +216,8 @@ const FeedbackForm: React.FC = () => {
                                     name="branch"
                                     value={formData.branch}
                                     onChange={handleChange}
-                                    className={`w-full py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg sm:rounded-xl bg-slate-800/50 text-white border-2 ${
-                                        validated && !formData.branch ? 'border-yellow-400' : 'border-slate-700'
-                                    } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 backdrop-blur-sm text-sm sm:text-base`}
+                                    className={`w-full py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg sm:rounded-xl bg-slate-800/50 text-white border-2 ${validated && !formData.branch ? 'border-yellow-400' : 'border-slate-700'
+                                        } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 backdrop-blur-sm text-sm sm:text-base`}
                                 >
                                     <option value="" disabled hidden className="bg-slate-800 text-white">
                                         Select your branch
@@ -251,16 +246,16 @@ const FeedbackForm: React.FC = () => {
 
                         {/* Rating Questions */}
                         <div className="bg-slate-800/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50">
-                            <StarRating name="q1" question="1. Overall,how satisfied were you with the Generative AI Systems Workshop?" />
+                            <StarRating name="q1" question="1. How would you rate the speaker overall?" />
                         </div>
-                        
+
                         <div className="bg-slate-800/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50">
-                            <StarRating name="q2" question="2. How well did the sessions meet your expectations in terms of content quality and relevance?" />
+                            <StarRating name="q2" question="2. How confident do you feel now about reading research papers and finding a research topic?" />
                         </div>
-                        
+
                         <div className="space-y-3 bg-slate-800/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50">
                             <label className="block text-white font-medium text-base sm:text-lg leading-relaxed">
-                                3. Which topic or session did you find most valuable, and why?
+                                3. Which specific insight from the session (ML Concepts, Coding Standards, or Research Roadmap) do you plan to implement?
                                 <span className="text-yellow-400 ml-1">*</span>
                             </label>
                             <textarea
@@ -269,9 +264,8 @@ const FeedbackForm: React.FC = () => {
                                 value={formData.q3}
                                 onChange={handleChange}
                                 placeholder="Share your thoughts here..."
-                                className={`w-full p-3 sm:p-4 rounded-lg sm:rounded-xl bg-slate-800/50 text-white placeholder-slate-400 border-2 ${
-                                    validated && !formData.q3 ? 'border-yellow-400' : 'border-slate-700'
-                                } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none backdrop-blur-sm text-sm sm:text-base`}
+                                className={`w-full p-3 sm:p-4 rounded-lg sm:rounded-xl bg-slate-800/50 text-white placeholder-slate-400 border-2 ${validated && !formData.q3 ? 'border-yellow-400' : 'border-slate-700'
+                                    } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none backdrop-blur-sm text-sm sm:text-base`}
                             />
                             {validated && !formData.q3 && (
                                 <p className="text-yellow-400 text-xs sm:text-sm flex items-center gap-1">
@@ -279,12 +273,12 @@ const FeedbackForm: React.FC = () => {
                                 </p>
                             )}
                         </div>
-                        
+
                         <div className="bg-slate-800/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50">
-                            <StarRating name="q4" question="4. How would you rate the effectiveness and clarity of the speakers' presentations?" />
+                            <StarRating name="q4" question="4. Did the session clearly explain the difference between a regular Project and Research work?" />
                         </div>
-                        
-                        <div className="space-y-3 bg-slate-800/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50">
+
+                        {/* <div className="space-y-3 bg-slate-800/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50">
                             <label className="block text-white font-medium text-base sm:text-lg leading-relaxed">
                                 5. Did the event provide actionable insights that you can apply to your work or projects?
                                 <span className="text-yellow-400 ml-1">*</span>
@@ -309,12 +303,22 @@ const FeedbackForm: React.FC = () => {
                                     <span>⚠</span> This field is required
                                 </p>
                             )}
-                        </div>
-                        
+                        </div> */}
+
+                        {/* added new field for the question */}
                         <div className="bg-slate-800/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50">
+                            <StarRating
+                                name="q5"
+                                question="5. How effective was the session in clarifying the fundamental distinction between traditional programming and Machine Learning workflows?"
+                            />
+                        </div>
+
+
+
+                        {/* <div className="bg-slate-800/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50">
                             <StarRating name="q6" question="6. Rate the event's organization (scheduling, flow, logistics)." />
                         </div>
-                        
+
                         <div className="space-y-3 bg-slate-800/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50">
                             <label className="block text-white font-medium text-base sm:text-lg leading-relaxed">
                                 7. Were the interactive elements (Q&A sessions, discussions, etc.) helpful in deepening your understanding of the topics?
@@ -324,9 +328,8 @@ const FeedbackForm: React.FC = () => {
                                 name="q7"
                                 value={formData.q7}
                                 onChange={handleChange}
-                                className={`w-full p-3 sm:p-4 rounded-lg sm:rounded-xl bg-slate-800/50 text-white border-2 ${
-                                    validated && !formData.q7 ? 'border-yellow-400' : 'border-slate-700'
-                                } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 backdrop-blur-sm text-sm sm:text-base`}
+                                className={`w-full p-3 sm:p-4 rounded-lg sm:rounded-xl bg-slate-800/50 text-white border-2 ${validated && !formData.q7 ? 'border-yellow-400' : 'border-slate-700'
+                                    } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 backdrop-blur-sm text-sm sm:text-base`}
                             >
                                 <option disabled hidden className="bg-slate-800 text-white" value="">
                                     Choose an option
@@ -340,14 +343,14 @@ const FeedbackForm: React.FC = () => {
                                 </p>
                             )}
                         </div>
-                        
+
                         <div className="bg-slate-800/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50">
                             <StarRating name="q8" question="8. How likely are you to attend future events like Building Trustworthy Gen AI systems, or recommend them to others?" outOf={10} />
-                        </div>
-                        
+                        </div> */}
+
                         <div className="space-y-3 bg-slate-800/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50">
                             <label className="block text-white font-medium text-base sm:text-lg leading-relaxed">
-                                 Additional Comments (Optional)
+                                6. Overall, was the workshop effective? Please share any feedback or suggestions for improvement .
                             </label>
                             <textarea
                                 name="q8comment"
@@ -366,7 +369,7 @@ const FeedbackForm: React.FC = () => {
                             type="submit"
                             className="w-full sm:w-auto px-8 sm:px-12 py-3 sm:py-4 text-base sm:text-lg font-bold text-white bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-500 hover:to-blue-700 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl shadow-xl border-2 border-blue-400/30"
                         >
-                             Submit Feedback
+                            Submit Feedback
                         </button>
 
                         {/* Toast Notification */}
@@ -374,8 +377,8 @@ const FeedbackForm: React.FC = () => {
                             <div className={`
                                 w-full sm:w-auto px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl font-semibold text-center backdrop-blur-md
                                 transition-all duration-300 animate-fade-in shadow-xl border-2 text-sm sm:text-base
-                                ${showToast.type === 'success' 
-                                    ? 'bg-green-500/20 text-green-100 border-green-400/60' 
+                                ${showToast.type === 'success'
+                                    ? 'bg-green-500/20 text-green-100 border-green-400/60'
                                     : 'bg-yellow-500/20 text-yellow-100 border-yellow-400/60'
                                 }
                             `}>
