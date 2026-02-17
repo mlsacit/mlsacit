@@ -69,7 +69,7 @@ const NewsletterRegistration: React.FC = () => {
         {/* Embedded Newsletter */}
         <div className="w-full overflow-hidden rounded-lg border border-white/20 shadow-lg h-[80vh]" data-aos="zoom-in">
           <iframe
-            src="https://drive.google.com/file/d/1hpSAlt8Z-7i0a1ALkWSBRxc2iwLs6Ad9/preview?usp=sharing"
+            src="https://docs.google.com/document/d/1MBruEUZT6kG79eKVyNuwjRe9peAfV3dY/preview"
             width="100%"
             height="100%"
             style={{ border: 'none' }}
