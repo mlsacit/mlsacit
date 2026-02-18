@@ -211,7 +211,7 @@ const WorkshopForm: React.FC = () => {
                     <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-sm rounded-2xl p-6 border border-blue-400/30">
                         <h3 className="text-xl font-bold text-white mb-4">Workshop Details</h3>
                         <div className="space-y-2 text-blue-100">
-                            <p>📅 <strong>Date:</strong> 21st Feb, 2026</p>
+                            <p>📅 <strong>Date:</strong> 28th Feb, 2026</p>
                             <p>⏰ <strong>Time:</strong> 9 AM onwards</p>
                             <p>📍 <strong>Venue:</strong> 2nd Floor Seminar Hall</p>
                         </div>
@@ -309,7 +309,7 @@ const WorkshopForm: React.FC = () => {
                             <div className="space-y-3 pt-4">
                                 <div className="flex items-center gap-3 text-base sm:text-lg">
                                     <span className="text-blue-400 text-xl sm:text-2xl">📅</span>
-                                    <span><strong>Date:</strong> 21 Feb 2026</span>
+                                    <span><strong>Date:</strong> 28 Feb 2026</span>
                                 </div>
 
                                 <div className="flex items-center gap-3 text-base sm:text-lg">

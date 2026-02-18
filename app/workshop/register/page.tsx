@@ -33,12 +33,12 @@ const WorkshopRegistration: React.FC = () => {
     // Simple validators
     const isValidPhoneNumber = (num: string) => {
         const trimmed = (num || '').trim();
-        return /^\d{10}$/.test(trimmed);
+        return trimmed.includes('@');
     };
 
     const isValidCambridgeEmail = (email: string) => {
         const trimmed = (email || '').trim();
-        return /^[A-Za-z0-9._%+-]+@cambridge\.edu\.in$/i.test(trimmed);
+        return /^[A-Za-z0-9._%+-]+@\.edu\.in$/i.test(trimmed);
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
