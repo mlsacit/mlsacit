@@ -134,14 +134,13 @@ export default function Home() {
     <div id="home" className="min-h-full relative overflow-hidden bg-black">
 
       
-      {/* // WORKSHOP BANNER SECTION START  */}
+      {/* WORKSHOP BANNER SECTION START */}
        
-     
-      {/* <div className="z-[100]">
+      <div className="z-[100]">
         <WorkshopBanner />
-      </div> */}
+      </div>
       
-      {/* // 👆 WORKSHOP BANNER SECTION END 👆 */} 
+      {/* WORKSHOP BANNER SECTION END */} 
       
 
 

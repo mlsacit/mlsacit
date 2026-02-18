@@ -1,4 +1,3 @@
-// ...existing code...
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -20,7 +19,7 @@ const WorkshopBanner = () => {
 
   if (!isVisible) return null;
 
-  const defaultText = "Workshop by Sreejit";
+  const defaultText = "LinkedIn + Resume Workshop";
   const defaultLinkText = (
     <>
       Register Here <span className="text-base">→</span>
@@ -86,4 +85,3 @@ const WorkshopBanner = () => {
 };
 
 export default WorkshopBanner;
-// ...existing code...
