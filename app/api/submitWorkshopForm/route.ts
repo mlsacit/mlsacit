@@ -1,11 +1,11 @@
 import { GoogleSpreadsheet } from 'google-spreadsheet';
-import { JWT } from 'google-auth-library';
+import { GoogleAuth } from 'google-auth-library';
 import { NextRequest, NextResponse } from 'next/server';
 
-// Load environment variables
-const WORKSHOP_SHEET_ID = process.env.WORKSHOP_SHEET_ID;
-const GOOGLE_CLIENT_EMAIL = process.env.GOOGLE_CLIENT_EMAIL;
-const GOOGLE_PRIVATE_KEY = process.env.GOOGLE_PRIVATE_KEY;
+// Load environment variables - use same pattern as other APIs
+const SHEET_ID = process.env.WORKSHOP_SHEET_ID || process.env.GOOGLE_SHEET_ID;
+const CLIENT_EMAIL = process.env.GOOGLE_CLIENT_EMAIL;
+const PRIVATE_KEY = (process.env.GOOGLE_PRIVATE_KEY || '').replace(/\\n/g, '\n');
 
 export async function POST(req: NextRequest) {
   try {
@@ -22,8 +22,12 @@ export async function POST(req: NextRequest) {
     }
 
     // Validate environment variables
-    if (!WORKSHOP_SHEET_ID || !GOOGLE_CLIENT_EMAIL || !GOOGLE_PRIVATE_KEY) {
-      console.error('Missing environment variables');
+    if (!SHEET_ID || !CLIENT_EMAIL || !PRIVATE_KEY) {
+      console.error('Missing environment variables:', { 
+        hasSheetId: !!SHEET_ID, 
+        hasClientEmail: !!CLIENT_EMAIL, 
+        hasPrivateKey: !!PRIVATE_KEY 
+      });
       return NextResponse.json(
         { message: 'Server configuration error' },
         { status: 500 }
@@ -37,16 +41,19 @@ export async function POST(req: NextRequest) {
     const year = formData.year as string;
     const officialMail = formData.officialMail as string;
     const phoneNumber = formData.phoneNumber as string;
+    const workshopName = formData.workshopName as string || 'LinkedIn Mastery + Resume Building';
 
-    // Initialize JWT auth for Google Sheets
-    const serviceAccountAuth = new JWT({
-      email: GOOGLE_CLIENT_EMAIL,
-      key: GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+    // Initialize Google Sheets auth (same pattern as other APIs)
+    const auth = new GoogleAuth({
+      credentials: {
+        client_email: CLIENT_EMAIL,
+        private_key: PRIVATE_KEY,
+      },
       scopes: ['https://www.googleapis.com/auth/spreadsheets'],
     });
 
     // Initialize Google Sheets document
-    const doc = new GoogleSpreadsheet(WORKSHOP_SHEET_ID, serviceAccountAuth);
+    const doc = new GoogleSpreadsheet(SHEET_ID, auth);
     await doc.loadInfo();
 
     // Get the first sheet
@@ -74,6 +81,7 @@ export async function POST(req: NextRequest) {
       Year: year,
       'Official Email': officialMail,
       'Phone Number': phoneNumber,
+      'Workshop': workshopName,
     };
 
     // Add row to the sheet
