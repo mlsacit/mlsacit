@@ -212,8 +212,8 @@ const WorkshopForm: React.FC = () => {
                         <h3 className="text-xl font-bold text-white mb-4">Workshop Details</h3>
                         <div className="space-y-2 text-blue-100">
                             <p>📅 <strong>Date:</strong> 21st Feb, 2026</p>
-                            <p>⏰ <strong>Time:</strong> To be announced</p>
-                            <p>📍 <strong>Venue:</strong> To be announced</p>
+                            <p>⏰ <strong>Time:</strong> 9 AM onwards</p>
+                            <p>📍 <strong>Venue:</strong> 2nd Floor Seminar Hall</p>
                         </div>
                     </div>
 
@@ -270,11 +270,17 @@ const WorkshopForm: React.FC = () => {
                 <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-12 py-20">
                     <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start max-w-7xl mx-auto">
 
-                        {/* Left Side - Photo Section */}
+                        {/* Left Side - Poster Section */}
                         <div className="flex justify-center lg:justify-start order-2 lg:order-1">
                             <div className="relative w-full max-w-md">
-                                <div className="w-full h-[450px] sm:h-[600px] bg-slate-800/40 rounded-2xl shadow-2xl flex items-center justify-center border-2 border-dashed border-slate-600 overflow-clip">
-                                    <span className="text-slate-400 text-center px-4">Add workshop instructor photo here</span>
+                                <div className="w-full h-[450px] sm:h-[600px] bg-slate-800/40 rounded-2xl shadow-2xl overflow-hidden">
+                                    <Image
+                                        src="/linkedin-workshop-poster.jpg"
+                                        alt="LinkedIn Workshop Poster - Aaron Noel D'Souza"
+                                        fill
+                                        className="object-cover object-top"
+                                        priority
+                                    />
                                 </div>
 
                                 {/* Club Badge - Top Right */}
@@ -308,12 +314,12 @@ const WorkshopForm: React.FC = () => {
 
                                 <div className="flex items-center gap-3 text-base sm:text-lg">
                                     <span className="text-blue-400 text-xl sm:text-2xl">🕐</span>
-                                    <span><strong>Time:</strong> To be announced</span>
+                                    <span><strong>Time:</strong> 9 AM onwards</span>
                                 </div>
 
                                 <div className="flex items-center gap-3 text-base sm:text-lg">
                                     <span className="text-blue-400 text-xl sm:text-2xl">📍</span>
-                                    <span><strong>Venue:</strong> To be announced</span>
+                                    <span><strong>Venue:</strong> 2nd Floor Seminar Hall</span>
                                 </div>
                             </div>
 
