@@ -38,7 +38,7 @@ const WorkshopRegistration: React.FC = () => {
 
     const isValidCambridgeEmail = (email: string) => {
         const trimmed = (email || '').trim();
-        return /^[A-Za-z0-9._%+-]+@\.edu\.in$/i.test(trimmed);
+        return trimmed.includes('@');
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -60,7 +60,7 @@ const WorkshopRegistration: React.FC = () => {
             setErrors(prev => ({
                 ...prev,
                 officialMail: value && !isValidCambridgeEmail(String(value))
-                    ? 'Use your official @cambridge.edu.in email'
+                    ? 'Use correct format:'
                     : undefined,
             }));
         }
