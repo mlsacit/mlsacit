@@ -3,7 +3,7 @@ import { GoogleAuth } from 'google-auth-library';
 import { NextRequest, NextResponse } from 'next/server';
 
 // Load environment variables - use same pattern as other APIs
-const SHEET_ID = process.env.WORKSHOP_SHEET_ID || process.env.GOOGLE_SHEET_ID;
+const SHEET_ID = process.env.WORKSHOP_SHEET_ID;
 const CLIENT_EMAIL = process.env.GOOGLE_CLIENT_EMAIL;
 const PRIVATE_KEY = (process.env.GOOGLE_PRIVATE_KEY || '').replace(/\\n/g, '\n');
 

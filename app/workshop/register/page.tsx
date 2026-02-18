@@ -17,6 +17,7 @@ const WorkshopRegistration: React.FC = () => {
     const [validated, setValidated] = useState(false);
     const [showToast, setShowToast] = useState({ message: '', type: '' });
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [errors, setErrors] = useState<{ officialMail?: string; phoneNumber?: string }>({});
 
     const branches = ['ISE', 'CSE', 'CSE IOT', 'AIML', 'ECE', 'MECH', 'CIVIL', 'EEE', 'MCA'];
     const years = ['1st Year', '2nd Year', '3rd Year', '4th Year', 'MCA 1st Year', 'MCA 2nd Year'];
@@ -29,12 +30,48 @@ const WorkshopRegistration: React.FC = () => {
         }
     }, [router]);
 
+    // Simple validators
+    const isValidPhoneNumber = (num: string) => {
+        const trimmed = (num || '').trim();
+        return /^\d{10}$/.test(trimmed);
+    };
+
+    const isValidCambridgeEmail = (email: string) => {
+        const trimmed = (email || '').trim();
+        return /^[A-Za-z0-9._%+-]+@cambridge\.edu\.in$/i.test(trimmed);
+    };
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-        const { name, value } = e.target;
+        const { name } = e.target;
+        let { value } = e.target as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
+
+        // Sanitize phone input to digits only and clamp to 10
+        if (name === 'phoneNumber') {
+            value = (value as string).replace(/\D/g, '').slice(0, 10);
+        }
+
         setFormData(prev => ({
             ...prev,
             [name]: value,
         }));
+
+        // Update field-specific errors live (shown after first submit)
+        if (name === 'officialMail') {
+            setErrors(prev => ({
+                ...prev,
+                officialMail: value && !isValidCambridgeEmail(String(value))
+                    ? 'Use your official @cambridge.edu.in email'
+                    : undefined,
+            }));
+        }
+        if (name === 'phoneNumber') {
+            setErrors(prev => ({
+                ...prev,
+                phoneNumber: value && !isValidPhoneNumber(String(value))
+                    ? 'Enter a valid 10-digit phone number'
+                    : undefined,
+            }));
+        }
     };
 
     const handleSubmit = async (e: FormEvent) => {
@@ -56,6 +93,22 @@ const WorkshopRegistration: React.FC = () => {
             if (firstError) {
                 firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
+            return;
+        }
+
+        // Field-specific validation
+        if (!isValidPhoneNumber(formData.phoneNumber) || !isValidCambridgeEmail(formData.officialMail)) {
+            const newErrors: { officialMail?: string; phoneNumber?: string } = {};
+            if (!isValidPhoneNumber(formData.phoneNumber)) {
+                newErrors.phoneNumber = 'Enter a valid 10-digit phone number';
+            }
+            if (!isValidCambridgeEmail(formData.officialMail)) {
+                newErrors.officialMail = 'Use your official @cambridge.edu.in email';
+            }
+            setErrors(prev => ({ ...prev, ...newErrors }));
+            setValidated(true);
+            setShowToast({ message: 'Please correct the highlighted fields', type: 'error' });
+            setTimeout(() => setShowToast({ message: '', type: '' }), 3000);
             return;
         }
 
@@ -85,6 +138,7 @@ const WorkshopRegistration: React.FC = () => {
                 name: "", usn: "", branch: "", year: "", officialMail: "", phoneNumber: ""
             });
             setValidated(false);
+            setErrors({});
             setShowToast({ message: 'Registration submitted successfully!', type: 'success' });
 
             // Redirect to workshop page after success
@@ -255,12 +309,12 @@ const WorkshopRegistration: React.FC = () => {
                                     required
                                     placeholder="your.email@college.edu"
                                     className={`w-full py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg sm:rounded-xl bg-slate-800/50 text-white placeholder-slate-400 border-2 ${
-                                        validated && !formData.officialMail ? 'border-yellow-400' : 'border-slate-700'
+                                        validated && (!formData.officialMail || errors.officialMail) ? 'border-yellow-400' : 'border-slate-700'
                                     } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 backdrop-blur-sm text-sm sm:text-base`}
                                 />
-                                {validated && !formData.officialMail && (
+                                {validated && (!formData.officialMail || errors.officialMail) && (
                                     <p className="text-yellow-400 text-xs sm:text-sm flex items-center gap-1">
-                                        <span>⚠</span> Official email is required
+                                        <span>⚠</span> {errors.officialMail || 'Official email is required'}
                                     </p>
                                 )}
                             </div>
@@ -280,12 +334,12 @@ const WorkshopRegistration: React.FC = () => {
                                     maxLength={10}
                                     minLength={10}
                                     className={`w-full py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg sm:rounded-xl bg-slate-800/50 text-white placeholder-slate-400 border-2 ${
-                                        validated && !formData.phoneNumber ? 'border-yellow-400' : 'border-slate-700'
+                                        validated && (!formData.phoneNumber || errors.phoneNumber) ? 'border-yellow-400' : 'border-slate-700'
                                     } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 backdrop-blur-sm text-sm sm:text-base`}
                                 />
-                                {validated && !formData.phoneNumber && (
+                                {validated && (!formData.phoneNumber || errors.phoneNumber) && (
                                     <p className="text-yellow-400 text-xs sm:text-sm flex items-center gap-1">
-                                        <span>⚠</span> Phone number is required
+                                        <span>⚠</span> {errors.phoneNumber || 'Phone number is required'}
                                     </p>
                                 )}
                             </div>
