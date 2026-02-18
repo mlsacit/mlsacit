@@ -33,7 +33,7 @@ const WorkshopRegistration: React.FC = () => {
     // Simple validators
     const isValidPhoneNumber = (num: string) => {
         const trimmed = (num || '').trim();
-        return trimmed.includes('@');
+        return /^\d{10}$/.test(trimmed);
     };
 
     const isValidCambridgeEmail = (email: string) => {
