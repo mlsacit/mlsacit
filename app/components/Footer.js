@@ -22,7 +22,7 @@ const Footer = () => {
             />
             <div>
               <h1 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
-                Microsoft Learn Student Ambassadors
+                Microsoft Student Ambassadors
               </h1>
               {/* <p className='text-sm font-light text-gray-300'>An ISE dept. Initiative</p> */}
               <p className="text-sm font-light text-gray-300">CIT Chapter</p>

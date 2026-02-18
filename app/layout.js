@@ -60,7 +60,7 @@ export const metadata = {
   title: "MLSA - CIT Chapter",
   description: "Microsoft Learn Student Ambassadors - CIT Chapter",
   icons: {
-    icon: "/logo.svg",
+    icon: "/newlogo.png",
   }
 };
 

@@ -162,10 +162,10 @@ export default function Home() {
           <Navbar />
         </div>
         {/* Recruitment Banner - Absolute positioning */}
-        <div className="logo-custom absolute mt-32 w-full flex justify-center max-custom:h-[36rem] max-custom:mt-[9.4rem]">
+        <div className="logo-custom absolute mt-36 w-full flex justify-center max-custom:h-[36rem] max-custom:mt-[9.4rem]">
           <Image
             ref={logoRef}
-            src="/logo.svg"
+            src="/newlogo.png"
             alt="MSC Logo"
             width={450}
             height={450}
@@ -183,7 +183,7 @@ export default function Home() {
               className="text-white lg:w-auto text-center lg:text-left m-2 mb-8 lg:mb-0 bg-b z-10 lg:absolute lg:left-0 lg:ml-0 max-sm:p-3 lg:overflow-visible"
             >
               <h1 className="font-extrabold text-3xl md:text-5xl lg:text-6xl font-[CB] max-sm:mt-[2.5vh] bg-clip-text text-transparent bg-gradient-to-r from-[#8AAAE5] max-sm:-ml-[25vw] max-sm:text-[8vw]">
-                Microsoft  Learn
+                Microsoft  
               </h1>
               <h1 className="font-extrabold text-3xl md:text-5xl lg:text-6xl whitespace-nowrap font-[CB] max-sm:text-[8vw] max-sm:ml-[1vw]  bg-clip-text text-transparent bg-gradient-to-r from-[#333333]  to-[#FFFFFF] max-sm:-mt-[1vh] ">
                 Student  Ambassadors

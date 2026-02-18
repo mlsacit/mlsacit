@@ -36,37 +36,46 @@ const WorkshopBanner = () => {
   const bannerLinkText = isRegistered ? null : defaultLinkText;
 
   const linkClasses =
-    "inline-flex items-center gap-1 px-4 py-2 bg-blue-600 text-white font-bold text-sm rounded-full hover:bg-blue-700 transition-all duration-300 shadow-lg whitespace-nowrap";
+    "inline-flex items-center gap-1 px-3 py-2 md:px-4 bg-blue-600 text-white font-bold text-xs md:text-sm rounded-full hover:bg-blue-700 transition-all duration-300 shadow-lg";
 
   return (
-    <div className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-[100] max-w-full md:max-w-max">
-      <div
-        className="relative flex items-center p-2 rounded-full shadow-2xl backdrop-blur-sm bg-white/10 border border-white/20"
-      >
+    <div className="fixed inset-x-0 bottom-3 md:bottom-8 px-3 md:px-0 z-[100] pb-[env(safe-area-inset-bottom)]">
+      <div className="relative mx-auto w-full max-w-sm md:max-w-max flex items-center p-2 md:p-2.5 rounded-full shadow-2xl backdrop-blur-sm bg-white/10 border border-white/20">
         {/* Make the main content clickable — for registered users this leads to the workshop registered page,
             for new users it leads to the register page. */}
         <Link
           href={bannerHref}
-          className="flex items-center gap-4 px-3 py-1 rounded-full hover:bg-white/5 transition-colors"
+          className="flex w-full items-center gap-2 md:gap-3 px-2 py-1 rounded-full hover:bg-white/5 transition-colors"
           aria-label={isRegistered ? "Open workshop (registered view)" : "Go to workshop registration"}
         >
-          <div className="flex items-center gap-3">
-            <p className={`text-white font-medium text-sm md:text-base whitespace-nowrap ${isRegistered ? 'max-w-[160px] md:max-w-none truncate' : ''}`}>
-              {bannerText}
-            </p>
-
-            {/* If not registered show the prominent CTA button; if registered show a subtle status pill */}
+          {/* Mobile: force two-line title; Desktop: single line */}
+          <div className="flex-1 text-white font-medium leading-snug">
             {!isRegistered ? (
-              <span className={linkClasses}>
-                {bannerLinkText}
-              </span>
+              <>
+                <span className="block md:hidden text-xs sm:text-sm">
+                  LinkedIn +<br />
+                  Resume Workshop
+                </span>
+                <span className="hidden md:inline text-base">
+                  {bannerText}
+                </span>
+              </>
             ) : (
-              <span className="inline-flex items-center gap-2 bg-green-600/10 text-green-300 px-3 py-1 rounded-full text-sm font-semibold border border-green-400/20">
-                <Check className="w-4 h-4 text-green-300" />
-                <span>View</span>
-              </span>
+              <span className="text-xs md:text-base">{bannerText}</span>
             )}
           </div>
+
+          {/* If not registered show the prominent CTA button; if registered show a subtle status pill */}
+          {!isRegistered ? (
+            <span className={linkClasses}>
+              {defaultLinkText}
+            </span>
+          ) : (
+            <span className="flex-shrink-0 inline-flex items-center gap-1 md:gap-2 bg-green-600/10 text-green-300 px-2.5 md:px-3 py-1 rounded-full text-xs md:text-sm font-semibold border border-green-400/20">
+              <Check className="w-3.5 h-3.5 md:w-4 md:h-4 text-green-300" />
+              <span>View</span>
+            </span>
+          )}
         </Link>
 
         {/* <button
