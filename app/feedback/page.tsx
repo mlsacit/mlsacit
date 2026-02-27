@@ -15,9 +15,9 @@ const FeedbackForm: React.FC = () => {
         q3: '',
         q4: 0,
         q5: 0,
-        // q6: '',
-        // q7: ,
-        // q8: 0,
+        q6: 0,
+        q7: '',
+        q8: 0,
         q8comment: '',
     });
 
@@ -30,7 +30,7 @@ const FeedbackForm: React.FC = () => {
 
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
-        const required = ["name", 'usn', 'branch', 'collegeMail', 'q1', 'q2', 'q3', 'q4', 'q5'];
+        const required = ["name", 'usn', 'branch', 'collegeMail', 'q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8'];
 
         const missing = required.some((field) => {
             const val = formData[field as keyof typeof formData];
@@ -55,7 +55,7 @@ const FeedbackForm: React.FC = () => {
 
             setFormData({
                 name: '', usn: '', branch: '', collegeMail: '',
-                q1: 0, q2: 0, q3: '', q4: 0, q5: 0, q8comment: '',
+                q1: 0, q2: 0, q3: '', q4: 0, q5: 0, q6: 0, q7: '', q8: 0, q8comment: '',
             });
             setValidated(false);
             setShowToast({ message: 'Feedback submitted successfully!', type: 'success' });
@@ -246,16 +246,16 @@ const FeedbackForm: React.FC = () => {
 
                         {/* Rating Questions */}
                         <div className="bg-slate-800/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50">
-                            <StarRating name="q1" question="1. How would you rate the speaker overall?" />
+                            <StarRating name="q1" question="1. Overall, how satisfied were you with the event?" />
                         </div>
 
                         <div className="bg-slate-800/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50">
-                            <StarRating name="q2" question="2. How confident do you feel now about reading research papers and finding a research topic?" />
+                            <StarRating name="q2" question="2. How well did the sessions meet your expectations in terms of content quality and relevance?" />
                         </div>
 
                         <div className="space-y-3 bg-slate-800/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50">
                             <label className="block text-white font-medium text-base sm:text-lg leading-relaxed">
-                                3. Which specific insight from the session (ML Concepts, Coding Standards, or Research Roadmap) do you plan to implement?
+                                3. Which topic or session did you find most valuable, and why?
                                 <span className="text-yellow-400 ml-1">*</span>
                             </label>
                             <textarea
@@ -275,7 +275,7 @@ const FeedbackForm: React.FC = () => {
                         </div>
 
                         <div className="bg-slate-800/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50">
-                            <StarRating name="q4" question="4. Did the session clearly explain the difference between a regular Project and Research work?" />
+                            <StarRating name="q4" question="4. How would you rate the effectiveness and clarity of the speakers' presentations?" />
                         </div>
 
                         {/* <div className="space-y-3 bg-slate-800/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50">
@@ -309,17 +309,17 @@ const FeedbackForm: React.FC = () => {
                         <div className="bg-slate-800/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50">
                             <StarRating
                                 name="q5"
-                                question="5. How effective was the session in clarifying the fundamental distinction between traditional programming and Machine Learning workflows?"
+                                question="5. Did the event provide actionable insights that you can apply to your work or projects?"
                             />
                         </div>
 
 
 
-                        {/* <div className="bg-slate-800/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50">
-                            <StarRating name="q6" question="6. Rate the event's organization (scheduling, flow, logistics)." />
+                        <div className="bg-slate-800/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50">
+                            <StarRating name="q6" question="6. How do you rate the event&apos;s organization (scheduling, flow, and logistics)?" />
                         </div>
 
-                        <div className="space-y-3 bg-slate-800/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50">
+                        {/* <div className="space-y-3 bg-slate-800/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50">
                             <label className="block text-white font-medium text-base sm:text-lg leading-relaxed">
                                 7. Were the interactive elements (Q&A sessions, discussions, etc.) helpful in deepening your understanding of the topics?
                                 <span className="text-yellow-400 ml-1">*</span>
@@ -347,10 +347,51 @@ const FeedbackForm: React.FC = () => {
                         <div className="bg-slate-800/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50">
                             <StarRating name="q8" question="8. How likely are you to attend future events like Building Trustworthy Gen AI systems, or recommend them to others?" outOf={10} />
                         </div> */}
+                        <div className="bg-slate-800/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50">
+                            <label className="block text-white font-medium text-base sm:text-lg leading-relaxed">
+                                7. Were the interactive elements (Q&A sessions, discussions, etc.) helpful in deepening your understanding of the topics?
+                                <span className="text-yellow-400 ml-1">*</span>
+                            </label>
+
+                            <div className="mt-4 flex gap-6">
+                                <label className="flex items-center gap-2 text-white cursor-pointer">
+                                    <input
+                                        type="radio"
+                                        name="q7"
+                                        value="Yes"
+                                        checked={formData.q7 === 'Yes'}
+                                        onChange={handleChange}
+                                        className="w-5 h-5 accent-yellow-400"
+                                    />
+                                    Yes
+                                </label>
+
+                                <label className="flex items-center gap-2 text-white cursor-pointer">
+                                    <input
+                                        type="radio"
+                                        name="q7"
+                                        value="No"
+                                        checked={formData.q7 === 'No'}
+                                        onChange={handleChange}
+                                        className="w-5 h-5 accent-yellow-400"
+                                    />
+                                    No
+                                </label>
+                            </div>
+                            {validated && !formData.q7 && (
+                                <p className="text-yellow-400 text-xs sm:text-sm flex items-center gap-1 mt-2">
+                                    <span>⚠</span> This field is required
+                                </p>
+                            )}
+                        </div>
+
+                        <div className="bg-slate-800/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50">
+                            <StarRating name="q8" question="8. How likely are you to attend future events like Building Trustworthy Gen AI systems, or recommend them to others?" outOf={5} />
+                        </div>
 
                         <div className="space-y-3 bg-slate-800/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50">
                             <label className="block text-white font-medium text-base sm:text-lg leading-relaxed">
-                                6. Overall, was the workshop effective? Please share any feedback or suggestions for improvement .
+                                Additional Comments: 
                             </label>
                             <textarea
                                 name="q8comment"
