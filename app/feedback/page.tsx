@@ -126,7 +126,7 @@ const FeedbackForm: React.FC = () => {
                         <span className="text-blue-300 text-xs sm:text-sm font-medium">Event Feedback</span>
                     </div>
                     <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 drop-shadow-2xl">
-                        Foundations to Frontiers: ML Basics, Clean Coding, and Research Orientation
+                        LinkedIn Mastery and Resume Building Workshop Feedback
                     </h1>
                     <p className="text-blue-200 text-sm sm:text-base md:text-lg px-2">We&apos;d love to hear your thoughts and experiences!</p>
                 </div>
@@ -386,7 +386,7 @@ const FeedbackForm: React.FC = () => {
                         </div>
 
                         <div className="bg-slate-800/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50">
-                            <StarRating name="q8" question="8. How likely are you to attend future events like Building Trustworthy Gen AI systems, or recommend them to others?" outOf={5} />
+                            <StarRating name="q8" question="8. How likely are you to attend future events like LinkedIn & Resume Building Workshop, or recommend them to others?" outOf={5} />
                         </div>
 
                         <div className="space-y-3 bg-slate-800/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50">
