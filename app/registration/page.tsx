@@ -44,7 +44,7 @@ export default function Home() {
         }
 
         try {
-            const response = await fetch('/api/submitRegistrationForm', {
+            const response = await fetch(process.env.NEXT_PUBLIC_SCRIPT_URL, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -68,6 +68,7 @@ export default function Home() {
                 college: '',
             });
             setShowToast({ message: 'Registration submitted successfully!', type: 'success' });
+            setIsModalOpen(false);
         } catch (error) {
             setShowToast({ message: error.message || 'Error submitting Registration Form. Please try again later.', type: 'error' });
         }
@@ -182,7 +183,7 @@ export default function Home() {
                             <p className="flex items-center">
                                 <FaMapMarkerAlt className="mr-2 text-indigo-400" />
                                 <a
-                                    href="https://www.google.com/maps/search/Lab+116,+First+Floor,Sir+MV+Block+CIT/@12.9227928,77.5022817,17z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D"
+                                    href="https://www.google.com/maps/search/2nd+Floor+Seminar+Hall"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-indigo-400 hover:underline"
@@ -197,7 +198,7 @@ export default function Home() {
                             whileHover={{ scale: 1.05 }}
                             transition={{ duration: 0.3 }}
                         >
-                            Register Now
+                            Register for Free
                         </motion.button>
                     </motion.div>
                 </div>
