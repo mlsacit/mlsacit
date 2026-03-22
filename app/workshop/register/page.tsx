@@ -183,7 +183,7 @@ const WorkshopRegistration: React.FC = () => {
                         Event Registration
                     </h1>
                     <p className="text-blue-200 text-sm sm:text-base md:text-lg px-2">
-                        Introduction to LLM's
+                        Introduction to LLM
                     </p>
                 </div>
 
