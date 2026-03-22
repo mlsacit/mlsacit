@@ -19,7 +19,7 @@ const WorkshopBanner = () => {
 
   if (!isVisible) return null;
 
-  const defaultText = "LinkedIn + Resume Workshop";
+  const defaultText = "Introduction to LLM's";
   const defaultLinkText = (
     <>
       Register Here <span className="text-base">→</span>
@@ -53,8 +53,8 @@ const WorkshopBanner = () => {
             {!isRegistered ? (
               <>
                 <span className="block md:hidden text-xs sm:text-sm">
-                  LinkedIn +<br />
-                  Resume Workshop
+                  Introduction to<br />
+                  LLM's
                 </span>
                 <span className="hidden md:inline text-base">
                   {bannerText}

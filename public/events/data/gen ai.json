@@ -1,27 +1,22 @@
 {
-    "title": "The Future of AI",
-    "subtitle": "GenAI & RAG Integration",
-    "date": "November 11-12, 2024",
-    "time": "10:00 AM - 3:30 PM",
-    "venue": "Lab 116, First Floor, Sir MV Block",
-    "posterImage": "/events/images/gen ai.png", 
-    "sponsorLogo": "/msc_logo.png",
-    "description": [
-      {
-        "day": "Day 1",
-        "topics": [
-          "Introduction to Large Language Models (LLMs), Generative AI, and Prompt Engineering",
-          "Fundamentals of Chunking, Embedding, and an Overview of Retrieval-Augmented Generation (RAG)"
-        ]
-      },
-      {
-        "day": "Day 2",
-        "topics": [
-          "In-depth Exploration of Memory Management in RAG Systems",
-          "Evaluation Methods and Performance Metrics for RAG Systems",
-          "Best Practices for Deployment and Optimization of AI Models"
-        ]
-      }
-    ]   
-  }
+  "title": "Introduction to LLM's",
+  "subtitle": "Topic - Introduction to LLM's",
+  "date": "28/3/26",
+  "time": "10 am onwards",
+  "venue": "2nd floor seminar hall",
+  "posterImage": "/into_to_llm.png",
+  "sponsorLogo": "/msc-logo.png",
+  "description": [
+    {
+      "day": "Session Highlights",
+      "topics": [
+        "What are Large Language Models (LLMs)?",
+        "How GPT, Gemini & AI models work",
+        "Real-world applications of LLMs",
+        "Live demos & use cases",
+        "Future of AI & career opportunities"
+      ]
+    }
+  ]
+}
   

@@ -24,7 +24,7 @@ const WorkshopRegistration: React.FC = () => {
 
     // Check if already registered
     useEffect(() => {
-        const cached = localStorage.getItem('linkedinWorkshopRegistration');
+        const cached = localStorage.getItem('llmEventRegistration');
         if (cached) {
             router.push('/workshop');
         }
@@ -120,7 +120,7 @@ const WorkshopRegistration: React.FC = () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ ...formData, workshopName: 'LinkedIn Mastery + Resume Building' }),
+                body: JSON.stringify({ ...formData, workshopName: 'Introduction to LLM\'s' }),
             });
 
             const data = await res.json().catch(() => ({}));
@@ -129,7 +129,7 @@ const WorkshopRegistration: React.FC = () => {
             // Cache registration locally
             const registrationRecord = { ...formData, submittedAt: new Date().toISOString() };
             try {
-                localStorage.setItem('linkedinWorkshopRegistration', JSON.stringify(registrationRecord));
+                localStorage.setItem('llmEventRegistration', JSON.stringify(registrationRecord));
                 localStorage.setItem('workshopRegistered', 'true');
                 localStorage.setItem('workshopRegisteredEmail', formData.officialMail);
             } catch {}
@@ -180,10 +180,10 @@ const WorkshopRegistration: React.FC = () => {
                         <span className="text-blue-300 text-xs sm:text-sm font-medium">Register Now</span>
                     </div>
                     <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 drop-shadow-2xl">
-                        Workshop Registration
+                        Event Registration
                     </h1>
                     <p className="text-blue-200 text-sm sm:text-base md:text-lg px-2">
-                        LinkedIn Mastery + Resume Building
+                        Introduction to LLM's
                     </p>
                 </div>
 
