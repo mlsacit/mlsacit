@@ -275,7 +275,7 @@ const WorkshopForm: React.FC = () => {
                             <div className="relative w-full max-w-md">
                                 <div className="w-full h-[450px] sm:h-[600px] bg-slate-800/40 rounded-2xl shadow-2xl overflow-hidden">
                                     <Image
-                                        src="/intro to llm.png"
+                                        src="/into_to_llm.png"
                                         alt="Introduction to LLM's Poster"
                                         fill
                                         className="object-cover object-top"
