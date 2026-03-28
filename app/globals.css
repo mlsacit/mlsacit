@@ -163,13 +163,10 @@ body {
   src: url('./fonts/LEMONMILK-Regular.woff2') format('woff2');
 }
 
-
 html::-webkit-scrollbar {
   display: none;
 }
-<<<<<<< HEAD
-=======
 
 
 
->>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+  

@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 "use client";
 import Image from 'next/image';
 import React from "react";
@@ -36,6 +37,16 @@ import { FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
+=======
+"use client"
+import React from 'react'
+import Link from 'next/link'
+import { FaInstagram } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+
+const Footer = () => {
+  return (
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
     <div className='bg-transparent text-white w-full p-8 rounded-md opacity-85 bg-red-600'>
       <h3 className='text-slate-500 text-xl font-bold'>Microsoft Learn Student Ambassador</h3>
       <div className='w-full h-[2px] bg-slate-400 '></div>
@@ -50,6 +61,9 @@ const Footer = () => {
                 <Link href="/"
                 className="text-slate-500 hover:text-white">Team</Link>
                 {/* <Link href="/projects" className="text-slate-500 hover:text-white">Projects</Link> */}
+<<<<<<< HEAD
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+=======
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
             </div>
           </div>
@@ -120,13 +134,19 @@ const Footer = () => {
                 aria-label="LinkedIn"
               >
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <FaLinkedin />
               </a>
 =======
+=======
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
                 <FaLinkedin size={30}/>
               </a>
             </div>
             <div className="mt-6 mb-6 text-slate-500 hover:text-white">
+<<<<<<< HEAD
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+=======
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
               <a
                 href="https://www.instagram.com/mlsacit"
@@ -135,6 +155,7 @@ const Footer = () => {
                 className="bg-gray-800 p-2 rounded-full hover:bg-pink-700 transition-colors"
                 aria-label="Instagram"
               >
+<<<<<<< HEAD
 <<<<<<< HEAD
                 <FaInstagram />
               </a>
@@ -149,12 +170,18 @@ const Footer = () => {
 =======
                 <FaInstagram size={30}/>
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+=======
+                <FaInstagram size={30}/>
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
               </a>
             </div>
           </div>
         </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
         <div className='w-full h-[2px] bg-slate-400 '></div>
       <p className='text-center p-2'>Copyright &copy; MLSA, Cambridge Institute of Technology.</p>
     </div>

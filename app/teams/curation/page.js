@@ -5,6 +5,7 @@ import "aos/dist/aos.css";
 import React from "react";
 import Image from "next/image";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { useRouter } from "next/navigation";
 import { FaInstagram, FaLinkedin, FaArrowLeft, FaBook } from "react-icons/fa";
 import { IoDocumentTextSharp } from "react-icons/io5";
@@ -20,6 +21,8 @@ const Page = () => {
     router.back();
   };
 =======
+=======
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
@@ -38,6 +41,9 @@ const Page = () => {
     threshold: 0.1, // Trigger animation when 10% of the section is visible
     triggerOnce: false, // Allow animation to reverse when scrolling up
   });
+<<<<<<< HEAD
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+=======
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 
   useEffect(() => {
@@ -45,6 +51,7 @@ const Page = () => {
         duration: 1000,
         once: true,
       });
+<<<<<<< HEAD
 <<<<<<< HEAD
   }, []);
 
@@ -377,6 +384,8 @@ const Page = () => {
                     
                   </div>
 =======
+=======
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
     }, []);
 
   return (
@@ -635,6 +644,9 @@ const Page = () => {
                     Ensuring accuracy and quality of all curated content and
                     documentation.
                   </p>
+<<<<<<< HEAD
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+=======
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
                 </div>
               </div>
@@ -642,7 +654,10 @@ const Page = () => {
           </div>
         </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
       </div> */}
       <div className="mt-16 sm:mt-32 py-6 sm:py-10 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-white/10 shadow-2xl overflow-hidden" data-aos="flip-right">
         <div className="mx-auto px-4">
@@ -849,6 +864,9 @@ const Page = () => {
             </div>
           </div>
         </div>
+<<<<<<< HEAD
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+=======
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
       </div>
     </div>
@@ -856,7 +874,11 @@ const Page = () => {
 };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 export default Page;
+=======
+export default Page;
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 =======
 export default Page;
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055

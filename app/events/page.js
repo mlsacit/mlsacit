@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 "use client";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
@@ -113,6 +114,8 @@ const events = [
   },
 ];
 =======
+=======
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 "use client"; 
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap/gsap-core";
@@ -123,6 +126,9 @@ import "../events/eventpage.css";
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa";
+<<<<<<< HEAD
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+=======
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 
 export default function EventsPage() {
@@ -163,6 +169,7 @@ export default function EventsPage() {
   };
 
   return (
+<<<<<<< HEAD
 <<<<<<< HEAD
     <div className="min-h-screen bg-[var(--bg-primary)] text-white p-6">
       {isLoading ? (
@@ -258,6 +265,8 @@ export default function EventsPage() {
   );
 }
 =======
+=======
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
     <div className="relative w-full h-full bg-gradient-to-b from-[#020084] to-[#000149] z-0">
       
       <Navbar />
@@ -322,4 +331,7 @@ export default function EventsPage() {
 };
 
 export default Page;
+<<<<<<< HEAD
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+=======
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055

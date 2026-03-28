@@ -1,5 +1,6 @@
 "use client";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -8,18 +9,27 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { FaInstagram, FaLinkedin, FaArrowLeft } from "react-icons/fa";
 =======
+=======
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 import {useEffect} from "react";
 import Image from "next/image";
 import AOS from "aos";
 import { useRouter } from "next/navigation";
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
+<<<<<<< HEAD
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+=======
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 import { FaPaintBrush } from "react-icons/fa";
 import { FaPencilRuler } from "react-icons/fa";
 import { PiGraphLight } from "react-icons/pi";
 import { MdPalette } from "react-icons/md";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import Link from "next/link";
+=======
+import "aos/dist/aos.css"
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 =======
 import "aos/dist/aos.css"
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
@@ -33,6 +43,7 @@ const Page = () => {
   };
 
   useEffect(() => {
+<<<<<<< HEAD
 <<<<<<< HEAD
       AOS.init({
         duration: 1000,
@@ -55,6 +66,8 @@ const Page = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30"></div>
       </div>
 =======
+=======
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
     AOS.init({
       duration:1000,
       once: true,
@@ -68,11 +81,15 @@ const Page = () => {
         className="absolute inset-0 w-full h-full bg-center  max-sm:bg-contain lg:bg-cover z-0"
         style={{ backgroundImage: "url('/Background.svg')" }}
       ></div>
+<<<<<<< HEAD
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+=======
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 
       {/* Back Button */}
       <button
         onClick={handleBackButtonClick}
+<<<<<<< HEAD
 <<<<<<< HEAD
         className="absolute top-6 left-6 z-20 px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg shadow-lg backdrop-blur-md border border-white/20 transition-all font-[Excon] flex items-center gap-2" 
         data-aos="fade-down"
@@ -392,6 +409,8 @@ const Page = () => {
                     
                   </div>
 =======
+=======
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
         className="absolute top-8 left-8 z-10 px-4 py-2 bg-gradient-to-r from-blue-400 to-purple-400 text-black font-semibold rounded-lg shadow-md hover:bg-gray-400 transition-all font-[Excon]" data-aos="fade-down"
       >
         Go Back
@@ -595,6 +614,9 @@ const Page = () => {
                   <p className="text-gray-400 font-[GMVF]">
                     Conducting sessions on design principles and tools.
                   </p>
+<<<<<<< HEAD
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+=======
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
                 </div>
               </div>
@@ -603,7 +625,10 @@ const Page = () => {
         </div>
       </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 
       <div className="mt-32 z-10 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-white/10 p-10 shadow-2xl" data-aos="zoom-out-up">
         <h2
@@ -709,13 +734,20 @@ const Page = () => {
           </div>
         </div>
       </div>
+<<<<<<< HEAD
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+=======
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
     </div>
   );
 };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 export default Page;
+=======
+export default Page;
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 =======
 export default Page;
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055

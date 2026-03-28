@@ -6,7 +6,11 @@ import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { FaInstagram, FaLinkedin, FaArrowLeft } from "react-icons/fa";
+=======
+import { FaInstagram, FaLinkedin } from "react-icons/fa";
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 =======
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
@@ -15,7 +19,11 @@ import { FaBullhorn } from "react-icons/fa";
 import { PiChatsCircleFill } from "react-icons/pi";
 import { GoGraph } from "react-icons/go";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import Link from "next/link";
+=======
+
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 =======
 
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
@@ -35,6 +43,7 @@ const Page = () => {
   }, []);
 
   return (
+<<<<<<< HEAD
 <<<<<<< HEAD
     <div className="relative min-h-screen w-full flex flex-col items-center py-16 px-4 overflow-hidden">
       {/* Background Image */}
@@ -534,6 +543,8 @@ const Page = () => {
                   </div>
                 </div>
 =======
+=======
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
     <div className="relative min-h-screen w-full bg-gradient-to-b from-[#020084] to-[#000149] flex flex-col items-center py-16 px-4 overflow-hidden">
       {/* Back Button */}
       <button
@@ -669,6 +680,9 @@ const Page = () => {
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-2 font-[Khand]">Analytics & Strategy</h3>
                 <p className="text-gray-400 font-[GMVF]">Analyzing trends and optimizing social media strategies.</p>
+<<<<<<< HEAD
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+=======
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
               </div>
             </div>
@@ -677,11 +691,14 @@ const Page = () => {
       </div>
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
   );
 };
 
 export default Page;
 =======
+=======
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
     <div className="mt-32 z-10 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-white/10 p-12 shadow-2xl" data-aos="zoom-out-up">
       <h2 className="text-3xl font-[Excon] font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400" data-aos="fade-up">
         Team Volunteers
@@ -753,4 +770,7 @@ export default Page;
 };
 
 export default Page;
+<<<<<<< HEAD
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+=======
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055

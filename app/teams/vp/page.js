@@ -1,6 +1,10 @@
 "use client";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { useEffect, useState } from "react";
+=======
+import { useEffect } from "react";
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 =======
 import { useEffect } from "react";
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
@@ -9,6 +13,7 @@ import "aos/dist/aos.css";
 import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+<<<<<<< HEAD
 <<<<<<< HEAD
 import { FaInstagram, FaLinkedin, FaArrowLeft, FaQuoteLeft, FaQuoteRight, FaHandshake } from "react-icons/fa";
 import Link from "next/link";
@@ -41,6 +46,8 @@ const Page = () => {
       </div>
 
 =======
+=======
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const Page = () => {
@@ -55,6 +62,9 @@ const Page = () => {
 
   return (
     <div className="relative min-h-screen w-full bg-gradient-to-b from-[#020084] to-[#000149] flex flex-col items-center py-16 px-4 overflow-hidden">
+<<<<<<< HEAD
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+=======
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
       {/* Back Button */}
       <button
@@ -62,6 +72,7 @@ const Page = () => {
           console.log("Navigating to /");
           router.back();
         }}
+<<<<<<< HEAD
 <<<<<<< HEAD
         className="absolute top-6 left-6 z-20 px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg shadow-lg backdrop-blur-md border border-white/20 transition-all font-[Excon] flex items-center gap-2"
         data-aos="fade-down"
@@ -221,6 +232,8 @@ const Page = () => {
             </div>
           </div>
 =======
+=======
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
         className="absolute top-8 left-8 z-10 px-4 py-2 bg-gradient-to-r from-blue-400 to-purple-400 text-black font-semibold rounded-lg shadow-md hover:bg-gray-400 transition-all font-[Excon]"
         data-aos="fade-left"
       >
@@ -310,6 +323,9 @@ const Page = () => {
           >
             <FaInstagram size={40} />
           </a>
+<<<<<<< HEAD
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+=======
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
         </div>
       </div>
@@ -318,7 +334,11 @@ const Page = () => {
 };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 export default Page;
+=======
+export default Page;
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 =======
 export default Page;
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055

@@ -1,21 +1,28 @@
 "use client";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React, { useRef, useEffect, useState, useMemo, useCallback } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Image from "next/image";
 =======
+=======
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 import React, { useRef, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Image from "next/image";
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
+<<<<<<< HEAD
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+=======
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 import { useRouter } from "next/navigation";
 
 const Teams = () => {
   const containerRef = useRef(null);
   const router = useRouter();
+<<<<<<< HEAD
 <<<<<<< HEAD
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -131,6 +138,8 @@ const Teams = () => {
             transition: 'all 0.3s ease-out',
           }}
 =======
+=======
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 
   useEffect(() => {
     AOS.init({
@@ -175,6 +184,9 @@ const Teams = () => {
           className="team-card  flex flex-shrink-0 flex-col justify-center items-center border-l-indigo-800 border-t-indigo-800 border-2 rounded-full hover:scale-105 hover:bg-gray-600 duration-300 cursor-pointer w-[200px] h-[200px] max-sm:w-[150px] max-sm:h-[150px] "
           data-aos="zoom-out"
           
+<<<<<<< HEAD
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+=======
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
         >
           <Image
@@ -182,6 +194,7 @@ const Teams = () => {
             alt={member.name}
             width={90}
             height={90}
+<<<<<<< HEAD
 <<<<<<< HEAD
             className="relative max-sm:w-[70px] transition-all duration-300"
           />
@@ -350,6 +363,8 @@ const Teams = () => {
     </div>
   );
 =======
+=======
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
             className="relative max-sm:w-[70px]"
             data-aos="flip-right"
           />
@@ -382,6 +397,9 @@ const Teams = () => {
     </div>
   </div>
 );
+<<<<<<< HEAD
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+=======
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 };
 
@@ -392,6 +410,7 @@ const teamData = [
   { name: "Social Media", path: "socmed", image: "/images/teams/social-media.png" },
   { name: "Technical", path: "technical", image: "/images/teams/technical.png" },
   { name: "Designers", path: "designers", image: "/images/teams/designers.png" },
+<<<<<<< HEAD
 <<<<<<< HEAD
   { name: "Curation", path: "curation", image: "/images/teams/curation.png" },
 
@@ -576,10 +595,16 @@ export default Teams;
 
 // export default Teams;
 =======
+=======
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
   { name: "Marketing", path: "marketing", image: "/images/teams/marketing.png" },
   { name: "Curation", path: "curation", image: "/images/teams/curation.png" },
   { name: "Treasure", path: "treasure", image: "/images/teams/treasure.png" },
 ];
 
+<<<<<<< HEAD
+export default Teams;
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+=======
 export default Teams;
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055

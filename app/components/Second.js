@@ -32,7 +32,12 @@ const Second = () => {
 
               <h1 className="max-sm:text-[5vw]">
 <<<<<<< HEAD
+<<<<<<< HEAD
               Be a <span className="text-blue-500 mx-[0.5vw]"> force </span> for good
+=======
+                This is your <span className="text-blue-500 mx-[0.5vw]"> sign </span> to
+                leave
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 =======
                 This is your <span className="text-blue-500 mx-[0.5vw]"> sign </span> to
                 leave
@@ -46,17 +51,24 @@ const Second = () => {
           <div className="w-[38vw] ml-auto flex justify-center items-center max-sm:w-[100%] max-sm:p-[1vw]" data-aos="fade-left">
             <h3 className="text-[1.5vw] font-[Excon] text-white max-sm:text-[3vw]">
 <<<<<<< HEAD
+<<<<<<< HEAD
             MLSA CIT is a chapter of the global Microsoft Learn Student Ambassador community at CIT Bengaluru. We empower learning through workshops and seminars, foster engagement through hands-on tech experiences, and cultivate leadership by driving innovation and industry exposure.
 =======
+=======
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
               It was popularised in the 1960s with the release of Letraset
               sheets containing Lorem Ipsum passages, and more recently with
               desktop publishing software like Aldus PageMaker including
               versions of Lorem Ipsum.
+<<<<<<< HEAD
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+=======
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
             </h3>
           </div>
         </div>
         
+<<<<<<< HEAD
 <<<<<<< HEAD
         <div className="mt-[5vw] flex max-sm:flex-col items-center w-full relative max-sm:p-[5vw]">
           {/* Left Image */}
@@ -67,6 +79,8 @@ const Second = () => {
               width={245}
               height={150}
 =======
+=======
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
         <div className=" mt-[5vw] flex max-sm:flex-col items-center h-full w-full relative  max-sm:p-[5vw] ">
           {/* Left Image */}
           <div className=" mt-auto w-full h-auto relative  max-sm:bg-gradient-to-br from-[#3a3a3a82] to-[#00000000] max-sm:rounded-tl-[23.69px] max-sm:rounded-bl-[23.69px] max-sm:ml-[4rem] ">
@@ -74,6 +88,9 @@ const Second = () => {
               src="/boxes/left.svg"
               width={245}
               height={223}
+<<<<<<< HEAD
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+=======
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
               layout="responsive"
               objectFit="contain"
@@ -83,9 +100,14 @@ const Second = () => {
             <Image
               src="/boxes/left-tp.svg"
 <<<<<<< HEAD
+<<<<<<< HEAD
               alt="Left border"
               width={245}
               height={150}
+=======
+              width={245}
+              height={223}
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 =======
               width={245}
               height={223}
@@ -95,6 +117,7 @@ const Second = () => {
               className="sm:hidden"
               data-aos="slide-left"
             />
+<<<<<<< HEAD
 <<<<<<< HEAD
             <h1 className="absolute inset-0 text-[1.5vw] font-semibold p-[2vw] text-white max-sm:p-[10vw] max-sm:text-[3vw]" data-aos="zoom-out">
               Founded in 2020, MLSA CIT began with a single Alpha Microsoft Learn Student Ambassador, laying the foundation for a thriving tech-driven initiative.
@@ -109,6 +132,8 @@ const Second = () => {
               width={245}
               height={150}
 =======
+=======
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
             {/* <div className="absolute inset-0 pl-5 flex z-0 text-white text-[1.5vw] font-bold font-[LM] bg-yellow-500"> */}
               <h1 className="absolute inset-0 text-[1.2vw] font-[LM] p-[2vw] h-full w-full text-white max-sm:p-[10vw] max-sm:text-[3vw]" data-aos="zoom-out">
               It was popularised in the 1960s with the release of Letraset
@@ -124,6 +149,9 @@ const Second = () => {
               src="/boxes/center.svg"
               width={245}
               height={223}
+<<<<<<< HEAD
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+=======
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
               layout="responsive"
               objectFit="contain"
@@ -133,9 +161,14 @@ const Second = () => {
             <Image
               src="/boxes/right-tp.svg"
 <<<<<<< HEAD
+<<<<<<< HEAD
               alt="right border"
               width={245}
               height={150}
+=======
+              width={245}
+              height={223}
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 =======
               width={245}
               height={223}
@@ -145,6 +178,7 @@ const Second = () => {
               className="sm:hidden"
               data-aos="slide-right"
             />
+<<<<<<< HEAD
 <<<<<<< HEAD
             <h1 className="absolute inset-0 text-[1.5vw] font-semibold p-[2vw] max-sm:p-[10vw] max-sm:text-[3vw] text-black" data-aos="zoom-out">
               Now in its third generation of leaders, MLSA CIT stands stronger than ever, successfully conducting impactful workshops and learning initiatives—driven by the commitment to push boundaries and shape the future of tech.
@@ -159,6 +193,8 @@ const Second = () => {
               width={245}
               height={150}
 =======
+=======
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
             <h1 className="absolute inset-0 text-[1.2vw] font-[LM] p-[2vw] h-full w-full max-sm:p-[10vw] max-sm:text-[3vw] text-black" data-aos="zoom-out">
               It was popularised in the 1960s with the release of Letraset
               sheets containing Lorem Ipsum passages, and more recently with
@@ -172,6 +208,9 @@ const Second = () => {
               src="/boxes/right.svg"
               width={245}
               height={223}
+<<<<<<< HEAD
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+=======
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
               layout="responsive"
               objectFit="contain"
@@ -181,9 +220,14 @@ const Second = () => {
             <Image
               src="/boxes/bor.svg"
 <<<<<<< HEAD
+<<<<<<< HEAD
               alt="left border"
               width={245}
               height={150}
+=======
+              width={245}
+              height={223}
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 =======
               width={245}
               height={223}
@@ -194,6 +238,7 @@ const Second = () => {
               data-aos="slide-left"
             />
 <<<<<<< HEAD
+<<<<<<< HEAD
             <h1 className="absolute inset-0 text-[1.5vw] font-semibold p-[2vw] text-white max-sm:p-[10vw] max-sm:text-[3vw]" data-aos="zoom-out">
               What followed was a surge of innovation and learning, rapidly producing seven Beta MLSAs and expanding the chapter into a dynamic and engaged network of tech enthusiasts.
             </h1>
@@ -201,6 +246,8 @@ const Second = () => {
         </div>
 
 =======
+=======
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
             <h1 className="absolute inset-0 text-[1.2vw] font-[LM] p-[2vw] h-full w-full text-white max-sm:p-[10vw] max-sm:text-[3vw]" data-aos="zoom-out">
               It was popularised in the 1960s with the release of Letraset
               sheets containing Lorem Ipsum passages, and more recently with
@@ -208,6 +255,9 @@ const Second = () => {
               </h1>
           </div>
         </div>
+<<<<<<< HEAD
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+=======
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
       </div>
   );
@@ -216,6 +266,7 @@ const Second = () => {
 export default Second;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 // import { useEffect, useState } from "react";
 // import dynamic from "next/dynamic";
@@ -398,5 +449,7 @@ export default Second;
 // };
 
 // export default Second;
+=======
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 =======
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055

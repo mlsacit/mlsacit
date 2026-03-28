@@ -1,6 +1,10 @@
 "use client";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { useEffect, useState } from "react";
+=======
+import { useEffect } from "react";
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 =======
 import { useEffect } from "react";
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
@@ -10,6 +14,7 @@ import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { FaInstagram, FaLinkedin, FaArrowLeft, FaQuoteLeft, FaQuoteRight, FaLightbulb, FaAward } from "react-icons/fa";
 import Link from "next/link";
 
@@ -17,10 +22,15 @@ const Page = () => {
   const router = useRouter();
   const [isLoaded, setIsLoaded] = useState(false);
 =======
+=======
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const Page = () => {
   const router = useRouter();
+<<<<<<< HEAD
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+=======
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 
   useEffect(() => {
@@ -28,6 +38,7 @@ const Page = () => {
       duration: 1000,
       once: true,
     });
+<<<<<<< HEAD
 <<<<<<< HEAD
     setIsLoaded(true);
   }, []);
@@ -209,6 +220,8 @@ const Page = () => {
             </div>
           </div>
 =======
+=======
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
   }, []);
 
   return (
@@ -308,6 +321,9 @@ const Page = () => {
           >
             <FaInstagram size={40} />
           </a>
+<<<<<<< HEAD
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+=======
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
         </div>
       </div>
@@ -316,7 +332,11 @@ const Page = () => {
 };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 export default Page;
+=======
+export default Page;
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 =======
 export default Page;
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055

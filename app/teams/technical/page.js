@@ -1,5 +1,6 @@
 "use client";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -13,6 +14,8 @@ import { FaLightbulb } from "react-icons/fa";
 import { GrWorkshop } from "react-icons/gr";
 import Link from "next/link";
 =======
+=======
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 import React from "react";
 import { useEffect } from "react";
 import AOS from "aos";
@@ -24,6 +27,9 @@ import { FaCode } from "react-icons/fa6";
 import { FaCalendarAlt } from "react-icons/fa";
 import { GrWorkshop } from "react-icons/gr";
 import { FaLightbulb } from "react-icons/fa";
+<<<<<<< HEAD
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+=======
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 
 const Page = () => {
@@ -35,6 +41,7 @@ const Page = () => {
   };
 
   useEffect(() => {
+<<<<<<< HEAD
 <<<<<<< HEAD
       AOS.init({
         duration: 1000,
@@ -458,6 +465,8 @@ const Page = () => {
                     
                   </div>
 =======
+=======
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
         AOS.init({
           duration: 1000,
           once: true,
@@ -719,6 +728,9 @@ const Page = () => {
                     Fostering creativity and technical innovation within the
                     community.
                   </p>
+<<<<<<< HEAD
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+=======
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
                 </div>
               </div>
@@ -727,7 +739,10 @@ const Page = () => {
         </div>
       </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 
       <div className="mt-32 z-10 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-white/10  shadow-2xl p-12" data-aos="slide-up">
         <h2
@@ -921,13 +936,20 @@ const Page = () => {
           </div>
         </div>
       </div>
+<<<<<<< HEAD
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+=======
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
     </div>
   );
 };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 export default Page;
+=======
+export default Page;
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 =======
 export default Page;
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055

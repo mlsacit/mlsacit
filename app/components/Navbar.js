@@ -3,10 +3,17 @@ import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import Cookies from "js-cookie";
 import { Link as ScrollLink } from 'react-scroll';
 import { gsap } from "gsap";
 import Link from 'next/link';
+=======
+import Image from "next/image";
+import Cookies from "js-cookie";
+import { Link } from "react-scroll";
+import { gsap } from "gsap";
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 =======
 import Image from "next/image";
 import Cookies from "js-cookie";
@@ -21,6 +28,7 @@ const Navbar = () => {
   const leftNavRef = React.useRef(null);
   const rightNavRef = React.useRef(null);
 <<<<<<< HEAD
+<<<<<<< HEAD
   const hamburgerRef = React.useRef(null);
 
   useEffect(() => {
@@ -33,6 +41,8 @@ const Navbar = () => {
     });
   }, []);
 =======
+=======
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
   const hamburgerRef = React.useRef(null); 
 
   useEffect(() => {
@@ -44,6 +54,9 @@ const Navbar = () => {
         mirror:false
       });
     }, []);
+<<<<<<< HEAD
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+=======
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 
   useEffect(() => {
@@ -51,6 +64,10 @@ const Navbar = () => {
     setIsAuthenticated(authStatus);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    // GSAP animation on mount
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 =======
     // GSAP animation on mount
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
@@ -71,6 +88,7 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (!isMenuOpen) {
       gsap.fromTo(
         dropdownRef.current,
@@ -78,6 +96,17 @@ const Navbar = () => {
         { opacity: 1, scaleY: 1, duration: 0.5, ease: "power3.out" }
       );
 
+=======
+    // GSAP animation for the dropdown menu
+    if (!isMenuOpen) {
+      gsap.fromTo(
+        dropdownRef.current,
+        { opacity: 0, scaleY: 0, transformOrigin: "top", ease:"power3.in", duration: 0.5 },
+        { opacity: 1, scaleY: 1, duration: 0.5, ease: "power3.out" }
+      );
+
+      // GSAP animation for the hamburger icon (3 dashes to cross)
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 =======
     // GSAP animation for the dropdown menu
     if (!isMenuOpen) {
@@ -97,6 +126,10 @@ const Navbar = () => {
       });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      // Animate the second line to form the cross
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 =======
       // Animate the second line to form the cross
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
@@ -106,6 +139,10 @@ const Navbar = () => {
       });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      // Animate the third line to form the cross
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 =======
       // Animate the third line to form the cross
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
@@ -117,6 +154,10 @@ const Navbar = () => {
       });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      // Make the circle visible
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 =======
       // Make the circle visible
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
@@ -135,6 +176,10 @@ const Navbar = () => {
       });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      // GSAP animation for the hamburger icon (cross to 3 dashes)
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 =======
       // GSAP animation for the hamburger icon (cross to 3 dashes)
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
@@ -145,6 +190,10 @@ const Navbar = () => {
       });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      // Revert the second line opacity to make it visible again
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 =======
       // Revert the second line opacity to make it visible again
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
@@ -154,6 +203,10 @@ const Navbar = () => {
       });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      // Revert the third line rotation to its original position
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 =======
       // Revert the third line rotation to its original position
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
@@ -165,6 +218,10 @@ const Navbar = () => {
       });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      // Make the circle invisible again
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 =======
       // Make the circle invisible again
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
@@ -211,11 +268,15 @@ const Navbar = () => {
                 HOME
               </Link>
               <Link
+<<<<<<< HEAD
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+=======
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
                 to="about"
                 smooth={true}
                 duration={500}
                 offset={-80}
+<<<<<<< HEAD
 <<<<<<< HEAD
                 className="hover:text-blue-400 hover:underline text-bold hover:scale-110 transition-transform duration-300 cursor-pointer"
               >
@@ -223,18 +284,27 @@ const Navbar = () => {
               </ScrollLink>
               <ScrollLink
 =======
+=======
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
                 className="hover:text-slate-300 hover:underline text-bold hover:scale-110 transition-transform duration-300"
               >
                 ABOUT
               </Link>
               <Link
+<<<<<<< HEAD
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+=======
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
                 to="teams"
                 smooth={true}
                 duration={500}
                 offset={-80}
 <<<<<<< HEAD
+<<<<<<< HEAD
                 className="hover:text-blue-400 hover:underline text-bold hover:scale-110 transition-transform duration-300 cursor-pointer"
+=======
+                className="hover:text-slate-300 hover:underline text-bold hover:scale-110 transition-transform duration-300"
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
               >
                 TEAM
               </ScrollLink>
@@ -266,12 +336,24 @@ const Navbar = () => {
               >
                 EVENTS
               </Link>
+              <Link
+                to="events"
+                smooth={true}
+                duration={500}
+                offset={-80}
+                className="hover:text-slate-300 hover:underline text-bold hover:scale-110 transition-transform duration-300"
+              >
+                EVENTS
+              </Link>
             </div>
 
             {/* Right links */}
             <div
               ref={rightNavRef}
               className="right-nav bg-[#64748b45] text-white rounded-lg p-3 flex items-center justify-end space-x-8 shadow-lg w-full sm:w-1/2"
+<<<<<<< HEAD
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+=======
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
             >
               {!isAuthenticated ? (
@@ -285,7 +367,11 @@ const Navbar = () => {
                   {/* <Link
                     href="/login"
 <<<<<<< HEAD
+<<<<<<< HEAD
                     className="hover:text-blue-400 text-bold hover:underline hover:scale-110 transition-transform duration-300"
+=======
+                    className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300"
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 =======
                     className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300"
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
@@ -295,22 +381,32 @@ const Navbar = () => {
                   <Link
                     href="/signup"
 <<<<<<< HEAD
+<<<<<<< HEAD
                     className="hover:text-blue-400 text-bold hover:underline hover:scale-110 transition-transform duration-300"
                   >
                     SIGN UP
                   </Link> */}
 =======
+=======
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
                     className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300"
                   >
                     SIGN UP
                   </Link>
+<<<<<<< HEAD
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+=======
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
                 </div>
               ) : (
                 <button
                   onClick={handleSignOut}
 <<<<<<< HEAD
+<<<<<<< HEAD
                   className="hover:text-red-400 text-bold hover:scale-110 transition-transform duration-300"
+=======
+                  className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300"
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 =======
                   className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300"
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
@@ -324,10 +420,17 @@ const Navbar = () => {
       </div>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       {/* Mobile Navbar - darker theme */}
       <div className="custom:hidden w-full flex items-center justify-between h-20 px-4 py-3 bg-[#1e293b99] border border-[#334155] relative font-[Technor]">
         <button
           className="flex flex-col justify-center items-center space-y-1 focus:outline-none ml-auto"
+=======
+      {/* Mobile Navbar */}
+      <div className="custom:hidden w-full flex items-center justify-between h-20 px-4 py-3 bg-[#64748b45] relative font-[Technor] " >
+        <button
+          className="flex flex-col justify-center items-center space-y-1 focus:outline-none ml-auto" 
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 =======
       {/* Mobile Navbar */}
       <div className="custom:hidden w-full flex items-center justify-between h-20 px-4 py-3 bg-[#64748b45] relative font-[Technor] " >
@@ -341,6 +444,7 @@ const Navbar = () => {
           <div className="w-6 h-0.5 bg-white line2"></div>
           <div className="w-6 h-0.5 bg-white line3"></div>
 <<<<<<< HEAD
+<<<<<<< HEAD
           <div className="w-1 h-1 rounded opacity-0 bg-white circle1"></div>
         </button>
 
@@ -348,6 +452,15 @@ const Navbar = () => {
         <div
           ref={dropdownRef}
           className="absolute top-full left-0 right-0 bg-[#0f172a] backdrop-blur-md text-white rounded-lg shadow-lg mt-2 p-4 flex flex-col space-y-4 z-50 max-sm:ml-3 max-sm:mr-3 border border-[#334155]"
+=======
+          <div className="w-1 h-1 rounded opacity-0 bg-white circle1"></div> {/* Circle element */}
+        </button>
+
+        {/* Dropdown menu */}
+        <div
+          ref={dropdownRef}
+          className="absolute top-full left-0 right-0 bg-gradient-to-b from-[#02008400] to-[#00014900] backdrop-blur-md bg-opacity-80 text-white rounded-lg shadow-lg mt-2 p-4 flex flex-col space-y-4 z-50 max-sm:ml-3 max-sm:mr-3  border-[1px] border-[#ffffff56]"
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 =======
           <div className="w-1 h-1 rounded opacity-0 bg-white circle1"></div> {/* Circle element */}
         </button>
@@ -384,11 +497,15 @@ const Navbar = () => {
             HOME
           </Link>
           <Link
+<<<<<<< HEAD
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+=======
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
             to="about"
             smooth={true}
             duration={500}
             offset={-80}
+<<<<<<< HEAD
 <<<<<<< HEAD
             className="hover:text-blue-400 text-bold hover:scale-110 transition-transform duration-300 pl-1 border-[#334155]"
             onClick={() => setIsMenuOpen(false)}
@@ -397,17 +514,23 @@ const Navbar = () => {
           </ScrollLink>
           <ScrollLink
 =======
+=======
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
             className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300  pl-1 border-[#ffffff5e]"
             onClick={() => setIsMenuOpen(false)}
           >
             ABOUT
           </Link>
           <Link
+<<<<<<< HEAD
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+=======
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
             to="teams"
             smooth={true}
             duration={500}
             offset={-80}
+<<<<<<< HEAD
 <<<<<<< HEAD
             className="hover:text-blue-400 text-bold hover:scale-110 transition-transform duration-300 pl-1 border-[#334155]"
 =======
@@ -433,6 +556,12 @@ const Navbar = () => {
             onClick={() => setIsMenuOpen(false)}
           >
             NEWSLETTER
+=======
+            className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300  pl-1 border-[#ffffff5e]"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            TEAM
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
           </Link>
           <Link
             to="events"
@@ -449,7 +578,11 @@ const Navbar = () => {
               {/* <Link
                 href="/login"
 <<<<<<< HEAD
+<<<<<<< HEAD
                 className="hover:text-blue-400 text-bold hover:scale-110 transition-transform duration-300 pl-1 border-[#334155]"
+=======
+                className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300  pl-1 border-[#ffffff5e]"
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 =======
                 className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300  pl-1 border-[#ffffff5e]"
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
@@ -460,7 +593,11 @@ const Navbar = () => {
               <Link
                 href="/signup"
 <<<<<<< HEAD
+<<<<<<< HEAD
                 className="hover:text-blue-400 text-bold hover:scale-110 transition-transform duration-300 pl-1 border-[#334155]"
+=======
+                className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300  pl-1 border-[#ffffff5e]"
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 =======
                 className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300  pl-1 border-[#ffffff5e]"
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
@@ -476,7 +613,11 @@ const Navbar = () => {
                 setIsMenuOpen(false);
               }}
 <<<<<<< HEAD
+<<<<<<< HEAD
               className="hover:text-red-400 text-bold hover:scale-110 transition-transform duration-300"
+=======
+              className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300"
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 =======
               className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300"
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
@@ -492,6 +633,9 @@ const Navbar = () => {
 
 <<<<<<< HEAD
 export default Navbar;
+<<<<<<< HEAD
 =======
 export default Navbar;
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
+=======
 >>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
