@@ -1,9 +1,8 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 "use client";
 import Image from 'next/image';
 import React from "react";
-import { FaInstagram, FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
+import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 import Link from "next/link";
 
 const Footer = () => {
@@ -26,59 +25,21 @@ const Footer = () => {
               <h1 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
                 Microsoft Student Ambassadors
               </h1>
-              {/* <p className='text-sm font-light text-gray-300'>An ISE dept. Initiative</p> */}
               <p className="text-sm font-light text-gray-300">CIT Chapter</p>
-=======
-"use client"
-import React from 'react'
-import Link from 'next/link'
-import { FaInstagram } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-
-const Footer = () => {
-  return (
-=======
-"use client"
-import React from 'react'
-import Link from 'next/link'
-import { FaInstagram } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-
-const Footer = () => {
-  return (
->>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
-    <div className='bg-transparent text-white w-full p-8 rounded-md opacity-85 bg-red-600'>
-      <h3 className='text-slate-500 text-xl font-bold'>Microsoft Learn Student Ambassador</h3>
-      <div className='w-full h-[2px] bg-slate-400 '></div>
-        <div className="container grid grid-cols-2 ">
-            <div className="name text-left text-lg text-semibold">
-                {/* <img src="/msc_logo.png" alt="" width={50} height={50}/> */}
-                
-                <h4 className='text-slate-500'>Cambridge Institute of Technology</h4>
-            </div>
-            <div className="parts text-right text-lg grid grid-rows-3 text-semibold">
-                <Link href="/events" className="text-slate-500 hover:text-white">Events</Link>
-                <Link href="/"
-                className="text-slate-500 hover:text-white">Team</Link>
-                {/* <Link href="/projects" className="text-slate-500 hover:text-white">Projects</Link> */}
-<<<<<<< HEAD
->>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
-=======
->>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
             </div>
           </div>
-          {/* Right: Tagline */}
+          
+          {/* Right: Tagline and CIT Logo */}
           <div className='flex items-center space-x-3 mb-4 md:mb-0'>
-            
-          <p className="text-center md:text-right text-sm max-w-md text-gray-300 italic">
-            &quot;Every new question is a doorway to an amazing discovery; dare to step through.&quot;
-          </p>
-          <Image
+            <p className="text-center md:text-right text-sm max-w-md text-gray-300 italic">
+              &quot;Every new question is a doorway to an amazing discovery; dare to step through.&quot;
+            </p>
+            <Image
               src="/cit logo.png"
               alt="Microsoft Learn Student Ambassador Logo"
-              className="h-14 w-auto "
+              className="h-14 w-auto"
               width={200}
-              height={50} 
+              height={50}
             />
           </div>
         </div>
@@ -117,7 +78,7 @@ const Footer = () => {
             <ul className="text-sm text-gray-300 space-y-2">
               <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
               <li><Link href="/events" className="hover:text-white transition-colors">Events</Link></li>
-              <li><Link href="/team" className="hover:text-white transition-colors">Our Team</Link></li>
+              <li><Link href="/teams" className="hover:text-white transition-colors">Our Team</Link></li>
               <li><Link href="/resources" className="hover:text-white transition-colors">Resources</Link></li>
             </ul>
           </div>
@@ -125,69 +86,37 @@ const Footer = () => {
           {/* Social Links */}
           <div>
             <h2 className="text-lg font-semibold mb-3 text-blue-300">Follow Us</h2>
-            <div className="flex space-x-4 text-xl">
+            <div className="flex space-x-4">
               <a
                 href="https://www.linkedin.com/company/microsoft-student-club-citech/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gray-800 p-2 rounded-full hover:bg-blue-700 transition-colors"
+                className="bg-gray-800 p-2 rounded-full hover:bg-blue-700 transition-colors text-xl"
                 aria-label="LinkedIn"
               >
-<<<<<<< HEAD
-<<<<<<< HEAD
                 <FaLinkedin />
               </a>
-=======
-=======
->>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
-                <FaLinkedin size={30}/>
-              </a>
-            </div>
-            <div className="mt-6 mb-6 text-slate-500 hover:text-white">
-<<<<<<< HEAD
->>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
-=======
->>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
               <a
                 href="https://www.instagram.com/mlsacit"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gray-800 p-2 rounded-full hover:bg-pink-700 transition-colors"
+                className="bg-gray-800 p-2 rounded-full hover:bg-pink-700 transition-colors text-xl"
                 aria-label="Instagram"
               >
-<<<<<<< HEAD
-<<<<<<< HEAD
                 <FaInstagram />
               </a>
               <a
                 href="https://github.com/mlsacit"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gray-800 p-2 rounded-full hover:bg-gray-600 transition-colors"
+                className="bg-gray-800 p-2 rounded-full hover:bg-gray-600 transition-colors text-xl"
                 aria-label="GitHub"
               >
                 <FaGithub />
-=======
-                <FaInstagram size={30}/>
->>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
-=======
-                <FaInstagram size={30}/>
->>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
               </a>
             </div>
           </div>
         </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
-        <div className='w-full h-[2px] bg-slate-400 '></div>
-      <p className='text-center p-2'>Copyright &copy; MLSA, Cambridge Institute of Technology.</p>
-    </div>
-  )
-}
->>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 
         {/* Divider */}
         <div className="my-6 w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent" />

@@ -189,16 +189,7 @@ const QuizPage: React.FC = () => {
         return () => {
             document.removeEventListener('visibilitychange', handleVisibilityChange);
         };
-<<<<<<< HEAD
-<<<<<<< HEAD
-    }, [quizStarted, quizSubmitted, handleSubmit]);  // ✅ Use the memoized handleSubmit
-    
-=======
     }, [quizStarted, quizSubmitted, handleSubmit]);
->>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
-=======
-    }, [quizStarted, quizSubmitted, handleSubmit]);
->>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 
     useEffect(() => {
         const storedAuth = Cookies.get('isAuthenticated');

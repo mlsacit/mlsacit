@@ -520,16 +520,11 @@
 
 "use client";
 import Image from "next/image";
-import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { gsap } from "gsap";
 import Lenis from "lenis";
-<<<<<<< HEAD
-import WorkshopBanner from "./workshop/WorkshopBanner"; // Still importing the fixed component
-=======
->>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 import Navbar from "./components/Navbar";
 import About from "./components/About";
 import Events from "./components/Events";
@@ -548,36 +543,14 @@ export default function Home() {
   const lenisRef = useRef(null);
 
   useEffect(() => {
-<<<<<<< HEAD
-    // Initialize AOS only
-    AOS.init({
-      offset: 120,
-      duration: 800, // Shorter duration
-=======
     AOS.init({
       offset: 120,
       duration: 1000,
->>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
       easing: "ease-out",
       once: true,
       mirror: false,
       debounceDelay: 50
     });
-<<<<<<< HEAD
-    
-    // Add simple scroll optimization
-    const handleScroll = () => {
-      // Throttle scroll events
-      if (!window.requestAnimationFrame) return;
-      
-      window.requestAnimationFrame(() => {
-        // Any scroll-based logic here
-      });
-    };
-    
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-=======
 
     // Lenis initialization with cleanup
     const lenis = new Lenis({
@@ -596,12 +569,9 @@ export default function Home() {
       cancelAnimationFrame(animationId);
       lenis.destroy();
     };
->>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
   }, []);
 
   useEffect(() => {
-    // Debounced resize handler
-    let resizeTimeout;
     // Debounced resize handler
     let resizeTimeout;
     const handleResize = () => {
@@ -609,10 +579,6 @@ export default function Home() {
       resizeTimeout = setTimeout(() => {
         setIsMobile(window.matchMedia("(max-width: 767px)").matches);
       }, 100);
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(() => {
-        setIsMobile(window.matchMedia("(max-width: 767px)").matches);
-      }, 100);
     };
 
     handleResize();
@@ -650,23 +616,6 @@ export default function Home() {
           delay: 1,
           force3D: true
         });
-    // GSAP animations with cleanup
-    const ctx = gsap.context(() => {
-      const animateLogoAndText = () => {
-        const logoScale = isMobile ? 0.18 : 0.25;
-        const logoPosition = isMobile ? "-40vw" : "0";
-        const logoVerticalShift = isMobile ? "-30rem" : "-27rem";
-
-        const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-
-        tl.to(logoRef.current, {
-          scale: logoScale,
-          x: logoPosition,
-          y: logoVerticalShift,
-          duration: 0.5,
-          delay: 1,
-          force3D: true
-        });
 
         tl.fromTo(
           navbarRef.current.querySelector(".left-nav"),
@@ -705,37 +654,7 @@ export default function Home() {
           "<"
         );
       };
-        tl.fromTo(
-          textSectionRef.current,
-          { opacity: 0, y: 50 },
-          { opacity: 1, y: 0, duration: 1 },
-          "<+0.5"
-        );
 
-        tl.fromTo(
-          blobRef.current,
-          { opacity: 0, scale: 0.5 },
-          { opacity: 1, scale: 1, duration: 1 },
-          "<"
-        );
-      };
-
-      animateLogoAndText();
-    });
-
-    return () => ctx.revert();
-  }, [isMobile]);
-
-  // Keep remaining logic the same
-  const getTopValues = () => {
-    if (isFullscreen) {
-      return { meme1: "100vh", meme2: "100vh" };
-    } else {
-      return { meme1: "-40vh", meme2: "-55vh" };
-    }
-  };
-
-  const topValues = getTopValues();
       animateLogoAndText();
     });
 
@@ -755,21 +674,6 @@ export default function Home() {
 
   return (
     <div id="home" className="min-h-full relative overflow-hidden bg-black">
-<<<<<<< HEAD
-
-      
-      {/* WORKSHOP BANNER SECTION START */}
-       
-      <div className="z-[100]">
-        <WorkshopBanner />
-      </div>
-      
-      {/* WORKSHOP BANNER SECTION END */} 
-      
-
-
-=======
->>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
       {/* Optimized Background Image */}
       <div className="absolute inset-0 w-full h-full bg-center max-sm:bg-contain lg:bg-cover z-0">
         <Image
@@ -783,17 +687,6 @@ export default function Home() {
       </div>
 
       {/* Main Content */}
-<<<<<<< HEAD
-      <div className="relative z-50 h-full w-full">
-        <div ref={navbarRef}>
-          <Navbar />
-        </div>
-        {/* Recruitment Banner - Absolute positioning */}
-        <div className="logo-custom absolute mt-36 w-full flex justify-center max-custom:h-[36rem] max-custom:mt-[9.4rem]">
-          <Image
-            ref={logoRef}
-            src="/newlogo.png"
-=======
       <div className="relative z-10 h-full w-full">
         <div ref={navbarRef}>
           <Navbar />
@@ -803,43 +696,11 @@ export default function Home() {
           <Image
             ref={logoRef}
             src="/logo.svg"
->>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
             alt="MSC Logo"
             width={450}
             height={450}
             priority
           />
-<<<<<<< HEAD
-        </div>  
-
-
-        {/* Rest of your components remain the same */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 w-full h-auto px-4 lg:px-8 py-12 gap-8 bg-am">
-        <div className="relative flex flex-col col-span-3 lg:flex-row items-center justify-between w-full bg-red h-[80vh] md:justify-center sm:justify-center max-sm:justify-center  ">
-            {/* Text Section */}
-            <div
-              ref={textSectionRef}
-              className="text-white lg:w-auto text-center lg:text-left m-2 mb-8 lg:mb-0 bg-b z-10 lg:absolute lg:left-0 lg:ml-0 max-sm:p-3 lg:overflow-visible"
-            >
-              <h1 className="font-extrabold text-3xl md:text-5xl lg:text-6xl font-[CB] max-sm:mt-[2.5vh] bg-clip-text text-transparent bg-gradient-to-r from-[#8AAAE5] max-sm:-ml-[25vw] max-sm:text-[8vw]">
-                Microsoft  
-              </h1>
-              <h1 className="font-extrabold text-3xl md:text-5xl lg:text-6xl whitespace-nowrap font-[CB] max-sm:text-[8vw] max-sm:ml-[1vw]  bg-clip-text text-transparent bg-gradient-to-r from-[#333333]  to-[#FFFFFF] max-sm:-mt-[1vh] ">
-                Student  Ambassadors
-              </h1>
-              
-              <h2 className="font-extrabold  md:text-3xl lg:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-[#1E2761]  to-[#408EC6] font-[CB]  max-sm:text-[5vw] max-sm:-ml-[56vw]">
-                CIT CHAPTER
-              </h2>
-              {/* <h3 className="text-xl md:text-2xl font-thin font-[CB] bg-clip-text text-transparent bg-gradient-to-r from-[#ffffff] to-[#8AAAE5] max-sm:text-[4vw] mb-2">
-                An ISE Dept. Initiative
-              </h3> */}
-              <p className="p-3 font-mono font-semibold text-sm md:text-base mt-4 max-sm:mt-[42vh] max-sm:text-left bg-[#11182784] max-sm:p-3 rounded-2xl max-sm:text-[3.5vw]">
-              More than a chapter — where every mind pens the next big page.
-              </p>
-            </div>
-
-=======
         </div>
 
         {/* Rest of your components remain the same */}
@@ -866,7 +727,6 @@ export default function Home() {
               </p>
             </div>
 
->>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
             {/* Foreground Image */}
             <div className="absolute right-0  flex justify-center lg:justify-end h-auto w-full pt-[3rem] md:h-auto sm:h-auto max-sm:pt-0 max-sm:h-auto lg:translate-x-[11rem] z-0  lg:w-[70vw]">
               <Image
@@ -985,23 +845,9 @@ export default function Home() {
         </div>
       </div>
 
-<<<<<<< HEAD
-      <div className="w-full h-full  relative z-10">
-=======
       <div className="">
->>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
         <Footer />
       </div>
     </div>
-    </div>
-  );
-<<<<<<< HEAD
+  )
 }
-
-
-
-
-
-=======
-}
->>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
