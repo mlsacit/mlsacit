@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 "use client";
 import Image from 'next/image';
 import React from "react";
@@ -26,6 +27,30 @@ const Footer = () => {
               </h1>
               {/* <p className='text-sm font-light text-gray-300'>An ISE dept. Initiative</p> */}
               <p className="text-sm font-light text-gray-300">CIT Chapter</p>
+=======
+"use client"
+import React from 'react'
+import Link from 'next/link'
+import { FaInstagram } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+
+const Footer = () => {
+  return (
+    <div className='bg-transparent text-white w-full p-8 rounded-md opacity-85 bg-red-600'>
+      <h3 className='text-slate-500 text-xl font-bold'>Microsoft Learn Student Ambassador</h3>
+      <div className='w-full h-[2px] bg-slate-400 '></div>
+        <div className="container grid grid-cols-2 ">
+            <div className="name text-left text-lg text-semibold">
+                {/* <img src="/msc_logo.png" alt="" width={50} height={50}/> */}
+                
+                <h4 className='text-slate-500'>Cambridge Institute of Technology</h4>
+            </div>
+            <div className="parts text-right text-lg grid grid-rows-3 text-semibold">
+                <Link href="/events" className="text-slate-500 hover:text-white">Events</Link>
+                <Link href="/"
+                className="text-slate-500 hover:text-white">Team</Link>
+                {/* <Link href="/projects" className="text-slate-500 hover:text-white">Projects</Link> */}
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
             </div>
           </div>
           {/* Right: Tagline */}
@@ -94,8 +119,15 @@ const Footer = () => {
                 className="bg-gray-800 p-2 rounded-full hover:bg-blue-700 transition-colors"
                 aria-label="LinkedIn"
               >
+<<<<<<< HEAD
                 <FaLinkedin />
               </a>
+=======
+                <FaLinkedin size={30}/>
+              </a>
+            </div>
+            <div className="mt-6 mb-6 text-slate-500 hover:text-white">
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
               <a
                 href="https://www.instagram.com/mlsacit"
                 target="_blank"
@@ -103,6 +135,7 @@ const Footer = () => {
                 className="bg-gray-800 p-2 rounded-full hover:bg-pink-700 transition-colors"
                 aria-label="Instagram"
               >
+<<<<<<< HEAD
                 <FaInstagram />
               </a>
               <a
@@ -113,10 +146,21 @@ const Footer = () => {
                 aria-label="GitHub"
               >
                 <FaGithub />
+=======
+                <FaInstagram size={30}/>
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
               </a>
             </div>
           </div>
         </div>
+<<<<<<< HEAD
+=======
+        <div className='w-full h-[2px] bg-slate-400 '></div>
+      <p className='text-center p-2'>Copyright &copy; MLSA, Cambridge Institute of Technology.</p>
+    </div>
+  )
+}
+>>>>>>> 3c51a0aad7112e75bbd6ac9d6f219495ea4cf055
 
         {/* Divider */}
         <div className="my-6 w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent" />
