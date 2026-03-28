@@ -41,7 +41,7 @@ export async function POST(req: NextRequest) {
     const year = formData.year as string;
     const officialMail = formData.officialMail as string;
     const phoneNumber = formData.phoneNumber as string;
-    const workshopName = formData.workshopName as string || 'LinkedIn Mastery + Resume Building';
+    const workshopName = formData.workshopName as string || 'Introduction to LLM\'s';
 
     // Initialize Google Sheets auth (same pattern as other APIs)
     const auth = new GoogleAuth({

@@ -31,7 +31,7 @@ const WorkshopForm: React.FC = () => {
     useEffect(() => {
         const checkRegistration = async () => {
             try {
-                const cached = localStorage.getItem('linkedinWorkshopRegistration');
+                const cached = localStorage.getItem('llmEventRegistration');
                 if (cached) {
                     try {
                         const parsed = JSON.parse(cached);
@@ -40,7 +40,7 @@ const WorkshopForm: React.FC = () => {
                         setCheckingRegistration(false);
                         return;
                     } catch (err) {
-                        localStorage.removeItem('linkedinWorkshopRegistration');
+                        localStorage.removeItem('llmEventRegistration');
                     }
                 }
             } finally {
@@ -93,7 +93,7 @@ const WorkshopForm: React.FC = () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ ...formData, workshopName: 'LinkedIn Mastery + Resume Building' }),
+                body: JSON.stringify({ ...formData, workshopName: 'Introduction to LLM' }),
             });
 
             const data = await res.json().catch(() => ({}));
@@ -102,7 +102,7 @@ const WorkshopForm: React.FC = () => {
             // Cache registration locally
             const registrationRecord = { ...formData, submittedAt: new Date().toISOString() };
             try {
-                localStorage.setItem('linkedinWorkshopRegistration', JSON.stringify(registrationRecord));
+                localStorage.setItem('llmEventRegistration', JSON.stringify(registrationRecord));
                 localStorage.setItem('workshopRegistered', 'true');
                 localStorage.setItem('workshopRegisteredEmail', formData.officialMail);
             } catch {}
@@ -169,7 +169,7 @@ const WorkshopForm: React.FC = () => {
                         </h1>
 
                         <p className="text-blue-200 text-lg">
-                            We&apos;re excited to see you at the workshop! Here are your registration details:
+                            We&apos;re excited to see you at the Introduction to LLM event! Here are your registration details:
                         </p>
                     </div>
 
@@ -209,10 +209,10 @@ const WorkshopForm: React.FC = () => {
 
                     {/* Workshop Details */}
                     <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-sm rounded-2xl p-6 border border-blue-400/30">
-                        <h3 className="text-xl font-bold text-white mb-4">Workshop Details</h3>
+                        <h3 className="text-xl font-bold text-white mb-4">Event Details</h3>
                         <div className="space-y-2 text-blue-100">
-                            <p>📅 <strong>Date:</strong> 28th Feb, 2026</p>
-                            <p>⏰ <strong>Time:</strong> 9 AM onwards</p>
+                            <p>📅 <strong>Date:</strong> 28/3/26</p>
+                            <p>⏰ <strong>Time:</strong> 10 AM onwards</p>
                             <p>📍 <strong>Venue:</strong> 2nd Floor Seminar Hall</p>
                         </div>
                     </div>
@@ -228,7 +228,7 @@ const WorkshopForm: React.FC = () => {
 
                         <button
                             onClick={() => {
-                                localStorage.removeItem('linkedinWorkshopRegistration');
+                                localStorage.removeItem('llmEventRegistration');
                                 localStorage.removeItem('workshopRegisteredEmail');
                                 localStorage.removeItem('workshopRegistered');
                                 setIsRegistered(false);
@@ -275,8 +275,8 @@ const WorkshopForm: React.FC = () => {
                             <div className="relative w-full max-w-md">
                                 <div className="w-full h-[450px] sm:h-[600px] bg-slate-800/40 rounded-2xl shadow-2xl overflow-hidden">
                                     <Image
-                                        src="/linkedin-workshop-poster.jpg"
-                                        alt="LinkedIn Workshop Poster - Aaron Noel D'Souza"
+                                        src="/into_to_llm.png"
+                                        alt="Introduction to LLM Poster"
                                         fill
                                         className="object-cover object-top"
                                         priority
@@ -294,27 +294,27 @@ const WorkshopForm: React.FC = () => {
                         <div className="text-white space-y-6 order-1 lg:order-2">
                             {/* Badge */}
                             <div className="inline-block px-4 py-2 bg-blue-500/20 rounded-full border border-blue-400/30">
-                                <span className="text-blue-300 text-sm font-medium">Interactive Workshop</span>
+                                <span className="text-blue-300 text-sm font-medium">AI Workshop</span>
                             </div>
 
                             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-                                LinkedIn Mastery +<br />Resume Building
+                                Introduction to<br />LLM
                             </h1>
 
                             <p className="text-lg sm:text-xl text-blue-200">
-                                Stand out in a sea of profiles and resumes with a hands-on session led by <strong>Aaron Noel D&apos;Souza</strong>.
+                                Explore the world of Large Language Models & AI with hands-on demos and real-world applications.
                             </p>
 
                             {/* Event Details */}
                             <div className="space-y-3 pt-4">
                                 <div className="flex items-center gap-3 text-base sm:text-lg">
                                     <span className="text-blue-400 text-xl sm:text-2xl">📅</span>
-                                    <span><strong>Date:</strong> 28 Feb 2026</span>
+                                    <span><strong>Date:</strong> 28/3/26</span>
                                 </div>
 
                                 <div className="flex items-center gap-3 text-base sm:text-lg">
                                     <span className="text-blue-400 text-xl sm:text-2xl">🕐</span>
-                                    <span><strong>Time:</strong> 9 AM onwards</span>
+                                    <span><strong>Time:</strong> 10 AM onwards</span>
                                 </div>
 
                                 <div className="flex items-center gap-3 text-base sm:text-lg">
@@ -325,44 +325,48 @@ const WorkshopForm: React.FC = () => {
 
                             {/* Topics Grid */}
                             <div className="grid sm:grid-cols-2 gap-4 pt-4">
-                                {/* LinkedIn Mastery Card */}
+                                {/* LLM Fundamentals Card */}
                                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-5 border border-slate-700">
                                     <div className="flex items-center gap-2 mb-3">
-                                        <FaLinkedin className="text-blue-400 text-xl" />
-                                        <h3 className="text-lg font-bold text-white">LinkedIn Mastery</h3>
+                                        <span className="text-blue-400 text-xl">🤖</span>
+                                        <h3 className="text-lg font-bold text-white">LLM Fundamentals</h3>
                                     </div>
                                     <ul className="space-y-2 text-sm text-blue-100">
-                                        <li>• How LinkedIn works and connection levels</li>
-                                        <li>• Six degrees of separation in action</li>
-                                        <li>• Improve visibility and profile strength</li>
-                                        <li>• Job alerts, followers vs. connections</li>
+                                        <li>• What are Large Language Models?</li>
+                                        <li>• How GPT, Gemini & AI models work</li>
+                                        <li>• Real-world applications of LLMs</li>
+                                        <li>• Future of AI & career opportunities</li>
                                     </ul>
                                 </div>
 
-                                {/* Resume Building Card */}
+                                {/* Hands-on Demos Card */}
                                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-5 border border-slate-700">
                                     <div className="flex items-center gap-2 mb-3">
-                                        <FaFileAlt className="text-purple-400 text-xl" />
-                                        <h3 className="text-lg font-bold text-white">Resume Building</h3>
+                                        <span className="text-purple-400 text-xl">🚀</span>
+                                        <h3 className="text-lg font-bold text-white">Live Demos & Use Cases</h3>
                                     </div>
                                     <ul className="space-y-2 text-sm text-blue-100">
-                                        <li>• What recruiters actually look for</li>
-                                        <li>• The CAO model for strong resumes</li>
-                                        <li>• Common mistakes to avoid</li>
-                                        <li>• Align LinkedIn and resume data</li>
+                                        <li>• Interactive AI model demonstrations</li>
+                                        <li>• Practical examples and applications</li>
+                                        <li>• Q&A session with experts</li>
+                                        <li>• Hands-on learning experience</li>
                                     </ul>
                                 </div>
                             </div>
 
-                            {/* Speaker Info */}
+                            {/* Session Highlights */}
                             <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-sm rounded-xl p-5 border border-blue-400/30">
                                 <div className="flex items-center gap-2 mb-3">
-                                    <FaUserTie className="text-blue-400 text-xl" />
-                                    <h3 className="text-lg font-bold text-white">Speaker</h3>
+                                    <span className="text-blue-400 text-xl">⭐</span>
+                                    <h3 className="text-lg font-bold text-white">What You will Learn</h3>
                                 </div>
-                                <p className="text-blue-100 text-sm leading-relaxed">
-                                    <strong>Aaron Noel D&apos;Souza</strong>, MBA, is a global professional with over a decade of experience spanning sustainability, alumni relations, communications, and financial markets. An alumnus of Nyenrode Business University in the Netherlands, he has worked with organizations such as Infosys, ING Bank, IISc, and Nuffic India. Currently serving as Alumni Relations Officer at Cambridge Institute of Technology.
-                                </p>
+                                <ul className="space-y-2 text-blue-100 text-sm">
+                                    <li>• Understanding Large Language Models (LLMs) and their capabilities</li>
+                                    <li>• How modern AI models like GPT and Gemini process information</li>
+                                    <li>• Real-world applications and industry use cases</li>
+                                    <li>• Live demonstrations and interactive sessions</li>
+                                    <li>• Career opportunities in AI and machine learning</li>
+                                </ul>
                             </div>
 
                             {/* Register Button */}
@@ -371,7 +375,7 @@ const WorkshopForm: React.FC = () => {
                                     <button
                                         className="px-8 sm:px-12 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-500 hover:to-blue-700 text-white text-lg sm:text-xl font-bold rounded-full transition-all duration-300 transform hover:scale-105 shadow-2xl"
                                     >
-                                        Register Now →
+                                        Register for Workshop →
                                     </button>
                                 </Link>
                             </div>
