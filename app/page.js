@@ -136,9 +136,9 @@ export default function Home() {
       
       {/* WORKSHOP BANNER SECTION START */}
        
-      <div className="z-[100]">
+      {/* <div className="z-[100]">
         <WorkshopBanner />
-      </div>
+      </div> */}
       
       {/* WORKSHOP BANNER SECTION END */} 
       
