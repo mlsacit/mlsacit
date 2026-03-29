@@ -54,7 +54,7 @@ const WorkshopBanner = () => {
               <>
                 <span className="block md:hidden text-xs sm:text-sm">
                   Introduction to<br />
-                  LLM's
+                  LLM&apos;s
                 </span>
                 <span className="hidden md:inline text-base">
                   {bannerText}

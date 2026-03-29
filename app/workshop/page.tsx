@@ -298,7 +298,7 @@ const WorkshopForm: React.FC = () => {
                             </div>
 
                             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-                                Introduction to<br />LLM's
+                                Introduction to<br />LLM&apos;s
                             </h1>
 
                             <p className="text-lg sm:text-xl text-blue-200">
@@ -358,7 +358,7 @@ const WorkshopForm: React.FC = () => {
                             <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-sm rounded-xl p-5 border border-blue-400/30">
                                 <div className="flex items-center gap-2 mb-3">
                                     <span className="text-blue-400 text-xl">⭐</span>
-                                    <h3 className="text-lg font-bold text-white">What You'll Learn</h3>
+                                    <h3 className="text-lg font-bold text-white">What You&apos;ll Learn</h3>
                                 </div>
                                 <ul className="space-y-2 text-blue-100 text-sm">
                                     <li>• Understanding Large Language Models (LLMs) and their capabilities</li>
