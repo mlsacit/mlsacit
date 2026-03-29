@@ -19,7 +19,7 @@ const WorkshopBanner = () => {
 
   if (!isVisible) return null;
 
-  const defaultText = "Introduction to LLM";
+  const defaultText = "Introduction to LLM's";
   const defaultLinkText = (
     <>
       Register Here <span className="text-base">→</span>
@@ -54,7 +54,7 @@ const WorkshopBanner = () => {
               <>
                 <span className="block md:hidden text-xs sm:text-sm">
                   Introduction to<br />
-                  LLM
+                  LLM's
                 </span>
                 <span className="hidden md:inline text-base">
                   {bannerText}
