@@ -82,7 +82,7 @@ const About = () => {
       {/* Header */}
       <div className="text-center mb-12">
         <h1 className="text-2xl font-[CB] sm:text-3xl lg:text-4xl font-bold mb-4" data-aos="flip-up">
-          About  <span className="text-blue-500"> MLSA CIT Chapter</span>
+          About  <span className="text-blue-500"> MSA CIT Chapter</span>
         </h1>
         <p className="text-sm sm:text-base max-w-3xl mx-auto font-mono" data-aos="flip-down">
           Aligning learning, innovation, and leadership to redefine the tech landscape
@@ -102,7 +102,7 @@ const About = () => {
           </div>
           <h2 className="text-lg sm:text-2xl font-semibold mb-4 text-center font-[Array] " >Vision</h2>
           <p className="text-xs sm:text-sm lg:text-base text-center font-mono" >
-            At MLSA CIT, the vision is a world where technology is not just a tool, but a force for good—transforming
+            At MSA CIT, the vision is a world where technology is not just a tool, but a force for good—transforming
             ideas into impactful solutions and empowering individuals to shape a better future.
           </p>
         </div>
@@ -118,7 +118,7 @@ const About = () => {
           </div>
           <h2 className="text-lg sm:text-2xl font-semibold mb-4 text-center font-[Array]" >Mission</h2>
           <p className="text-xs sm:text-sm lg:text-base text-center font-mono" >
-            MLSA CIT is committed to going beyond textbooks by equipping individuals with the knowledge, skills, and
+            MSA CIT is committed to going beyond textbooks by equipping individuals with the knowledge, skills, and
             resources to make an impact through hands-on learning opportunities such as workshops, webinars, and events.
           </p>
         </div>

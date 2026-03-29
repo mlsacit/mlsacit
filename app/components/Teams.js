@@ -198,7 +198,7 @@ const Teams = () => {
         {/* Futuristic subtitle */}
         <p className="text-blue-300/80 max-w-md mx-auto mb-4 text-sm" data-aos="fade-up" data-aos-delay="100">
           <span className="inline-block w-2 h-2 bg-blue-400 rounded-full mr-2 animate-pulse"></span>
-          The brilliant minds powering MLSA CIT
+          The brilliant minds powering MSA CIT
           <span className="inline-block w-2 h-2 bg-blue-400 rounded-full ml-2 animate-pulse"></span>
         </p>
       </div>

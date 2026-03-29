@@ -102,7 +102,7 @@ const AdvisorPage = () => {
                     </h2>
                     <div className="inline-flex items-center gap-2 px-6 py-2.5 bg-blue-500/20 backdrop-blur-sm rounded-full border border-blue-400/30">
                       <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-                      <span className="text-blue-300 text-base font-semibold tracking-wide">MLSA Club Advisor</span>
+                      <span className="text-blue-300 text-base font-semibold tracking-wide">MSA Club Advisor</span>
                     </div>
                   </div>
 
@@ -158,7 +158,7 @@ const AdvisorPage = () => {
                         {[
                           'Head Of The Department – Master Of Computer Applications, Cambridge Institute of Technology',
                           'Assistant Professor at Cambridge Institute of Technology',
-                          'MLSA CIT chapter club advisor'
+                          'MSA CIT chapter club advisor'
                         ].map((credential, index) => (
                           <div key={index} className="flex items-start group/item">
                             <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 group-hover/item:bg-white/20 transition-all duration-300">

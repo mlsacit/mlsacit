@@ -57,7 +57,7 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "MLSA - CIT Chapter",
+  title: "MSA - CIT Chapter",
   description: "Microsoft Learn Student Ambassadors - CIT Chapter",
   icons: {
     icon: "/newlogo.png",

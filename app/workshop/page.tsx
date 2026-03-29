@@ -285,7 +285,7 @@ const WorkshopForm: React.FC = () => {
 
                                 {/* Club Badge - Top Right */}
                                 <div className="absolute top-4 right-4 bg-blue-600/80 backdrop-blur-sm px-3 py-1 rounded-full">
-                                    <span className="text-white text-xs font-semibold tracking-wider">MLSA CLUB</span>
+                                    <span className="text-white text-xs font-semibold tracking-wider">MSA CLUB</span>
                                 </div>
                             </div>
                         </div>

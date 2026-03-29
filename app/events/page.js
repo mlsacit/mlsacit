@@ -161,10 +161,10 @@ export default function EventsPage() {
               <span className="w-3 h-3 bg-yellow-500 rounded-full"></span>
               <span className="w-3 h-3 bg-green-500 rounded-full"></span>
             </div>
-            <span className="text-[var(--text-primary)] pt-2 opacity-80">mlsa-events.js - MLSA CIT</span>
+            <span className="text-[var(--text-primary)] pt-2 opacity-80">msa-events.js - MSA CIT</span>
           </div>
           
-          <h1 className="text-3xl font-bold text-center text-[var(--accent-1)] mb-4">MLSA CIT Events</h1>
+          <h1 className="text-3xl font-bold text-center text-[var(--accent-1)] mb-4">MSA CIT Events</h1>
           <p className="text-[var(--comment-color)] text-center mb-6">Browse our past and upcoming events</p>
           <hr className="m-4 text-[var(--comment-color)]"></hr>
           {selectedEvent ? (

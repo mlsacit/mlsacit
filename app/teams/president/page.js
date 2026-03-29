@@ -152,7 +152,7 @@ const Page = () => {
                         Vision & Leadership
                       </h3>
                       <p className="text-white/70 leading-relaxed font-[GMVF]">
-                        As President, Vidhula aims to shape the MLSA CIT Chapter into a space where members are encouraged to think beyond boundaries and explore out of the box ideas. Her vision focuses on helping students discover their niche, build on their strengths, and embrace the skills that make them stand out, all while growing together as a community driven by curiosity and innovation.
+                        As President, Vidhula aims to shape the MSA CIT Chapter into a space where members are encouraged to think beyond boundaries and explore out of the box ideas. Her vision focuses on helping students discover their niche, build on their strengths, and embrace the skills that make them stand out, all while growing together as a community driven by curiosity and innovation.
                       </p>
                     </div>
                   </div>
@@ -163,7 +163,7 @@ const Page = () => {
                     <div className="relative">
                       <h3 className="text-2xl font-semibold text-purple-400 mb-4 font-[Khand]">Biography</h3>
                       <p className="text-white/70 leading-relaxed font-[GMVF]">
-                        Since taking on the role in September 2025, Vidhula strives to bring creativity, structure, and vision to the MLSA CIT Chapter. Starting as a volunteer in the Curation Team, she developed a keen sense for detail. Her journey has been shaped by observing, learning, and contributing to the chapter&apos;s growth from within. Now, as President, she aims to build on that foundation, fostering innovation, empowering members, and creating a community that grows through shared purpose and collaboration.
+                        Since taking on the role in September 2025, Vidhula strives to bring creativity, structure, and vision to the MSA CIT Chapter. Starting as a volunteer in the Curation Team, she developed a keen sense for detail. Her journey has been shaped by observing, learning, and contributing to the chapter&apos;s growth from within. Now, as President, she aims to build on that foundation, fostering innovation, empowering members, and creating a community that grows through shared purpose and collaboration.
                       </p>
                     </div>
                   </div>

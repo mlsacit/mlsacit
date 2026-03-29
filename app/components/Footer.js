@@ -124,7 +124,7 @@ const Footer = () => {
         {/* Bottom section: Copyright */}
         <div className="text-center text-sm text-gray-400">
           <p>
-            &copy; {new Date().getFullYear()} MLSA CIT | Designed & Developed by MLSA, CIT TEAM
+            &copy; {new Date().getFullYear()} MSA CIT | Designed & Developed by MLSA, CIT TEAM
           </p>
         </div>
       </div>

@@ -155,7 +155,7 @@ const Page = () => {
                         Role & Responsibilities
                       </h3>
                       <p className="text-white/70 leading-relaxed font-[GMVF]">
-                        As Vice President and Treasurer, Tejas brings a strategic calm to the MLSA CIT Chapter—balancing creativity with structure and ensuring that ideas are backed by thoughtful execution. His leadership focuses on building systems that support collaboration, clarity, and sustainable growth. Whether it&apos;s guiding decisions or managing resources, Tejas leads with logic, empathy, and a deep commitment to community impact.
+                        As Vice President and Treasurer, Tejas brings a strategic calm to the MSA CIT Chapter—balancing creativity with structure and ensuring that ideas are backed by thoughtful execution. His leadership focuses on building systems that support collaboration, clarity, and sustainable growth. Whether it&apos;s guiding decisions or managing resources, Tejas leads with logic, empathy, and a deep commitment to community impact.
                       </p>
                     </div>
                   </div>
@@ -166,7 +166,7 @@ const Page = () => {
                     <div className="relative">
                       <h3 className="text-2xl font-semibold text-purple-400 mb-4 font-[Khand]">Biography</h3>
                       <p className="text-white/70 leading-relaxed font-[GMVF]">
-                        Tejas began his MLSA journey as a Marketing Team volunteer, where he explored storytelling, outreach, and audience engagement. That experience shaped his understanding of how visibility and structure go hand in hand. Now, stepping into his first term as Treasurer, he&apos;s focused on streamlining operations, supporting cross-team coordination, and ensuring that every initiative is backed by clarity and care.
+                        Tejas began his MSA journey as a Marketing Team volunteer, where he explored storytelling, outreach, and audience engagement. That experience shaped his understanding of how visibility and structure go hand in hand. Now, stepping into his first term as Treasurer, he&apos;s focused on streamlining operations, supporting cross-team coordination, and ensuring that every initiative is backed by clarity and care.
                       </p>
                     </div>
                   </div>
