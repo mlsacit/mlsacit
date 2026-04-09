@@ -483,6 +483,18 @@ const Fifth = () => {
       date: "13/05/2025",
       description: "A hands-on workshop led by Sakshi, Shibasish, Neelakshi and Anarghya exploring storytelling, branding and audience-focused digital strategy through practical activities."
     },
+    {
+      images: ["/fifth/resume1.jpeg", "/fifth/resume2.jpeg"],
+      title: "LinkedIn Mastery & Resume Building Workshop",
+      date: "28/02/2026",
+      description: "The LinkedIn Mastery & Resume Building Workshop, conducted by the MSA CIT Chapter on 28th February 2026, focused on preparing students for the competitive job market. Led by industry expert Mr. Aaron Noel D’Souza, the session provided practical insights into creating impactful resumes, building strong LinkedIn profiles, and enhancing professional visibility. The workshop empowered students with essential skills to confidently present themselves and take meaningful steps toward their career goals."
+    },
+    {
+      images: ["/fifth/llm1.jpeg", "/fifth/llm2_og.jpeg"],
+      title: "Introduction to Large Language Models Workshop",
+      date: "28/03/2026",
+      description: "The “Introduction to Large Language Models” workshop, led by Mr. Anish Ravishankar, offered students an engaging insight into the world of AI and NLP. The session covered key concepts such as tokenization, language prediction, and real-world applications of LLMs. With over 80 participants, the workshop combined theoretical understanding with industry perspectives, inspiring students to explore the rapidly evolving field of artificial intelligence."
+    },
   ];
 
   const navigateGallery = (direction) => {
@@ -510,6 +522,7 @@ const Fifth = () => {
           src={events[activeIndex].images[0]}
           alt={events[activeIndex].title}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover"
           priority
         />
@@ -557,6 +570,7 @@ const Fifth = () => {
                 src={event.images[0]}
                 alt={event.title}
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover"
               />
             </div>
@@ -592,8 +606,8 @@ const Fifth = () => {
 
             <div className="grid grid-cols-2 gap-4">
               {selectedEvent.images.map((src, index) => (
-                <div key={index} className="relative h-32 rounded-lg overflow-hidden">
-                  <Image src={src} alt={selectedEvent.title} fill className="object-cover" />
+                <div key={index} className="relative aspect-video rounded-lg overflow-hidden bg-black/20">
+                  <Image src={src} alt={`${selectedEvent.title} - photo ${index + 1}`} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" priority />
                 </div>
               ))}
             </div>
