@@ -86,7 +86,7 @@ const Teams = () => {
             hoveredIndex === index ? 'opacity-100' : 'opacity-40'
           }`}
           style={{
-            background: `conic-gradient(from ${Date.now() / 20 % 360}deg at 50% 50%, #4793F4, #6366F1, #4793F4)`,
+            background: `conic-gradient(from 0deg at 50% 50%, #4793F4, #6366F1, #4793F4)`,
             padding: '2px',
             animation: hoveredIndex === index ? 'spin 4s linear infinite' : 'none'
           }}
@@ -128,6 +128,7 @@ const Teams = () => {
             width={90}
             height={90}
             className="relative max-sm:w-[70px] transition-all duration-300"
+            style={{ width: "auto", height: "auto" }}
           />
 
           {/* Enhanced Futuristic scan effect - only render when hovered */}
