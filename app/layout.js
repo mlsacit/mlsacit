@@ -57,10 +57,10 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "MSClub - CIT",
-  description: "Microsoft Student Club - CITech",
+  title: "MSA - CIT Chapter",
+  description: "Microsoft Learn Student Ambassadors - CIT Chapter",
   icons: {
-    icon: "/favicon.png",
+    icon: "/newlogo.png",
   }
 };
 
@@ -84,3 +84,30 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
+
+
+// import "./globals.css";
+// import { AuthProvider } from './context/AuthContext';
+// import Head from 'next/head'; 
+
+// export const metadata = {
+//   title: "MSClub - CIT",
+//   description: "Microsoft Student Club - CITech",
+//   icons: {
+//     icon: "/favicon.png",
+//   }
+// };
+
+// export default function RootLayout({ children }) {
+//   return (
+//     <html lang="en">
+//       <body className="antialiased">
+//         <Head>
+//           <link rel="icon" href="/favicon.ico" />
+//         </Head>
+//         <AuthProvider>{children}</AuthProvider>
+//       </body>
+//     </html>
+//   );
+// }

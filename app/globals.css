@@ -2,53 +2,149 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 🔹 Keyframe for scrolling animation */
 @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-  
-  .animate-scroll {
-    animation: scroll 30s linear infinite;
-  }
-
-  .custom-scrollbar::-webkit-scrollbar {
-      display: none; /* Hide scrollbar for webkit browsers */
-  }
-
-  .custom-scrollbar {
-      -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
-      scrollbar-width: none; /* Hide scrollbar for Firefox */
-  }
-
-  .karantina-bold {
-    font-family: "Karantina";
-    font-weight: 600;
-    font-style: normal;
-  }
-
-@font-face{
-  font-family: 'MB';
-  src: url('./fonts/Melodrama-Bold.woff2') format('woff2');
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
 }
-@font-face{
-  font-family: 'CB';
-  src: url('./fonts/ClashDisplay-Bold.woff2') format('woff2');
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
 }
-@font-face{
-  font-family: 'Excon';
-  src: url('./fonts/Excon-Medium.woff') format('woff');
+
+/* 🔹 Custom Scrollbar - Hidden */
+.custom-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
-@font-face{
-  font-family: 'Array';
-  src: url('./fonts/Array-Bold.woff2') format('woff2');
+
+.custom-scrollbar::-webkit-scrollbar {
+  display: none;
 }
-@font-face{
-  font-family: 'Khand';
-  src: url('./fonts/Khand-Light.woff2') format('woff2');
+
+/* 🔹 Font Imports */
+@font-face { font-family: 'MB'; src: url('./fonts/Melodrama-Bold.woff2') format('woff2'); }
+@font-face { font-family: 'CB'; src: url('./fonts/ClashDisplay-Bold.woff2') format('woff2'); }
+@font-face { font-family: 'Excon'; src: url('./fonts/Excon-Medium.woff') format('woff'); }
+@font-face { font-family: 'Array'; src: url('./fonts/Array-Bold.woff2') format('woff2'); }
+@font-face { font-family: 'Khand'; src: url('./fonts/Khand-Light.woff2') format('woff2'); }
+@font-face { font-family: 'Technor'; src: url('./fonts/Technor-Medium.woff2') format('woff2'); }
+@font-face { font-family: 'GMVF'; src: url('./fonts/GeistMonoVF.woff') format('woff'); }
+@font-face { font-family: 'GVF'; src: url('./fonts/GeistVF.woff') format('woff'); }
+@font-face { font-family: 'LM'; src: url('./fonts/LEMONMILK-Regular.woff2') format('woff2'); }
+
+/* 🔹 Global Color Variables */
+:root {
+  --bg-primary: #1e1e2e;
+  --bg-secondary: #282a36;
+  --text-primary: #f8f8f2;
+  --text-secondary: #bd93f9;
+  --accent-1: #8be9fd;
+  --accent-2: #50fa7b;
+  --accent-3: #ff79c6;
+  --border-color: #44475a;
+  --comment-color: #6272a4;
+}
+
+/* 🔹 Global Body Styling */
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Fira Code', monospace;
+}
+
+/* 🔹 Terminal Header */
+.terminal-header {
+  @apply flex items-center justify-between border-b pb-3 mb-6 border-[var(--border-color)];
+}
+
+/* Terminal Dots */
+.terminal-dots {
+  @apply flex space-x-2;
+}
+
+.dot {
+  @apply w-3 h-3 rounded-full;
+}
+
+.dot-red { background: #ff5f56; }
+.dot-yellow { background: #ffbd2e; }
+.dot-green { background: #27c93f; }
+
+/* 🔹 Event Grid */
+.events-grid {
+  @apply grid gap-4;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+/* 🔹 Code Block */
+.code-block {
+  @apply bg-[var(--bg-primary)] border border-[var(--border-color)] rounded-lg p-4 transition-transform duration-300;
+}
+
+.code-block:hover {
+  @apply -translate-y-1;
+}
+
+/* 🔹 Code Header */
+.code-header {
+  @apply flex justify-between items-center border-b border-[var(--border-color)] pb-2 mb-3;
+}
+
+/* 🔹 Buttons */
+.view-button, .back-button, .register-button {
+  @apply px-4 py-2 rounded transition-all duration-300;
+}
+
+.view-button {
+  @apply border border-[var(--accent-1)] text-[var(--accent-1)];
+}
+
+.view-button:hover {
+  @apply bg-[var(--accent-1)] text-[var(--bg-primary)];
+}
+
+.back-button {
+  @apply border border-[var(--accent-1)] text-[var(--accent-1)];
+}
+
+.back-button:hover {
+  @apply bg-[var(--accent-1)] text-[var(--bg-primary)];
+}
+
+.register-button {
+  @apply bg-[var(--accent-2)] text-[var(--bg-primary)];
+}
+
+/* 🔹 Custom Scrollbar */
+::-webkit-scrollbar {
+  @apply w-1.5;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  @apply rounded-md;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--comment-color);
+}
+
+/* 🔹 Fade-in Animation */
+@keyframes simpleFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 768px) {
+  .events-grid {
+    @apply grid-cols-1;
+  }
 }
 @font-face{
   font-family: 'Technor';
@@ -67,10 +163,10 @@
   src: url('./fonts/LEMONMILK-Regular.woff2') format('woff2');
 }
 
-
-html::-webkit-scrollbar{
-  display:none;
+html::-webkit-scrollbar {
+  display: none;
 }
 
 
 
+  
